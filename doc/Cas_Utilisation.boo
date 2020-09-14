@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{85E6FBAD-86B8-43A2-9750-69A1AF3D6051}" Label="" LastModificationDate="1598453096" Name="v.2.0.0" Objects="185" Symbols="64" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{85E6FBAD-86B8-43A2-9750-69A1AF3D6051}" Label="" LastModificationDate="1599471415" Name="v.2.0.0" Objects="291" Symbols="64" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
 
 <o:RootObject Id="o1">
+<a:SessionID>00000000-0000-0000-0000-000000000000</a:SessionID>
 <c:Children>
 <o:Model Id="o2">
 <a:ObjectID>85E6FBAD-86B8-43A2-9750-69A1AF3D6051</a:ObjectID>
@@ -29,7 +30,10 @@ GenerationSelections=</a:PackageOptionsText>
 CaseSensitive=Yes
 DisplayName=Yes
 EnableTrans=Yes
+UseTerm=No
 EnableRequirements=No
+EnableFullShortcut=No
+SynchroCode=Yes
 ShowClss=No
 DeftAttr=int
 DeftMthd=int
@@ -890,6 +894,34 @@ Script=.convert_code(%Code%,&quot; &quot;)
 ConvTable=
 ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
 
+[ModelOptions\Cld\ClssNamingOptions\AREA]
+
+[ModelOptions\Cld\ClssNamingOptions\AREA\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Resource Files\Conversion Tables
+
+[ModelOptions\Cld\ClssNamingOptions\AREA\Code]
+Template=
+MaxLen=254
+Case=M
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Resource Files\Conversion Tables
+
 [ModelOptions\Cld\ClssNamingOptions\DefaultClass]
 
 [ModelOptions\Cld\ClssNamingOptions\DefaultClass\Name]
@@ -920,6 +952,15 @@ ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
 
 [ModelOptions\Generate]
 
+[ModelOptions\Generate\Xsm]
+GenRootElement=Yes
+GenComplexType=No
+GenAttribute=Yes
+CheckModel=Yes
+SaveLinks=Yes
+ORMapping=No
+NameToCode=No
+
 [ModelOptions\Generate\Cdm]
 CheckModel=Yes
 SaveLinks=Yes
@@ -933,20 +974,15 @@ ORMapping=No
 NameToCode=No
 BuildTrgr=No
 TablePrefix=
-RefrUpdRule=RESTRICT
-RefrDelRule=RESTRICT
 IndxPKName=%TABLE%_PK
 IndxAKName=%TABLE%_AK
 IndxFKName=%REFR%_FK
 IndxThreshold=
 ColnFKName=%.3:PARENT%_%COLUMN%
 ColnFKNameUse=No
-
-[ModelOptions\Generate\Xsm]
-CheckModel=Yes
-SaveLinks=Yes
-ORMapping=No
-NameToCode=No</a:ModelOptionsText>
+RefrUpdRule=RESTRICT
+RefrDelRule=RESTRICT</a:ModelOptionsText>
+<a:RepositoryFilename>%[PRJ_ROOT_DIR]%\Cas_Utilisation.moo</a:RepositoryFilename>
 <a:Description>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fmodern\fprq1\fcharset0 Consolas;}{\f1\fnil\fcharset0 Consolas;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\hyphpar0\widctlpar\qj\tx644\f0\fs20 Vinci Construction con\&#39;e7oit et r\&#39;e9alise des enceintes sportives.\par
@@ -1002,6 +1038,8 @@ Snap Grid=No
 Constrain Labels=Yes
 Display Grid=No
 Show Page Delimiter=Yes
+Show Links intersections=No
+Activate automatic link routing=No
 Grid size=0
 Graphic unit=2
 Window color=255, 255, 255
@@ -1018,6 +1056,7 @@ TreeVert=No
 CompDark=0
 
 [DisplayPreferences\Object]
+Show Icon=No
 Mode=0
 Trunc Length=80
 Word Length=80
@@ -1031,53 +1070,102 @@ Shortcut ExtLoct=No
 Shortcut ExtFullPath=No
 Shortcut ExtLastPackage=Yes
 Shortcut ExtIncludeModl=Yes
+Area.IconPicture=Yes
+Area.Stereotype=Yes
+Area.Comment=No
+Area.TextStyle=No
+Area.SubSymbols=Yes
+Area_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de zone&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 EObjShowStrn=Yes
 ExtendedObject.Comment=No
 ExtendedObject.IconPicture=No
-ExtendedObject_SymbolLayout=
+ExtendedObject.TextStyle=No
+ExtendedObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de l&amp;#39;objet&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 ELnkShowStrn=Yes
 ELnkShowName=Yes
-ExtendedLink_SymbolLayout=
+ExtendedLink_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+ExtDpdShowStrn=Yes
+ExtendedDependency_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 FileObject.Stereotype=No
 FileObject.DisplayName=Yes
 FileObject.LocationOrName=No
 FileObject.IconPicture=No
+FileObject.TextStyle=No
 FileObject.IconMode=Yes
-FileObject_SymbolLayout=
-PckgShowStrn=Yes
+FileObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Emplacement&quot; Attribute=&quot;LocationOrName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Package.Stereotype=Yes
 Package.Comment=No
 Package.IconPicture=No
-Package_SymbolLayout=
+Package.TextStyle=No
+Package_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 Display Model Version=Yes
-Class.IconPicture=No
-Class_SymbolLayout=
-Interface.IconPicture=No
-Interface_SymbolLayout=
-Port.IconPicture=No
-Port_SymbolLayout=
-ClssShowSttr=Yes
+Generalization.DisplayedStereotype=Yes
+Generalization.DisplayName=No
+Generalization.DisplayedRules=Yes
+Generalization_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;DisplayedStereotype&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;DisplayedRules&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+Realization.DisplayedStereotype=Yes
+Realization.DisplayName=No
+Realization.DisplayedRules=Yes
+Realization_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;DisplayedStereotype&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;DisplayedRules&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+Dependency.DisplayedStereotype=Yes
+Dependency.DisplayName=No
+Dependency.DisplayedRules=Yes
+Dependency_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;DisplayedStereotype&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;DisplayedRules&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+Class.Stereotype=Yes
+Class.Constraint=Yes
+Class.Attributes=Yes
+Class.Attributes._Columns=DisplayVisibilityMarker Stereotype DataType InitialValue
+Class.Attributes._Limit=-3
+Class.Operations=Yes
+Class.Operations._Columns=DisplayVisibilityMarker Stereotype SignatureWithParameters ReturnType
+Class.Operations._Limit=-3
+Class.InnerClassifiers=Yes
 Class.Comment=No
-ClssShowCntr=Yes
-ClssShowAttr=Yes
-ClssAttrTrun=No
-ClssAttrMax=3
-ClssShowMthd=Yes
-ClssMthdTrun=No
-ClssMthdMax=3
-ClssShowInnr=Yes
-IntfShowSttr=Yes
+Class.IconPicture=No
+Class.TextStyle=No
+Class_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de classe&quot; Attribute=&quot;DisplayedQualifiedName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;Constraint&quot; Prefix=&quot;{&quot; Suffix=&quot;}&quot; Alignment=&quot;RGHT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Attributs&quot; Collection=&quot;Attributes&quot; Columns=&quot;DisplayVisibilityMarker No\r\nDisplayVisibilityKeyword No\r\nDisplayVisibilityIcon No\r\nStereotype No\r\nDisplayName Yes\r\nDataType No\r\nDomain No\r\nInitialValue No&quot; HasLimit=&quot;Yes&quot; HideEmpty=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Opérations&quot; Collection=&quot;Operations&quot; Columns=&quot;DisplayVisibilityMarker No\r\nDisplayVisibilityKeyword No\r\nDisplayVisibilityIcon No\r\nStereotype No\r\nSignatureWithoutParameters No\r\nSignatureWithParameters No\r\nReturnType No&quot; HasLimit=&quot;Yes&quot; HideEmpty=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Classificateurs internes&quot; Collection=&quot;InnerClassifiers&quot; Columns=&quot;DisplayInnerIcon Yes\r\nDisplayNameGeneric Yes&quot; HasLimit=&quot;No&quot; HideEmpty=&quot;Yes&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Interface.Stereotype=Yes
+Interface.Constraint=Yes
+Interface.Attributes=Yes
+Interface.Attributes._Columns=DisplayVisibilityMarker Stereotype DataType InitialValue
+Interface.Attributes._Limit=-3
+Interface.Operations=Yes
+Interface.Operations._Columns=DisplayVisibilityMarker Stereotype SignatureWithParameters ReturnType
+Interface.Operations._Limit=-3
+Interface.InnerClassifiers=Yes
 Interface.Comment=No
-IntfShowAttr=Yes
-IntfAttrTrun=No
-IntfAttrMax=3
-IntfShowMthd=Yes
-IntfMthdTrun=No
-IntfMthdMax=3
-IntfShowCntr=Yes
-IntfShowInnr=Yes
+Interface.IconPicture=No
+Interface.TextStyle=No
+Interface_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom d&amp;#39;interface&quot; Attribute=&quot;DisplayedQualifiedName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;Constraint&quot; Prefix=&quot;{&quot; Suffix=&quot;}&quot; Alignment=&quot;RGHT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Attributs&quot; Collection=&quot;Attributes&quot; Columns=&quot;DisplayVisibilityMarker No\r\nDisplayVisibilityKeyword No\r\nDisplayVisibilityIcon No\r\nStereotype No\r\nDisplayName Yes\r\nDataType No\r\nDomain No\r\nInitialValue No&quot; HasLimit=&quot;Yes&quot; HideEmpty=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Opérations&quot; Collection=&quot;Operations&quot; Columns=&quot;DisplayVisibilityMarker No\r\nDisplayVisibilityKeyword No\r\nDisplayVisibilityIcon No\r\nStereotype No\r\nSignatureWithoutParameters No\r\nSignatureWithParameters No\r\nReturnType No&quot; HasLimit=&quot;Yes&quot; HideEmpty=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Classificateurs internes&quot; Collection=&quot;InnerClassifiers&quot; Columns=&quot;DisplayInnerIcon Yes\r\nDisplayNameGeneric Yes&quot; HasLimit=&quot;No&quot; HideEmpty=&quot;Yes&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Port.IconPicture=No
+Port.TextStyle=No
+Port_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Association.RoleAMultiplicity=Yes
+Association.RoleAName=Yes
+Association.RoleAOrdering=Yes
+Association.DisplayedStereotype=No
+Association.DisplayName=No
+Association.DisplayedRules=Yes
+Association.RoleBMultiplicity=Yes
+Association.RoleBName=Yes
+Association.RoleBOrdering=Yes
+Association.RoleMultiplicitySymbol=No
+Association_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Multiplicité A&quot; Attribute=&quot;RoleAMultiplicity&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Rôle A&quot; Attribute=&quot;RoleAName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Ordre A&quot; Attribute=&quot;RoleAOrdering&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;DisplayedStereotype&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;DisplayedRules&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Multiplicité B&quot; Attribute=&quot;RoleBMultiplicity&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Rôle B&quot; Attribute=&quot;RoleBName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Ordre B&quot; Attribute=&quot;RoleBOrdering&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+RequireLink.DisplayedStereotype=Yes
+RequireLink.DisplayName=No
+RequireLink.DisplayedRules=Yes
+RequireLink_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;DisplayedStereotype&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;DisplayedRules&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 PortShowName=Yes
 PortShowType=No
 PortShowMult=No
+ClssAttrTrun=No
+ClssAttrMax=3
+ClssMthdTrun=No
+ClssMthdMax=3
+IntfAttrTrun=No
+IntfAttrMax=3
+IntfMthdTrun=No
+IntfMthdMax=3
 AttrShowVisi=Yes
 AttrVisiFmt=1
 AttrShowStrn=Yes
@@ -1089,27 +1177,39 @@ MthdVisiFmt=1
 MthdShowStrn=Yes
 MthdShowRttp=Yes
 MthdShowParm=Yes
-AsscShowName=No
-AsscShowCntr=Yes
-AsscShowRole=Yes
-AsscShowOrdr=Yes
 AsscShowMult=Yes
 AsscMultStr=Yes
-AsscShowStrn=No
-GnrlShowName=No
-GnrlShowStrn=Yes
-GnrlShowCntr=Yes
 RlzsShowName=No
 RlzsShowStrn=Yes
 RlzsShowCntr=Yes
-DepdShowName=No
-DepdShowStrn=Yes
-DepdShowCntr=Yes
-RqlkShowName=No
-RqlkShowStrn=Yes
-RqlkShowCntr=Yes
 
 [DisplayPreferences\Symbol]
+
+[DisplayPreferences\Symbol\AREA]
+STRNFont=Arial,8,N
+STRNFont color=0 0 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0 0 0
+LABLFont=Arial,8,N
+LABLFont color=0 0 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=9600
+Height=8000
+Brush color=253 249 234
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=16
+Brush gradient color=245 230 173
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 121 98 6
+Shadow color=192 192 192
+Shadow=0
 
 [DisplayPreferences\Symbol\FRMEOBJ]
 STRNFont=Arial,8,N
@@ -1141,6 +1241,9 @@ Shadow=0
 CENTERFont=Arial,8,N
 CENTERFont color=0, 0, 0
 Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -1157,6 +1260,32 @@ Custom text mode=0
 Pen=1 0 128 128 255
 Shadow color=192 192 192
 Shadow=0
+
+[DisplayPreferences\Symbol\USRDEPD]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=2 0 128 0 64
+Shadow color=192 192 192
+Shadow=0
+OBJXSTRFont=Arial,8,N
+OBJXSTRFont color=0 0 0
 
 [DisplayPreferences\Symbol\FILO]
 OBJSTRNFont=Arial,8,N
@@ -1210,11 +1339,83 @@ Pen=1 0 178 178 178
 Shadow color=192 192 192
 Shadow=0
 
+[DisplayPreferences\Symbol\GNRLLINK]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=0
+Source Arrow=24
+Center Arrow=24
+Target Arrow=6
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 128 0 64
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\RLZSLINK]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=6
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=3 0 128 0 64
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\DEPDLINK]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=2 0 128 0 64
+Shadow color=192 192 192
+Shadow=0
+
 [DisplayPreferences\Symbol\CLDCLASS]
 STRNFont=Arial,8,N
 STRNFont color=0 0 0
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
+QDNMFont=Arial,8,N
+QDNMFont color=0 0 0
 CNTRFont=Arial,8,N
 CNTRFont color=0 0 0
 AttributesFont=Arial,8,N
@@ -1249,8 +1450,8 @@ Shadow=1
 [DisplayPreferences\Symbol\CLDINTF]
 STRNFont=Arial,8,N
 STRNFont color=0 0 0
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
+QDNMFont=Arial,8,N
+QDNMFont color=0 0 0
 CNTRFont=Arial,8,N
 CNTRFont color=0 0 0
 AttributesFont=Arial,8,N
@@ -1303,63 +1504,16 @@ Shadow color=192 192 192
 Shadow=0
 
 [DisplayPreferences\Symbol\CLDASSC]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-MULAFont=Arial,8,N
-MULAFont color=0 0 0
+SOURCEFont=Arial,8,N
+SOURCEFont color=0 0 0
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+DESTINATIONFont=Arial,8,N
+DESTINATIONFont color=0 0 0
 Line style=0
-Pen=1 0 128 0 64
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\INNERLINK]
-Line style=2
-Pen=1 0 128 0 64
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\CLDACLK]
-Line style=0
-Pen=2 0 128 0 64
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\GNRLLINK]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-Line style=0
-Pen=1 0 128 0 64
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\RLZSLINK]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-Line style=2
-Pen=3 0 128 0 64
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\RQLINK]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-Line style=2
-Pen=1 0 128 0 64
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\DEPDLINK]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-Line style=2
-Pen=2 0 128 0 64
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\USRDEPD]
-OBJXSTRFont=Arial,8,N
-OBJXSTRFont color=0 0 0
-Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -1373,7 +1527,49 @@ Brush gradient color=118 118 118
 Brush background image=
 Custom shape=
 Custom text mode=0
+Pen=1 0 128 0 64
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\INNERLINK]
+Line style=2
+Source Arrow=14
+Center Arrow=24
+Target Arrow=24
+Pen=1 0 128 0 64
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\CLDACLK]
+Line style=0
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 Pen=2 0 128 0 64
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\RQLINK]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=6
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 128 0 64
 Shadow color=192 192 192
 Shadow=0
 
@@ -1381,6 +1577,9 @@ Shadow=0
 Free TextFont=Arial,8,N
 Free TextFont color=0 0 0
 Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -1413,13 +1612,13 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationSymbol Id="o6">
 <a:CreationDate>1460102671</a:CreationDate>
 <a:ModificationDate>1460102861</a:ModificationDate>
-<a:Rect>((-16911,4075), (8512,6423))</a:Rect>
+<a:Rect>((-16911,4276), (8512,6223))</a:Rect>
 <a:ListOfPoints>((-16911,5249),(8512,5249))</a:ListOfPoints>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-MULA 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ClassSymbol Ref="o7"/>
 </c:SourceSymbol>
@@ -1451,7 +1650,7 @@ MULA 0 Arial,8,N</a:FontList>
 </o:AssociationClassLinkSymbol>
 <o:ClassSymbol Id="o7">
 <a:CreationDate>1460102550</a:CreationDate>
-<a:ModificationDate>1460102861</a:ModificationDate>
+<a:ModificationDate>1599471423</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-19311,3339), (-14512,7160))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
@@ -1459,7 +1658,7 @@ MULA 0 Arial,8,N</a:FontList>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
+QDNM 0 Arial,8,N
 CNTR 0 Arial,8,N
 Attributes 0 Arial,8,N
 ClassPrimaryAttribute 0 Arial,8,U
@@ -1475,7 +1674,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o8">
 <a:CreationDate>1460102551</a:CreationDate>
-<a:ModificationDate>1460102861</a:ModificationDate>
+<a:ModificationDate>1599471423</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((6113,3339), (10912,7160))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
@@ -1483,7 +1682,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
+QDNM 0 Arial,8,N
 CNTR 0 Arial,8,N
 Attributes 0 Arial,8,N
 ClassPrimaryAttribute 0 Arial,8,U
@@ -1499,7 +1698,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o11">
 <a:CreationDate>1460102832</a:CreationDate>
-<a:ModificationDate>1460102955</a:ModificationDate>
+<a:ModificationDate>1599471423</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-6386,9339), (-1587,13160))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
@@ -1507,7 +1706,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
+QDNM 0 Arial,8,N
 CNTR 0 Arial,8,N
 Attributes 0 Arial,8,N
 ClassPrimaryAttribute 0 Arial,8,U
@@ -1542,6 +1741,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:HtmlHeaderSize>54</a:HtmlHeaderSize>
 <a:HtmlFooterSize>18</a:HtmlFooterSize>
 <a:HtmlTOCLevel>4</a:HtmlTOCLevel>
+<a:HtmlImageFormat>0</a:HtmlImageFormat>
 <a:HtmlHomePageFile>Accueil_BleuClair.html</a:HtmlHomePageFile>
 <a:HtmlTemplate>Bleu_Clair</a:HtmlTemplate>
 <a:RtfTemplate>vinci_model</a:RtfTemplate>
@@ -1556,6 +1756,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReportBaseParagraph.FontName>Consolas</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>1</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:ReportBaseParagraph.Alignment>4</a:ReportBaseParagraph.Alignment>
 <a:SpaceBefore>423</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
@@ -1570,6 +1773,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:ReportBaseParagraph.Alignment>4</a:ReportBaseParagraph.Alignment>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
@@ -1611,6 +1818,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -1623,6 +1833,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
 <c:Tabulations>
@@ -1645,6 +1859,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>350</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1668,6 +1886,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>700</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1691,6 +1913,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>1050</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1714,6 +1940,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>1400</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1737,6 +1967,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>1750</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1760,6 +1994,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>2100</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1783,6 +2021,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>2450</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1806,6 +2048,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Left>2800</a:Left>
 <a:FillTheTabs>1</a:FillTheTabs>
 <a:Box>0</a:Box>
@@ -1899,6 +2145,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:ReportBaseParagraph.Alignment>4</a:ReportBaseParagraph.Alignment>
 <a:Box>0</a:Box>
 </o:ReportTitleParagraph>
@@ -1915,6 +2165,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -1948,6 +2201,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Flow>2</a:Flow>
@@ -1962,6 +2218,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>2</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:BorderType>1</a:BorderType>
 <a:Flow>2</a:Flow>
 <a:ParagraphInTable>1</a:ParagraphInTable>
@@ -1974,6 +2233,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:BorderType>1</a:BorderType>
 <a:Flow>2</a:Flow>
 <a:ParagraphInTable>1</a:ParagraphInTable>
@@ -2003,6 +2266,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2015,6 +2281,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2042,6 +2312,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2054,6 +2327,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2069,6 +2346,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2086,6 +2366,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>423</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2128,6 +2411,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:ReportBaseParagraph.Alignment>4</a:ReportBaseParagraph.Alignment>
 <a:Box>0</a:Box>
 </o:ReportTitleParagraph>
@@ -2156,6 +2443,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2168,6 +2458,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2195,6 +2489,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2207,6 +2504,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2222,6 +2523,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2279,6 +2583,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:ReportBaseParagraph.Alignment>4</a:ReportBaseParagraph.Alignment>
 <a:Box>0</a:Box>
 </o:ReportTitleParagraph>
@@ -2307,6 +2615,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2319,6 +2630,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2346,6 +2661,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2358,6 +2676,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2373,6 +2695,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2406,6 +2731,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Flow>2</a:Flow>
@@ -2420,6 +2748,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>2</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:BorderType>1</a:BorderType>
 <a:Flow>2</a:Flow>
 <a:ParagraphInTable>1</a:ParagraphInTable>
@@ -2432,6 +2763,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:BorderType>1</a:BorderType>
 <a:Flow>2</a:Flow>
 <a:ParagraphInTable>1</a:ParagraphInTable>
@@ -2461,6 +2796,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2473,6 +2811,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2500,6 +2842,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2512,6 +2857,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2539,6 +2888,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2551,6 +2903,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2578,6 +2934,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2590,6 +2949,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2617,6 +2980,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2629,6 +2995,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2656,6 +3026,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2668,6 +3041,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2695,6 +3072,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2707,6 +3087,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2722,6 +3106,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2780,6 +3167,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:ReportBaseParagraph.Alignment>4</a:ReportBaseParagraph.Alignment>
 <a:Box>0</a:Box>
 </o:ReportTitleParagraph>
@@ -2808,6 +3199,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2820,6 +3214,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2847,6 +3245,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2859,6 +3260,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2874,6 +3279,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2903,6 +3311,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2915,6 +3326,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2942,6 +3357,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2954,6 +3372,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:Box>0</a:Box>
 </o:ReportParagraph>
 </c:Paragraphs>
@@ -2969,6 +3391,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>353</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -2986,6 +3411,9 @@ Comment
 <a:ReportBaseParagraph.FontName>Arial</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
 <a:FontStyle>5</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:SpaceBefore>423</a:SpaceBefore>
 <a:SpaceAfter>106</a:SpaceAfter>
 <a:Box>0</a:Box>
@@ -3002,6 +3430,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:BorderType>8</a:BorderType>
 <a:Box>0</a:Box>
 <c:Tabulations>
@@ -3024,6 +3456,10 @@ Comment
 <a:Modifier>jvalenti</a:Modifier>
 <a:ReportBaseParagraph.FontName>Times New Roman</a:ReportBaseParagraph.FontName>
 <a:FontHeight>10</a:FontHeight>
+<a:FontStyle>0</a:FontStyle>
+<a:FontFamily>0</a:FontFamily>
+<a:FontPitch>0</a:FontPitch>
+<a:FontCharset>0</a:FontCharset>
 <a:BorderType>2</a:BorderType>
 <a:Box>0</a:Box>
 <c:Tabulations>
@@ -3105,6 +3541,8 @@ Snap Grid=No
 Constrain Labels=Yes
 Display Grid=No
 Show Page Delimiter=Yes
+Show Links intersections=No
+Activate automatic link routing=No
 Grid size=800
 Graphic unit=2
 Window color=255 255 255
@@ -3121,6 +3559,7 @@ TreeVert=No
 CompDark=0
 
 [DisplayPreferences\Object]
+Show Icon=No
 Mode=0
 Trunc Length=80
 Word Length=80
@@ -3134,42 +3573,84 @@ Shortcut ExtLoct=No
 Shortcut ExtFullPath=No
 Shortcut ExtLastPackage=Yes
 Shortcut ExtIncludeModl=Yes
+Area.IconPicture=Yes
+Area.Stereotype=Yes
+Area.Comment=No
+Area.TextStyle=No
+Area.SubSymbols=Yes
+Area_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de zone&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 EObjShowStrn=Yes
 ExtendedObject.Comment=No
 ExtendedObject.IconPicture=No
-ExtendedObject_SymbolLayout=
+ExtendedObject.TextStyle=No
+ExtendedObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de l&amp;#39;objet&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 ELnkShowStrn=Yes
 ELnkShowName=Yes
-ExtendedLink_SymbolLayout=
+ExtendedLink_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+ExtDpdShowStrn=Yes
+ExtendedDependency_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 FileObject.Stereotype=No
 FileObject.DisplayName=Yes
 FileObject.LocationOrName=No
 FileObject.IconPicture=No
+FileObject.TextStyle=No
 FileObject.IconMode=Yes
-FileObject_SymbolLayout=
-PckgShowStrn=Yes
+FileObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Emplacement&quot; Attribute=&quot;LocationOrName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Package.Stereotype=Yes
 Package.Comment=No
 Package.IconPicture=No
-Package_SymbolLayout=
+Package.TextStyle=No
+Package_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 Display Model Version=Yes
+Generalization.DisplayedStereotype=No
+Generalization.DisplayName=No
+Generalization.DisplayedRules=No
+Generalization_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;DisplayedStereotype&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;DisplayedRules&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+Dependency.DisplayedStereotype=Yes
+Dependency.DisplayName=No
+Dependency.DisplayedRules=No
+Dependency_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;DisplayedStereotype&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Contrainte&quot; Attribute=&quot;DisplayedRules&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+Actor.Stereotype=Yes
 Actor.IconPicture=No
-Actor_SymbolLayout=
+Actor.TextStyle=No
+Actor_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+UseCaseAssociation.Stereotype=No
+UseCaseAssociation.DisplayName=No
+UseCaseAssociation.DisplayDirection=No
+UseCaseAssociation_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 UseCase.Stereotype=Yes
 UseCase.Comment=No
 UseCase.IconPicture=No
-UseCase_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
-ActrShowStrn=Yes
-AsscShowName=No
-AsscShowDirt=No
-AsscShowStrn=No
-GnrlShowName=No
-GnrlShowStrn=No
-GnrlShowCntr=No
-DepdShowName=No
-DepdShowStrn=Yes
-DepdShowCntr=No
+UseCase.TextStyle=No
+UseCase_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 
 [DisplayPreferences\Symbol]
+
+[DisplayPreferences\Symbol\AREA]
+STRNFont=Arial,8,N
+STRNFont color=0 0 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0 0 0
+LABLFont=Arial,8,N
+LABLFont color=0 0 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=9600
+Height=8000
+Brush color=253 249 234
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=16
+Brush gradient color=245 230 173
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 121 98 6
+Shadow color=192 192 192
+Shadow=0
 
 [DisplayPreferences\Symbol\FRMEOBJ]
 STRNFont=Arial,8,N
@@ -3201,6 +3682,9 @@ Shadow=0
 CENTERFont=Arial,8,N
 CENTERFont color=0, 0, 0
 Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -3217,6 +3701,32 @@ Custom text mode=0
 Pen=1 0 128 128 255
 Shadow color=192 192 192
 Shadow=0
+
+[DisplayPreferences\Symbol\USRDEPD]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=2 0 128 0 0
+Shadow color=192 192 192
+Shadow=0
+OBJXSTRFont=Arial,8,N
+OBJXSTRFont color=0 0 0
 
 [DisplayPreferences\Symbol\FILO]
 OBJSTRNFont=Arial,8,N
@@ -3270,6 +3780,54 @@ Pen=1 0 178 178 178
 Shadow color=192 192 192
 Shadow=0
 
+[DisplayPreferences\Symbol\GNRLLINK]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=6
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 128 0 0
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\DEPDLINK]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=0
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=2 0 128 0 0
+Shadow color=192 192 192
+Shadow=0
+
 [DisplayPreferences\Symbol\UCDACTR]
 STRNFont=Arial,8,N
 STRNFont color=0 0 0
@@ -3295,26 +3853,26 @@ Shadow color=192 192 192
 Shadow=0
 
 [DisplayPreferences\Symbol\UCDASSC]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
 Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
 Pen=1 0 128 0 0
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\GNRLLINK]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-Line style=2
-Pen=1 0 128 0 0
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\DEPDLINK]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-Line style=0
-Pen=2 0 128 0 0
 Shadow color=192 192 192
 Shadow=0
 
@@ -3344,31 +3902,13 @@ Pen=1 150 128 0 0
 Shadow color=192 192 192
 Shadow=1
 
-[DisplayPreferences\Symbol\USRDEPD]
-OBJXSTRFont=Arial,8,N
-OBJXSTRFont color=0 0 0
-Line style=2
-AutoAdjustToText=Yes
-Keep aspect=No
-Keep center=No
-Keep size=No
-Brush color=255 255 255
-Fill Color=Yes
-Brush style=1
-Brush bitmap mode=12
-Brush gradient mode=0
-Brush gradient color=118 118 118
-Brush background image=
-Custom shape=
-Custom text mode=0
-Pen=2 0 128 0 0
-Shadow color=192 192 192
-Shadow=0
-
 [DisplayPreferences\Symbol\Free Symbol]
 Free TextFont=Arial,8,N
 Free TextFont color=0 0 0
 Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -3398,13 +3938,13 @@ Shadow=0</a:DisplayPreferences>
 <o:UseCaseAssociationSymbol Id="o133">
 <a:CreationDate>1460098707</a:CreationDate>
 <a:ModificationDate>1460098707</a:ModificationDate>
-<a:Rect>((-21187,12712), (-8737,12812))</a:Rect>
-<a:ListOfPoints>((-21187,12712),(-8737,12712))</a:ListOfPoints>
+<a:Rect>((-21187,12712), (-8693,12812))</a:Rect>
+<a:ListOfPoints>((-21187,12712),(-8693,12712))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActorSymbol Ref="o134"/>
 </c:SourceSymbol>
@@ -3420,12 +3960,11 @@ Shadow=0</a:DisplayPreferences>
 <a:ModificationDate>1460102394</a:ModificationDate>
 <a:CenterTextOffset>(-25, 75)</a:CenterTextOffset>
 <a:Rect>((-11949,2625), (-7075,9975))</a:Rect>
-<a:ListOfPoints>((-9835,2625),(-9487,6750),(-7912,9975))</a:ListOfPoints>
+<a:ListOfPoints>((-9847,2625),(-9487,6750),(-7880,9975))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
-<a:DashStyle>2</a:DashStyle>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:UseCaseSymbol Ref="o138"/>
 </c:SourceSymbol>
@@ -3439,13 +3978,12 @@ Shadow=0</a:DisplayPreferences>
 <o:DependencySymbol Id="o140">
 <a:CreationDate>1460102323</a:CreationDate>
 <a:ModificationDate>1460102394</a:ModificationDate>
-<a:Rect>((-2137,2700), (3600,10800))</a:Rect>
-<a:ListOfPoints>((2888,2700),(1163,7275),(-2137,10800))</a:ListOfPoints>
+<a:Rect>((-2195,2700), (3600,10800))</a:Rect>
+<a:ListOfPoints>((2906,2700),(1163,7275),(-2195,10800))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
-<a:DashStyle>2</a:DashStyle>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:UseCaseSymbol Ref="o141"/>
 </c:SourceSymbol>
@@ -3458,7 +3996,7 @@ Shadow=0</a:DisplayPreferences>
 </o:DependencySymbol>
 <o:ActorSymbol Id="o134">
 <a:CreationDate>1460096789</a:CreationDate>
-<a:ModificationDate>1460102438</a:ModificationDate>
+<a:ModificationDate>1599471423</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-23512,10950), (-18713,14549))</a:Rect>
 <a:LineColor>128</a:LineColor>
@@ -3478,8 +4016,9 @@ DISPNAME 0 Arial,8,N</a:FontList>
 </o:ActorSymbol>
 <o:UseCaseSymbol Id="o135">
 <a:CreationDate>1460096795</a:CreationDate>
-<a:ModificationDate>1460102438</a:ModificationDate>
-<a:Rect>((-12337,9450), (559,14849))</a:Rect>
+<a:ModificationDate>1599471423</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-12237,9450), (459,14849))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
 <a:LineColor>128</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
@@ -3497,8 +4036,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o138">
 <a:CreationDate>1460096812</a:CreationDate>
-<a:ModificationDate>1460102438</a:ModificationDate>
-<a:Rect>((-14961,-1275), (-6264,4124))</a:Rect>
+<a:ModificationDate>1599471423</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-14893,-1275), (-6332,4124))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
 <a:LineColor>128</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
@@ -3516,8 +4056,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o141">
 <a:CreationDate>1460102219</a:CreationDate>
-<a:ModificationDate>1460102438</a:ModificationDate>
-<a:Rect>((-1136,-1650), (9161,3749))</a:Rect>
+<a:ModificationDate>1599471423</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-1055,-1650), (9080,3749))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
 <a:LineColor>128</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
@@ -3555,6 +4096,8 @@ Snap Grid=No
 Constrain Labels=Yes
 Display Grid=No
 Show Page Delimiter=Yes
+Show Links intersections=No
+Activate automatic link routing=No
 Grid size=0
 Graphic unit=2
 Window color=255, 255, 255
@@ -3571,6 +4114,7 @@ TreeVert=No
 CompDark=0
 
 [DisplayPreferences\Object]
+Show Icon=No
 Mode=0
 Trunc Length=80
 Word Length=80
@@ -3584,51 +4128,102 @@ Shortcut ExtLoct=No
 Shortcut ExtFullPath=No
 Shortcut ExtLastPackage=Yes
 Shortcut ExtIncludeModl=Yes
+Area.IconPicture=Yes
+Area.Stereotype=Yes
+Area.Comment=No
+Area.TextStyle=No
+Area.SubSymbols=Yes
+Area_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de zone&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 EObjShowStrn=Yes
 ExtendedObject.Comment=No
 ExtendedObject.IconPicture=No
-ExtendedObject_SymbolLayout=
+ExtendedObject.TextStyle=No
+ExtendedObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de l&amp;#39;objet&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 ELnkShowStrn=Yes
 ELnkShowName=Yes
-ExtendedLink_SymbolLayout=
+ExtendedLink_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+ExtDpdShowStrn=Yes
+ExtendedDependency_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 FileObject.Stereotype=No
 FileObject.DisplayName=Yes
 FileObject.LocationOrName=No
 FileObject.IconPicture=No
+FileObject.TextStyle=No
 FileObject.IconMode=Yes
-FileObject_SymbolLayout=
-PckgShowStrn=Yes
+FileObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Emplacement&quot; Attribute=&quot;LocationOrName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Package.Stereotype=Yes
 Package.Comment=No
 Package.IconPicture=No
-Package_SymbolLayout=
+Package.TextStyle=No
+Package_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 Display Model Version=Yes
 InteractionSymbol.IconPicture=No
-InteractionSymbol_SymbolLayout=
+InteractionSymbol.TextStyle=No
+InteractionSymbol_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+UMLObject.Stereotype=Yes
+UMLObject.HeaderAlwaysVisible=Yes
 UMLObject.IconPicture=No
-UMLObject_SymbolLayout=
+UMLObject.TextStyle=No
+UMLObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 ActivationSymbol.IconPicture=No
-ActivationSymbol_SymbolLayout=
+ActivationSymbol.TextStyle=No
+ActivationSymbol_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Actor.Stereotype=Yes
 Actor.IconPicture=No
-Actor_SymbolLayout=
+Actor.TextStyle=No
+Actor_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 InteractionReference.IconPicture=No
-InteractionReference_SymbolLayout=
+InteractionReference.TextStyle=No
+InteractionReference_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]&lt;/Form&gt;
 InteractionFragment.IconPicture=No
-InteractionFragment_SymbolLayout=
-ActrShowStrn=Yes
-ObjtShowStrn=Yes
-ObjtShowHead=Yes
-MssgShowName=Yes
-MssgShowStrn=Yes
-MssgShowTime=Yes
-MssgShowCond=Yes
-MssgShowMthd=Yes
-MssgShowSign=Yes
-MssgShowActv=No
+InteractionFragment.TextStyle=No
+InteractionFragment_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Message.BeginTime=Yes
+Message.Stereotype=Yes
+Message.NameOrCode=No
+Message.NameOrOper=No
+Message.OperAndArgs=No
+Message.CondAndOper=No
+Message.CondOperAndSign=Yes
+Message.EndTime=Yes
+Message.ActivationAttachment=No
+Message_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Heure de début&quot; Attribute=&quot;BeginTime&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;NameOrCode&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;Nom&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;No&quot; Display=&quot;VerticalRadios&quot; &gt;[CRLF]   &lt;StandardAttribute Name=&quot;Nom d&amp;#39;opération&quot; Attribute=&quot;NameOrOper&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Nom d&amp;#39;opération avec signature&quot; Attribute=&quot;OperAndArgs&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Expression de séquence et nom d&amp;#39;opération&quot; Attribute=&quot;CondAndOper&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Expression de séquence et nom d&amp;#39;opération avec signature&quot; Attribute=&quot;CondOperAndSign&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;/ExclusiveChoice&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Heure de fin&quot; Attribute=&quot;EndTime&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 IRefShowStrn=Yes
 FragShowLife=Yes
 ShowIntrSym=Yes
+MssgShowName=Yes
+MssgShowCond=Yes
+MssgShowMthd=Yes
+MssgShowSign=Yes
+Actor.HeaderAlwaysVisible=Yes
 
 [DisplayPreferences\Symbol]
+
+[DisplayPreferences\Symbol\AREA]
+STRNFont=Arial,8,N
+STRNFont color=0 0 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0 0 0
+LABLFont=Arial,8,N
+LABLFont color=0 0 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=9600
+Height=8000
+Brush color=253 249 234
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=16
+Brush gradient color=245 230 173
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 121 98 6
+Shadow color=192 192 192
+Shadow=0
 
 [DisplayPreferences\Symbol\FRMEOBJ]
 STRNFont=Arial,8,N
@@ -3660,6 +4255,9 @@ Shadow=0
 CENTERFont=Arial,8,N
 CENTERFont color=0, 0, 0
 Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -3676,6 +4274,32 @@ Custom text mode=0
 Pen=1 0 128 128 255
 Shadow color=192 192 192
 Shadow=0
+
+[DisplayPreferences\Symbol\USRDEPD]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=2 0 128 0 0
+Shadow color=192 192 192
+Shadow=0
+OBJXSTRFont=Arial,8,N
+OBJXSTRFont color=0 0 0
 
 [DisplayPreferences\Symbol\FILO]
 OBJSTRNFont=Arial,8,N
@@ -3866,21 +4490,16 @@ Shadow color=192 192 192
 Shadow=0
 
 [DisplayPreferences\Symbol\SQDMSSG]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0 0 0
-BTIMFont=Arial,8,N
-BTIMFont color=0 0 0
-ETIMFont=Arial,8,N
-ETIMFont color=0 0 0
+SOURCEFont=Arial,8,N
+SOURCEFont color=0 0 0
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+DESTINATIONFont=Arial,8,N
+DESTINATIONFont color=0 0 0
 Line style=2
-Pen=1 0 128 0 0
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\USRDEPD]
-OBJXSTRFont=Arial,8,N
-OBJXSTRFont color=0 0 0
-Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -3894,7 +4513,7 @@ Brush gradient color=118 118 118
 Brush background image=
 Custom shape=
 Custom text mode=0
-Pen=2 0 128 0 0
+Pen=1 0 128 0 0
 Shadow color=192 192 192
 Shadow=0
 
@@ -3902,6 +4521,9 @@ Shadow=0
 Free TextFont=Arial,8,N
 Free TextFont color=0 0 0
 Line style=2
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -3956,14 +4578,14 @@ Dans ce sc\&#39;e9nario, l&#39;affichage des donn\&#39;e9es se fait sous forme t
 <o:MessageSymbol Id="o149">
 <a:CreationDate>1460366306</a:CreationDate>
 <a:ModificationDate>1460366306</a:ModificationDate>
-<a:Rect>((-22411,-19952), (-12012,-18480))</a:Rect>
+<a:Rect>((-22411,-19952), (-12012,-18682))</a:Rect>
 <a:ListOfPoints>((-22411,-19727),(-12012,-19727))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActorSequenceSymbol Ref="o150"/>
 </c:SourceSymbol>
@@ -3977,14 +4599,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o153">
 <a:CreationDate>1460365090</a:CreationDate>
 <a:ModificationDate>1460365090</a:ModificationDate>
-<a:Rect>((-11775,8233), (18638,9704))</a:Rect>
+<a:Rect>((-11775,8233), (18638,9464))</a:Rect>
 <a:ListOfPoints>((-11775,8458),(18638,8458))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o154"/>
 </c:SourceSymbol>
@@ -3999,14 +4621,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <a:CreationDate>1460364228</a:CreationDate>
 <a:ModificationDate>1460366170</a:ModificationDate>
 <a:CenterTextOffset>(7325, 225)</a:CenterTextOffset>
-<a:Rect>((-22411,-16142), (914,-14445))</a:Rect>
+<a:Rect>((-22411,-16142), (914,-14647))</a:Rect>
 <a:ListOfPoints>((-22411,-15917),(-12012,-15917))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActorSequenceSymbol Ref="o150"/>
 </c:SourceSymbol>
@@ -4020,14 +4642,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o160">
 <a:CreationDate>1460363411</a:CreationDate>
 <a:ModificationDate>1460365005</a:ModificationDate>
-<a:Rect>((-11700,-5482), (18638,-4010))</a:Rect>
+<a:Rect>((-11700,-5482), (18638,-4212))</a:Rect>
 <a:ListOfPoints>((-11700,-5257),(18638,-5257))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o161"/>
 </c:SourceSymbol>
@@ -4041,14 +4663,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o164">
 <a:CreationDate>1460294436</a:CreationDate>
 <a:ModificationDate>1460363830</a:ModificationDate>
-<a:Rect>((-12075,13301), (3262,14772))</a:Rect>
+<a:Rect>((-12075,13301), (3262,14528))</a:Rect>
 <a:ListOfPoints>((-12075,13526),(3262,13526))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o165"/>
 </c:SourceSymbol>
@@ -4062,15 +4684,15 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o168">
 <a:CreationDate>1460286483</a:CreationDate>
 <a:ModificationDate>1460363801</a:ModificationDate>
-<a:Rect>((2512,20277), (11212,22323))</a:Rect>
+<a:Rect>((2512,20052), (11212,22075))</a:Rect>
 <a:ListOfPoints>((3262,21877),(6862,21877),(6862,20277),(3262,20277))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o169"/>
 </c:SourceSymbol>
@@ -4084,14 +4706,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o172">
 <a:CreationDate>1460286026</a:CreationDate>
 <a:ModificationDate>1460366220</a:ModificationDate>
-<a:Rect>((300,22588), (21300,24059))</a:Rect>
+<a:Rect>((300,22588), (21300,23807))</a:Rect>
 <a:ListOfPoints>((3375,22813),(18338,22813))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o169"/>
 </c:SourceSymbol>
@@ -4105,15 +4727,15 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o175">
 <a:CreationDate>1460106677</a:CreationDate>
 <a:ModificationDate>1460365694</a:ModificationDate>
-<a:Rect>((-18462,-11819), (1638,-9773))</a:Rect>
+<a:Rect>((-18462,-12044), (1638,-9974))</a:Rect>
 <a:ListOfPoints>((-12012,-10219),(-8412,-10219),(-8412,-11819),(-12012,-11819))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o161"/>
 </c:SourceSymbol>
@@ -4128,15 +4750,15 @@ ETIM 0 Arial,8,N</a:FontList>
 <a:CreationDate>1460106675</a:CreationDate>
 <a:ModificationDate>1460365005</a:ModificationDate>
 <a:CenterTextOffset>(0, 800)</a:CenterTextOffset>
-<a:Rect>((-12874,-4570), (-4550,-1724))</a:Rect>
-<a:ListOfPoints>((-12312,-2970),(-8712,-2970),(-8712,-4570),(-12312,-4570))</a:ListOfPoints>
+<a:Rect>((-12912,-9701), (-4512,-2970))</a:Rect>
+<a:ListOfPoints>((-12312,-2970),(-8712,-2970),(-8712,-9476),(-12312,-9476))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o165"/>
 </c:SourceSymbol>
@@ -4150,15 +4772,15 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o180">
 <a:CreationDate>1460106524</a:CreationDate>
 <a:ModificationDate>1460365077</a:ModificationDate>
-<a:Rect>((-19437,5310), (2613,7356))</a:Rect>
+<a:Rect>((-19437,5085), (2613,7120))</a:Rect>
 <a:ListOfPoints>((-12012,6910),(-8412,6910),(-8412,5310),(-12012,5310))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o154"/>
 </c:SourceSymbol>
@@ -4173,15 +4795,15 @@ ETIM 0 Arial,8,N</a:FontList>
 <a:CreationDate>1460106390</a:CreationDate>
 <a:ModificationDate>1460365073</a:ModificationDate>
 <a:CenterTextOffset>(0, 800)</a:CenterTextOffset>
-<a:Rect>((-12874,9653), (-4550,12499))</a:Rect>
+<a:Rect>((-12912,9428), (-4512,12257))</a:Rect>
 <a:ListOfPoints>((-12312,11253),(-8712,11253),(-8712,9653),(-12312,9653))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o165"/>
 </c:SourceSymbol>
@@ -4195,15 +4817,15 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o185">
 <a:CreationDate>1460105892</a:CreationDate>
 <a:ModificationDate>1460363801</a:ModificationDate>
-<a:Rect>((-12303,29175), (3047,30721))</a:Rect>
+<a:Rect>((-12303,29175), (3047,30463))</a:Rect>
 <a:ListOfPoints>((-12303,29475),(3047,29475))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o165"/>
 </c:SourceSymbol>
@@ -4217,14 +4839,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o188">
 <a:CreationDate>1460105569</a:CreationDate>
 <a:ModificationDate>1460365005</a:ModificationDate>
-<a:Rect>((-18850,-1437), (9800,35))</a:Rect>
+<a:Rect>((-18850,-1437), (9800,-167))</a:Rect>
 <a:ListOfPoints>((-11937,-1212),(3262,-1212))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o165"/>
 </c:SourceSymbol>
@@ -4239,14 +4861,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <a:CreationDate>1460105103</a:CreationDate>
 <a:ModificationDate>1460365929</a:ModificationDate>
 <a:CenterTextOffset>(4850, 225)</a:CenterTextOffset>
-<a:Rect>((-23236,750), (-1786,2521))</a:Rect>
+<a:Rect>((-23236,750), (-1786,2285))</a:Rect>
 <a:ListOfPoints>((-22411,1050),(-12312,1050))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActorSequenceSymbol Ref="o150"/>
 </c:SourceSymbol>
@@ -4261,15 +4883,15 @@ ETIM 0 Arial,8,N</a:FontList>
 <a:CreationDate>1460103904</a:CreationDate>
 <a:ModificationDate>1460363801</a:ModificationDate>
 <a:CenterTextOffset>(0, 400)</a:CenterTextOffset>
-<a:Rect>((1687,25076), (11437,27522))</a:Rect>
+<a:Rect>((1687,24851), (11437,27268))</a:Rect>
 <a:ListOfPoints>((2962,26676),(6562,26676),(6562,25076),(2962,25076))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o186"/>
 </c:SourceSymbol>
@@ -4283,6 +4905,7 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:UMLObjectSequenceSymbol Id="o192">
 <a:CreationDate>1460103154</a:CreationDate>
 <a:ModificationDate>1460366306</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
 <a:Rect>((-14712,32400), (-9913,35999))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
@@ -4395,6 +5018,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <o:UMLObjectSequenceSymbol Id="o198">
 <a:CreationDate>1460103157</a:CreationDate>
 <a:ModificationDate>1460363290</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
 <a:Rect>((563,32400), (5362,35999))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
@@ -4484,7 +5108,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 </o:UMLObjectSequenceSymbol>
 <o:ActorSequenceSymbol Id="o150">
 <a:CreationDate>1460103487</a:CreationDate>
-<a:ModificationDate>1460285639</a:ModificationDate>
+<a:ModificationDate>1599471423</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-24811,32400), (-20012,35999))</a:Rect>
 <a:LineColor>128</a:LineColor>
@@ -4513,6 +5137,7 @@ DISPNAME 0 Arial,8,N</a:FontList>
 <o:UMLObjectSequenceSymbol Id="o202">
 <a:CreationDate>1460103501</a:CreationDate>
 <a:ModificationDate>1460365090</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
 <a:Rect>((15939,32400), (20738,35999))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
@@ -4642,6 +5267,8 @@ Snap Grid=No
 Constrain Labels=Yes
 Display Grid=No
 Show Page Delimiter=Yes
+Show Links intersections=No
+Activate automatic link routing=No
 Grid size=0
 Graphic unit=2
 Window color=255, 255, 255
@@ -4658,6 +5285,7 @@ TreeVert=No
 CompDark=0
 
 [DisplayPreferences\Object]
+Show Icon=No
 Mode=2
 Trunc Length=40
 Word Length=40
@@ -4671,51 +5299,102 @@ Shortcut ExtLoct=No
 Shortcut ExtFullPath=No
 Shortcut ExtLastPackage=Yes
 Shortcut ExtIncludeModl=Yes
+Area.IconPicture=Yes
+Area.Stereotype=Yes
+Area.Comment=No
+Area.TextStyle=No
+Area.SubSymbols=Yes
+Area_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de zone&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 EObjShowStrn=Yes
 ExtendedObject.Comment=No
 ExtendedObject.IconPicture=No
-ExtendedObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de l&amp;#39;objet&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+ExtendedObject.TextStyle=No
+ExtendedObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de l&amp;#39;objet&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 ELnkShowStrn=Yes
 ELnkShowName=Yes
 ExtendedLink_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+ExtDpdShowStrn=Yes
+ExtendedDependency_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 FileObject.Stereotype=No
 FileObject.DisplayName=Yes
 FileObject.LocationOrName=No
 FileObject.IconPicture=No
+FileObject.TextStyle=No
 FileObject.IconMode=Yes
-FileObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Emplacement&quot; Attribute=&quot;LocationOrName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
-PckgShowStrn=Yes
+FileObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Emplacement&quot; Attribute=&quot;LocationOrName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Package.Stereotype=Yes
 Package.Comment=No
 Package.IconPicture=No
-Package_SymbolLayout=
+Package.TextStyle=No
+Package_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 Display Model Version=Yes
 InteractionSymbol.IconPicture=No
-InteractionSymbol_SymbolLayout=
+InteractionSymbol.TextStyle=No
+InteractionSymbol_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+UMLObject.Stereotype=Yes
+UMLObject.HeaderAlwaysVisible=Yes
 UMLObject.IconPicture=No
-UMLObject_SymbolLayout=
+UMLObject.TextStyle=No
+UMLObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 ActivationSymbol.IconPicture=No
-ActivationSymbol_SymbolLayout=
+ActivationSymbol.TextStyle=No
+ActivationSymbol_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Actor.Stereotype=Yes
 Actor.IconPicture=No
-Actor_SymbolLayout=
+Actor.TextStyle=No
+Actor_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
 InteractionReference.IconPicture=No
-InteractionReference_SymbolLayout=
+InteractionReference.TextStyle=No
+InteractionReference_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]&lt;/Form&gt;
 InteractionFragment.IconPicture=No
-InteractionFragment_SymbolLayout=
-ActrShowStrn=Yes
-ObjtShowStrn=Yes
-ObjtShowHead=Yes
-MssgShowName=Yes
-MssgShowStrn=Yes
-MssgShowTime=Yes
-MssgShowCond=Yes
-MssgShowMthd=Yes
-MssgShowSign=Yes
-MssgShowActv=No
+InteractionFragment.TextStyle=No
+InteractionFragment_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Forcer l&amp;#39;alignement en haut&quot; Attribute=&quot;TextStyle&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+Message.BeginTime=Yes
+Message.Stereotype=Yes
+Message.NameOrCode=No
+Message.NameOrOper=No
+Message.OperAndArgs=No
+Message.CondAndOper=No
+Message.CondOperAndSign=Yes
+Message.EndTime=Yes
+Message.ActivationAttachment=No
+Message_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Heure de début&quot; Attribute=&quot;BeginTime&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;NameOrCode&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;Nom&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;No&quot; Display=&quot;VerticalRadios&quot; &gt;[CRLF]   &lt;StandardAttribute Name=&quot;Nom d&amp;#39;opération&quot; Attribute=&quot;NameOrOper&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Nom d&amp;#39;opération avec signature&quot; Attribute=&quot;OperAndArgs&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Expression de séquence et nom d&amp;#39;opération&quot; Attribute=&quot;CondAndOper&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Expression de séquence et nom d&amp;#39;opération avec signature&quot; Attribute=&quot;CondOperAndSign&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;/ExclusiveChoice&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Heure de fin&quot; Attribute=&quot;EndTime&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 IRefShowStrn=Yes
 FragShowLife=Yes
 ShowIntrSym=Yes
+MssgShowName=Yes
+MssgShowCond=Yes
+MssgShowMthd=Yes
+MssgShowSign=Yes
+Actor.HeaderAlwaysVisible=Yes
 
 [DisplayPreferences\Symbol]
+
+[DisplayPreferences\Symbol\AREA]
+STRNFont=Arial,8,N
+STRNFont color=0 0 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0 0 0
+LABLFont=Arial,8,N
+LABLFont color=0 0 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=9600
+Height=8000
+Brush color=253 249 234
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=16
+Brush gradient color=245 230 173
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 121 98 6
+Shadow color=192 192 192
+Shadow=0
 
 [DisplayPreferences\Symbol\FRMEOBJ]
 STRNFont=Arial,8,N
@@ -4747,6 +5426,9 @@ Shadow=0
 CENTERFont=Arial,8,N
 CENTERFont color=0, 0, 0
 Line style=1
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -4763,6 +5445,32 @@ Custom text mode=0
 Pen=1 0 128 128 255
 Shadow color=192 192 192
 Shadow=0
+
+[DisplayPreferences\Symbol\USRDEPD]
+CENTERFont=Arial,8,N
+CENTERFont color=0 0 0
+Line style=1
+Source Arrow=24
+Center Arrow=24
+Target Arrow=7
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=2 0 128 128 255
+Shadow color=192 192 192
+Shadow=0
+OBJXSTRFont=Arial,8,N
+OBJXSTRFont color=0, 0, 0
 
 [DisplayPreferences\Symbol\FILO]
 OBJSTRNFont=Arial,8,N
@@ -4953,21 +5661,16 @@ Shadow color=192 192 192
 Shadow=0
 
 [DisplayPreferences\Symbol\SQDMSSG]
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0, 0, 0
-BTIMFont=Arial,8,N
-BTIMFont color=0, 0, 0
-ETIMFont=Arial,8,N
-ETIMFont color=0, 0, 0
+SOURCEFont=Arial,8,N
+SOURCEFont color=0, 0, 0
+CENTERFont=Arial,8,N
+CENTERFont color=0, 0, 0
+DESTINATIONFont=Arial,8,N
+DESTINATIONFont color=0, 0, 0
 Line style=0
-Pen=1 0 128 128 192
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\USRDEPD]
-OBJXSTRFont=Arial,8,N
-OBJXSTRFont color=0, 0, 0
-Line style=1
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -4981,7 +5684,7 @@ Brush gradient color=118 118 118
 Brush background image=
 Custom shape=
 Custom text mode=0
-Pen=2 0 128 128 255
+Pen=1 0 128 128 192
 Shadow color=192 192 192
 Shadow=0
 
@@ -4989,6 +5692,9 @@ Shadow=0
 Free TextFont=Arial,8,N
 Free TextFont color=0, 0, 0
 Line style=0
+Source Arrow=24
+Center Arrow=24
+Target Arrow=24
 AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
@@ -5033,14 +5739,14 @@ Shadow=0</a:DisplayPreferences>
 <o:MessageSymbol Id="o211">
 <a:CreationDate>1460293018</a:CreationDate>
 <a:ModificationDate>1460315331</a:ModificationDate>
-<a:Rect>((-19649,20127), (-800,21673))</a:Rect>
+<a:Rect>((-19649,20127), (-800,21473))</a:Rect>
 <a:ListOfPoints>((-800,20427),(-19649,20427))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o212"/>
 </c:SourceSymbol>
@@ -5054,14 +5760,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o215">
 <a:CreationDate>1460292934</a:CreationDate>
 <a:ModificationDate>1460315331</a:ModificationDate>
-<a:Rect>((-19649,23602), (-350,25148))</a:Rect>
+<a:Rect>((-19649,23602), (-350,24948))</a:Rect>
 <a:ListOfPoints>((-19649,23902),(-350,23902))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActorSequenceSymbol Ref="o213"/>
 </c:SourceSymbol>
@@ -5075,14 +5781,14 @@ ETIM 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o218">
 <a:CreationDate>1460292885</a:CreationDate>
 <a:ModificationDate>1460315331</a:ModificationDate>
-<a:Rect>((-19649,26302), (-351,27848))</a:Rect>
+<a:Rect>((-19649,26302), (-351,27648))</a:Rect>
 <a:ListOfPoints>((-351,26602),(-19649,26602))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-BTIM 0 Arial,8,N
-ETIM 0 Arial,8,N</a:FontList>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
 <o:ActivationSymbol Ref="o212"/>
 </c:SourceSymbol>
@@ -5095,7 +5801,7 @@ ETIM 0 Arial,8,N</a:FontList>
 </o:MessageSymbol>
 <o:ActorSequenceSymbol Id="o213">
 <a:CreationDate>1460286812</a:CreationDate>
-<a:ModificationDate>1460315331</a:ModificationDate>
+<a:ModificationDate>1599471423</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-22049,30552), (-17250,34151))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
@@ -5125,6 +5831,7 @@ DISPNAME 0 Arial,8,N</a:FontList>
 <o:UMLObjectSequenceSymbol Id="o216">
 <a:CreationDate>1460286875</a:CreationDate>
 <a:ModificationDate>1460315385</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
 <a:Rect>((-2750,30552), (2049,34151))</a:Rect>
 <a:ShadowStyle>1</a:ShadowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -5175,7 +5882,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:Size>12736</a:Size>
 <a:FragmentType>loop</a:FragmentType>
-<a:Condition>not eof</a:Condition>
+<a:InteractionFragment.Condition>not eof</a:InteractionFragment.Condition>
 </o:InteractionFragment>
 <o:InteractionFragment Id="o208">
 <a:ObjectID>982F4087-20AB-4282-8F83-FD623AEB526B</a:ObjectID>
@@ -5185,7 +5892,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Modifier>jvalenti</a:Modifier>
 <a:Size>8974</a:Size>
 <a:FragmentType>opt</a:FragmentType>
-<a:Condition>celsius</a:Condition>
+<a:InteractionFragment.Condition>celsius</a:InteractionFragment.Condition>
 </o:InteractionFragment>
 </c:InteractionFragments>
 <c:Classes>
@@ -5227,7 +5934,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Code>mesurer</a:Code>
 <a:CreationDate>1460102671</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1598367908</a:ModificationDate>
+<a:ModificationDate>1599471415</a:ModificationDate>
 <a:Modifier>jvalenti</a:Modifier>
 <a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
@@ -5787,11 +6494,12 @@ Fin du cas d\rquote utilisation.\par
 <a:Code>Java</a:Code>
 <a:CreationDate>1460096666</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1598347784</a:ModificationDate>
+<a:ModificationDate>1202823188</a:ModificationDate>
 <a:Modifier>jvalenti</a:Modifier>
-<a:TargetModelURL>file:///%_OBJLANG%/java5-j2ee14.xol</a:TargetModelURL>
+<a:TargetModelURL>file:///%[XOL]%/java5-j2ee14.xol</a:TargetModelURL>
 <a:TargetModelID>0DEDDB90-46E2-45A0-886E-411709DA0DC9</a:TargetModelID>
 <a:TargetModelClassID>1811206C-1A4B-11D1-83D9-444553540000</a:TargetModelClassID>
+<a:TargetModelLastModificationDate>1202823188</a:TargetModelLastModificationDate>
 <c:SessionShortcuts>
 <o:Shortcut Ref="o3"/>
 </c:SessionShortcuts>
@@ -5802,11 +6510,12 @@ Fin du cas d\rquote utilisation.\par
 <a:Code>WSDLJava</a:Code>
 <a:CreationDate>1460096667</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1598347784</a:ModificationDate>
+<a:ModificationDate>1096028631</a:ModificationDate>
 <a:Modifier>jvalenti</a:Modifier>
-<a:TargetModelURL>file:///%_XEM%/WSDLJ2EE.xem</a:TargetModelURL>
+<a:TargetModelURL>file:///%[XEM]%/WSDLJ2EE.xem</a:TargetModelURL>
 <a:TargetModelID>C8F5F7B2-CF9D-4E98-8301-959BB6E86C8A</a:TargetModelID>
 <a:TargetModelClassID>186C8AC3-D3DC-11D3-881C-00508B03C75C</a:TargetModelClassID>
+<a:TargetModelLastModificationDate>1096028631</a:TargetModelLastModificationDate>
 <c:SessionShortcuts>
 <o:Shortcut Ref="o4"/>
 </c:SessionShortcuts>
@@ -5817,11 +6526,12 @@ Fin du cas d\rquote utilisation.\par
 <a:Code>French</a:Code>
 <a:CreationDate>1598427635</a:CreationDate>
 <a:Creator>jvalenti</a:Creator>
-<a:ModificationDate>1598427635</a:ModificationDate>
+<a:ModificationDate>1353338168</a:ModificationDate>
 <a:Modifier>jvalenti</a:Modifier>
-<a:TargetModelURL>file:///%_RTPLANG%/Francais.xrl</a:TargetModelURL>
+<a:TargetModelURL>file:///%[XRL]%/French.xrl</a:TargetModelURL>
 <a:TargetModelID>9870ECCD-6599-11D5-A481-0008C75A860B</a:TargetModelID>
 <a:TargetModelClassID>585CBB37-C940-11D1-BD0D-00A02478ECC9</a:TargetModelClassID>
+<a:TargetModelLastModificationDate>1353338168</a:TargetModelLastModificationDate>
 <c:SessionShortcuts>
 <o:Shortcut Ref="o131"/>
 </c:SessionShortcuts>

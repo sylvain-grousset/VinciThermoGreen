@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{85E6FBAD-86B8-43A2-9750-69A1AF3D6051}" Label="" LastModificationDate="1599471415" Name="v.2.0.0" Objects="291" Symbols="64" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
+<?PowerDesigner AppLocale="UTF16" ID="{85E6FBAD-86B8-43A2-9750-69A1AF3D6051}" Label="" LastModificationDate="1600087259" Name="v.2.0.0" Objects="293" Symbols="62" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1022,12 +1022,12 @@ Les stades construits par Vinci sont \&#39;e9quip\&#39;e9s d&#39;un dispositif d
 <c:ClassDiagrams>
 <o:ClassDiagram Id="o5">
 <a:ObjectID>B9D1E4B9-45B0-4E49-BE72-449FF26C06DA</a:ObjectID>
-<a:Name>DiagrammeClasses_1</a:Name>
-<a:Code>DiagrammeClasses_1</a:Code>
+<a:Name>Classes métier</a:Name>
+<a:Code>Classes_metier</a:Code>
 <a:CreationDate>1460102482</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1598444925</a:ModificationDate>
-<a:Modifier>jvalenti</a:Modifier>
+<a:ModificationDate>1600087209</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\CLD]
@@ -1612,7 +1612,7 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationSymbol Id="o6">
 <a:CreationDate>1460102671</a:CreationDate>
 <a:ModificationDate>1460102861</a:ModificationDate>
-<a:Rect>((-16911,4276), (8512,6223))</a:Rect>
+<a:Rect>((-16911,4272), (8512,6219))</a:Rect>
 <a:ListOfPoints>((-16911,5249),(8512,5249))</a:ListOfPoints>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -3515,6 +3515,7 @@ Comment
 <a:TargetModelURL>file:///.</a:TargetModelURL>
 <a:TargetModelID>85E6FBAD-86B8-43A2-9750-69A1AF3D6051</a:TargetModelID>
 <a:TargetModelClassID>18112060-1A4B-11D1-83D9-444553540000</a:TargetModelClassID>
+<a:TargetModelLastModificationDate>1600087259</a:TargetModelLastModificationDate>
 </o:TargetModel>
 </c:TargetModels>
 </o:IntraModelReport>
@@ -3525,12 +3526,12 @@ Comment
 <c:UseCaseDiagrams>
 <o:UseCaseDiagram Id="o132">
 <a:ObjectID>FEDBB85A-795D-4CB0-B1DF-14DA59B6AEE9</a:ObjectID>
-<a:Name>CasUtilisation_1</a:Name>
-<a:Code>CasUtilisation_1</a:Code>
+<a:Name>Expérience utilisateur</a:Name>
+<a:Code>Experience_utilisateur</a:Code>
 <a:CreationDate>1460096666</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1598444522</a:ModificationDate>
-<a:Modifier>jvalenti</a:Modifier>
+<a:ModificationDate>1600087224</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\UCD]
@@ -4080,12 +4081,12 @@ LABL 0 Arial,8,N</a:FontList>
 <c:SequenceDiagrams>
 <o:SequenceDiagram Id="o147">
 <a:ObjectID>6C67C74A-96D7-41C4-8EB8-C6A2680C8CAB</a:ObjectID>
-<a:Name>DiagrammeSequence_2</a:Name>
-<a:Code>DiagrammeSequence_2</a:Code>
+<a:Name>Scénario objet</a:Name>
+<a:Code>Scenario_objet</a:Code>
 <a:CreationDate>1460103013</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1598445189</a:ModificationDate>
-<a:Modifier>jvalenti</a:Modifier>
+<a:ModificationDate>1600087259</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\SQD]
@@ -5200,7 +5201,6 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <o:InteractionFragmentSymbol Id="o205">
 <a:CreationDate>1460104350</a:CreationDate>
 <a:ModificationDate>1460365340</a:ModificationDate>
-<a:RegionConditionPositionList>((2500,300))</a:RegionConditionPositionList>
 <a:Rect>((-23311,15542), (21225,28278))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>128</a:LineColor>
@@ -5225,7 +5225,6 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <o:InteractionFragmentSymbol Id="o207">
 <a:CreationDate>1460364724</a:CreationDate>
 <a:ModificationDate>1460365198</a:ModificationDate>
-<a:RegionConditionPositionList>((2500,300))</a:RegionConditionPositionList>
 <a:Rect>((-23552,-12965), (20475,-3991))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>128</a:LineColor>
@@ -5251,12 +5250,12 @@ DISPNAME 0 Arial,8,U</a:FontList>
 </o:SequenceDiagram>
 <o:SequenceDiagram Id="o209">
 <a:ObjectID>D9410B5A-91AB-4C54-981B-BBB9AA0DEF61</a:ObjectID>
-<a:Name>DiagrammeSequence_1</a:Name>
-<a:Code>DiagrammeSequence_1</a:Code>
+<a:Name>Scénario en boïte noire</a:Name>
+<a:Code>Scenario_en_boite_noire</a:Code>
 <a:CreationDate>1460286777</a:CreationDate>
 <a:Creator>jvalenti</a:Creator>
-<a:ModificationDate>1598445066</a:ModificationDate>
-<a:Modifier>jvalenti</a:Modifier>
+<a:ModificationDate>1600087242</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\SQD]
@@ -5934,8 +5933,8 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Code>mesurer</a:Code>
 <a:CreationDate>1460102671</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1599471415</a:ModificationDate>
-<a:Modifier>jvalenti</a:Modifier>
+<a:ModificationDate>1600086113</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
 <a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
 <a:RoleBNavigability>0</a:RoleBNavigability>
