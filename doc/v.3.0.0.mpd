@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{307C0939-0A92-440F-96D0-775A02631278}" Label="" LastModificationDate="1600093643" Name="v 3.x.y - multistade" Objects="75" Symbols="3" Target="MySQL 5.0" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="16.6.10.6261"?>
+<?PowerDesigner AppLocale="UTF16" ID="{957B7093-0A74-42E6-95DA-E3B00DC746AC}" Label="" LastModificationDate="1600696029" Name="ModelePhysiqueDonnees" Objects="86" Symbols="4" Target="MySQL 5.0" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="16.6.10.6261"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -8,16 +8,19 @@
 <a:SessionID>00000000-0000-0000-0000-000000000000</a:SessionID>
 <c:Children>
 <o:Model Id="o2">
-<a:ObjectID>307C0939-0A92-440F-96D0-775A02631278</a:ObjectID>
-<a:Name>v 3.x.y - multistade</a:Name>
-<a:Code>V_3_X_Y___MULTISTADE</a:Code>
-<a:CreationDate>1600089914</a:CreationDate>
+<a:ObjectID>957B7093-0A74-42E6-95DA-E3B00DC746AC</a:ObjectID>
+<a:Name>ModelePhysiqueDonnees</a:Name>
+<a:Code>V_3_0_0</a:Code>
+<a:CreationDate>1600695118</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600092807</a:ModificationDate>
+<a:ModificationDate>1600696029</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {622F1E53-4D4A-4936-8578-50084900A636}
-DAT 1600090026
-ATT FOPT</a:History>
+<a:History>ORG {E7B3C53B-5E10-469D-A1BE-E65F2B24259E}
+DAT 1600695123
+ATT SMDC
+DLD {0CD12581-CE50-4A0B-8713-ABFBC01245C5}
+ATT NAME
+ATT DISPNAME</a:History>
 <a:PackageOptionsText>[FolderOptions]
 
 [FolderOptions\Physical Objects]
@@ -82,8 +85,8 @@ DeploymentMode=REP
 
 [FolderOptions\Physical Objects\Database Generation]
 GenScriptName=crebas.sql
-GenScriptName0=
-GenScriptName1=
+GenScriptName0=crebas.sql
+GenScriptName1=crebas
 GenScriptName2=
 GenScriptName3=
 GenScriptName4=
@@ -92,7 +95,7 @@ GenScriptName6=
 GenScriptName7=
 GenScriptName8=
 GenScriptName9=
-GenPathName=C:\Users\UTI307\git\repository\src\model\v3\
+GenPathName=C:\Users\UTI307\Documents\
 GenSingleFile=Yes
 GenODBC=No
 GenCheckModel=Yes
@@ -213,7 +216,7 @@ Footer=Yes
 Constraint declaration=No
 
 [FolderOptions\Physical Objects\Database Generation\Table&amp;&amp;Column\Column]
-User datatype=No
+User datatype=Yes
 Default value=Yes
 Check=Yes
 Physical Options=Yes
@@ -260,9 +263,9 @@ Constraint declaration=Yes
 Physical Options=Yes
 
 [FolderOptions\Physical Objects\Database Generation\Table&amp;&amp;Column\Index\Filter]
-Primary key=No
-Foreign key=No
-Alternate key=No
+Primary key=Yes
+Foreign key=Yes
+Alternate key=Yes
 Cluster=Yes
 Other=Yes
 
@@ -407,8 +410,8 @@ IndxFK=Yes
 IndxAK=Yes
 IndxPKName=%TABLE%_PK
 IndxFKName=%REFR%_FK
-IndxAKName=%TABLE%_AK
-IndxPreserve=Yes
+IndxAKName=%AKEY%_AK
+IndxPreserve=No
 IndxThreshold=0
 IndxStats=No
 RefrPreserve=No
@@ -435,2640 +438,7 @@ EstimationYears=0
 DfltDomnName=D_%.U:VALUE%
 DfltColnName=D_%.U:VALUE%
 DfltReuse=Yes
-DfltDrop=Yes
-
-[FolderOptions\CheckModel]
-
-[FolderOptions\CheckModel\Package]
-
-[FolderOptions\CheckModel\Package\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\CheckPackageMissTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\DefaultCheckPackageMissTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\CircularReference]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\ConstraintName]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\CnstMaxLen]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\CircularDependency]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package\ShortcutUniqCode]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Table]
-
-[FolderOptions\CheckModel\Table\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\UniqIndex]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\MaxLen - NAME]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\EmptyColl - COLNCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\EmptyColl - INDXCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\EmptyColl - KEYCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\SerialColumnNumber]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\EmptyCollYesYes]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\TableIndexes]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\Mapping]
-CheckSeverity=No
-FixRequested=Yes
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\MappingSFMap]
-CheckSeverity=No
-FixRequested=Yes
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\EmptyColl - PERMCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Table\CheckTablePartitionKey]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\CheckTableStartDate]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\CheckTableRefNoLifecycle]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\CheckTableSourceMapping]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\CheckTablePartialColumnMapping]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\CheckTableKeyColumnMapping]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\CheckTableNotOnLifecycleTablespace]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table\MYSQL50_Table_Type_de_storage_de_table]
-CheckSeverity=No
-FixRequested=Yes
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne]
-
-[FolderOptions\CheckModel\Table.Colonne\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\DomainDivergence]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\ColumnMandatory]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckNumParam]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckPrecSupLng]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckUndefDttp]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\FkeyDttpDivergence]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\FkeyCheckDivergence]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\ColnSqncNoKey]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\ColnSqncDttp]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\SerialColumnFK]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\ColumnCompExpr]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckColumnOneToOneMapping]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckColumnDataTypeMapping]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckColumnNoMapping]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\CheckDttpIncompatibleFormat]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\MYSQL50_Column_Attributs_de_type_de_donn_es]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Colonne\MYSQL50_Column_Cl____incr_ment_automatique]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index]
-
-[FolderOptions\CheckModel\Table.Index\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\EmptyColl - CIDXCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\UndefIndexType]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\IndexColumnCount]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\IQIndxHNGUniq]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\CheckIncludeColl - Tabl]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Index\MYSQL50_Index_Validit__des_index_Fulltext]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé]
-
-[FolderOptions\CheckModel\Table.Clé\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\EmptyColl - COLNCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\CheckIncludeColl - Tabl]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Clé\MultiKeySqnc]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger]
-
-[FolderOptions\CheckModel\Table.Trigger\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Table.Trigger\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Join index]
-
-[FolderOptions\CheckModel\Join index\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Join index\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Join index\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Join index\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Join index\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Join index\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Join index\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue]
-
-[FolderOptions\CheckModel\Vue\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue\EmptyColl - PERMCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Vue.Index de vue]
-
-[FolderOptions\CheckModel\Vue.Index de vue\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\EmptyColl - CIDXCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\IndexColumnCount]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Vue.Index de vue\CheckIncludeColl - Tabl]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence]
-
-[FolderOptions\CheckModel\Référence\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\Reflexive]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\EmptyColl - RFJNCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\IncompleteJoin]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence\JoinOrder]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue]
-
-[FolderOptions\CheckModel\Référence de vue\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Référence de vue\EmptyColl - VRFJNCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine]
-
-[FolderOptions\CheckModel\Domaine\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\CheckNumParam]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\CheckPrecSupLng]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\CheckUndefDttp]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Domaine\CheckDttpIncompatibleFormat]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut]
-
-[FolderOptions\CheckModel\Défaut\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\DfltValeEmpty]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Défaut\DfltSameVale]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur]
-
-[FolderOptions\CheckModel\Utilisateur\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Utilisateur\UniqueMot de passe]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Groupe]
-
-[FolderOptions\CheckModel\Groupe\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\EmptyColl - USERCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Groupe\UniqueMot de passe]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Rôle]
-
-[FolderOptions\CheckModel\Rôle\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Rôle\EmptyColl - USERCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure]
-
-[FolderOptions\CheckModel\Procédure\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\ProcBodyEmpty]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Procédure\EmptyColl - PERMCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Trigger de SGBD]
-
-[FolderOptions\CheckModel\Trigger de SGBD\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Trigger de SGBD\DbmsTriggerEvent]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données]
-
-[FolderOptions\CheckModel\Source de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\EmptyColl - MODLSRC]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\DtscTargets]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Source de données\CheckDataSourceModels]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement horizontal]
-
-[FolderOptions\CheckModel\Partitionnement horizontal\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement horizontal\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement horizontal\EmptyColl - PARTCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement horizontal\TargetTables]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement vertical]
-
-[FolderOptions\CheckModel\Partitionnement vertical\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement vertical\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement vertical\EmptyColl - PARTCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Partitionnement vertical\TargetTables]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fusion de tables]
-
-[FolderOptions\CheckModel\Fusion de tables\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fusion de tables\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fusion de tables\EmptyColl - TargetTable]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fusion de tables\TargetTables]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait]
-
-[FolderOptions\CheckModel\Fait\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\EmptyColl - MEASCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\Mapping]
-CheckSeverity=No
-FixRequested=Yes
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\MappingSFMap]
-CheckSeverity=No
-FixRequested=Yes
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\EmptyColl - ALLOLINKCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait\CubeDupAssociation]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension]
-
-[FolderOptions\CheckModel\Dimension\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\EmptyColl - DATTRCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\EmptyColl - HIERCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\DimnDupHierarchy]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\DimnDefHierarchy]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\Mapping]
-CheckSeverity=No
-FixRequested=Yes
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\MappingSFMap]
-CheckSeverity=No
-FixRequested=Yes
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension\SerialColumnNumber]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Association]
-
-[FolderOptions\CheckModel\Association\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Association\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Association\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Association\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Association\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Association\EmptyColl - Hierarchy]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Attribut]
-
-[FolderOptions\CheckModel\Dimension.Attribut\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Attribut\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Attribut\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Attribut\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Attribut\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Attribut\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Attribut\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Mesure]
-
-[FolderOptions\CheckModel\Fait.Mesure\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Mesure\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Mesure\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Mesure\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Mesure\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Mesure\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Mesure\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Attribut de fait]
-
-[FolderOptions\CheckModel\Fait.Attribut de fait\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Attribut de fait\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Attribut de fait\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Attribut de fait\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Attribut de fait\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Attribut de fait\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fait.Attribut de fait\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie]
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Dimension.Hiérarchie\EmptyColl - DATTRCOL]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme]
-
-[FolderOptions\CheckModel\Synonyme\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\MaxLen - NAME]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Synonyme\EmptyColl - BASEOBJ]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait]
-
-[FolderOptions\CheckModel\Type de données abstrait\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\AdtInstantiable]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait\AdtAbstractUsed]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait]
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\AdtProcUniqName]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\UniqueDéfinition]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Type de données abstrait.Procédure de type de données abstrait\ReturnDataType]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données]
-
-[FolderOptions\CheckModel\Package de base de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\MaxLen - NAME]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\EmptyColl - PROCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données\EmptyColl - CURCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Package de base de données\EmptyColl - VARCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Package de base de données\EmptyColl - TYPCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Package de base de données\EmptyColl - EXCCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données]
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\UniqueDéfinition]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\EmptyColl - PARM]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Package de base de données.Procédure de package de base de données\ReturnDataType]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence]
-
-[FolderOptions\CheckModel\Séquence\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Séquence\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données]
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\UniqueDéfinition]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\ReturnDataType]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Curseur de package de base de données\EmptyColl - PARM]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=No
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données]
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Variable de package de base de données\CheckUndefDttp]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données]
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Type de package de base de données\UniqueDéfinition]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données]
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Package de base de données.Exception de package de base de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace]
-
-[FolderOptions\CheckModel\Tablespace\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Tablespace\IsObjectUsed]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage]
-
-[FolderOptions\CheckModel\Storage\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Storage\IsObjectUsed]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données]
-
-[FolderOptions\CheckModel\Base de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Base de données\IsObjectUsed]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web]
-
-[FolderOptions\CheckModel\Service Web\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web]
-
-[FolderOptions\CheckModel\Service Web.Opération Web\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Service Web.Opération Web\MaxLen - CODE]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie]
-
-[FolderOptions\CheckModel\Cycle de vie\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\CheckLifecyclePhase]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\CheckLifecycleRetention]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie\CheckPartitionRange]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase]
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseTbspace]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseIQTbspace]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseDuplicateTbspace]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseTbspaceCurrency]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseRetention]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseIdlePeriod]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseDataSource]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Cycle de vie.Phase\CheckPhaseExternalOnFirst]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Réplication]
-
-[FolderOptions\CheckModel\Réplication\PartialReplication]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion]
-
-[FolderOptions\CheckModel\Règle de gestion\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Règle de gestion\EmptyColl - OBJCOL]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Objet étendu]
-
-[FolderOptions\CheckModel\Objet étendu\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Objet étendu\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Objet étendu\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Objet étendu\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Objet étendu\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Objet étendu\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Objet étendu\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Lien étendu]
-
-[FolderOptions\CheckModel\Lien étendu\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Lien étendu\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Lien étendu\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Lien étendu\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Lien étendu\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Lien étendu\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Lien étendu\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fichier]
-
-[FolderOptions\CheckModel\Fichier\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fichier\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fichier\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fichier\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fichier\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fichier\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Fichier\CheckPathExists]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données]
-
-[FolderOptions\CheckModel\Format de données\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Format de données\CheckDataFormatNullExpression]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Zone]
-
-[FolderOptions\CheckModel\Zone\CheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Zone\CheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Zone\DefaultCheckUseOnlyTerms]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Zone\DefaultCheckUseTermBySynonym]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Zone\NotApprovedTerms]
-CheckSeverity=Yes
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Zone\UniqueNom]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes
-
-[FolderOptions\CheckModel\Zone\UniqueCode]
-CheckSeverity=No
-FixRequested=No
-CheckRequested=Yes</a:PackageOptionsText>
+DfltDrop=Yes</a:PackageOptionsText>
 <a:ModelOptionsText>[ModelOptions]
 
 [ModelOptions\Physical Objects]
@@ -3175,7 +545,7 @@ Template=
 MaxLen=254
 Case=M
 ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
-InvldChar=&quot; &#39;(.)+=*/&quot;
+InvldChar=&quot; +-*/!=&lt;&gt;&#39;&quot;&quot;().&quot;
 AllValid=Yes
 NoAccent=Yes
 DefaultChar=_
@@ -3203,7 +573,7 @@ Template=
 MaxLen=254
 Case=M
 ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
-InvldChar=&quot; &#39;(.)+=*/&quot;
+InvldChar=&quot; +-*/!=&lt;&gt;&#39;&quot;&quot;().&quot;
 AllValid=Yes
 NoAccent=Yes
 DefaultChar=_
@@ -3231,7 +601,7 @@ Template=
 MaxLen=254
 Case=M
 ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
-InvldChar=&quot; &#39;(.)+=*/&quot;
+InvldChar=&quot; +-*/!=&lt;&gt;&#39;&quot;&quot;().&quot;
 AllValid=Yes
 NoAccent=Yes
 DefaultChar=_
@@ -3287,7 +657,7 @@ Template=
 MaxLen=254
 Case=M
 ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
-InvldChar=&quot; &#39;(.)+=*/&quot;
+InvldChar=&quot; +-*/!=&lt;&gt;&#39;&quot;&quot;().&quot;
 AllValid=Yes
 NoAccent=Yes
 DefaultChar=_
@@ -3707,7 +1077,7 @@ Template=
 MaxLen=254
 Case=M
 ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
-InvldChar=&quot; &#39;(.)+=*/&quot;
+InvldChar=&quot; +-*/!=&lt;&gt;&#39;&quot;&quot;().&quot;
 AllValid=Yes
 NoAccent=Yes
 DefaultChar=_
@@ -3785,37 +1155,29 @@ PhysOpts=
 
 [ModelOptions\Default Opts\JIDX]
 PhysOpts=</a:ModelOptionsText>
-<a:RepositoryFilename>C:\Users\UTI307\git\repository\doc\v 3.x.y - multistade.mpd</a:RepositoryFilename>
-<a:Description>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
-{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
-\pard\f0\fs20 Dans cette version, les donn\&#39;e9es sont consolid\&#39;e9es sur un serveur de donn\&#39;e9es MySQL.\par
-Ce qui implique de prendre en charge cette modification d&#39;infrastructure au niveau du code en impl\&#39;e9mentant une couche JDBC et la persistance des objets dans la base de donn\&#39;e9es.\par
-\par
-D&#39;un point de l&#39;exp\&#39;e9rience utilisateur, l&#39;interface doit permettre de choisir le stade que l&#39;on veut observer.\line\par
-}
-</a:Description>
+<a:RepositoryFilename>%[PRJ_ROOT_DIR]%\v.3.0.0.mpd</a:RepositoryFilename>
 <c:GenerationOrigins>
 <o:Shortcut Id="o3">
-<a:ObjectID>8B2DC240-F0EC-451D-98E5-FBD82F5E5EAA</a:ObjectID>
-<a:Name>v 3.x.y - multistade</a:Name>
-<a:Code>v_3_x_y___multistade</a:Code>
-<a:CreationDate>1600090027</a:CreationDate>
+<a:ObjectID>AFE15563-8C2D-4963-94BC-97B65506F0AF</a:ObjectID>
+<a:Name>v.3.0.0</a:Name>
+<a:Code>v_3_0_0</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090027</a:ModificationDate>
+<a:ModificationDate>1600695123</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
 <a:TargetStereotype/>
-<a:TargetID>622F1E53-4D4A-4936-8578-50084900A636</a:TargetID>
+<a:TargetID>E7B3C53B-5E10-469D-A1BE-E65F2B24259E</a:TargetID>
 <a:TargetClassID>18112060-1A4B-11D1-83D9-444553540000</a:TargetClassID>
 </o:Shortcut>
 </c:GenerationOrigins>
 <c:DBMS>
 <o:Shortcut Id="o4">
-<a:ObjectID>19C0E26F-E15D-4984-A51B-68F5538DB001</a:ObjectID>
+<a:ObjectID>017B690A-CB1C-4D5E-87C0-B5076A508B84</a:ObjectID>
 <a:Name>MySQL 5.0</a:Name>
 <a:Code>MYSQL50</a:Code>
-<a:CreationDate>1600089924</a:CreationDate>
+<a:CreationDate>1600695119</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600089924</a:ModificationDate>
+<a:ModificationDate>1600695119</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
 <a:TargetStereotype/>
 <a:TargetID>F4F16ECD-F2F1-4006-AF6F-638D5C65F35E</a:TargetID>
@@ -3824,15 +1186,15 @@ D&#39;un point de l&#39;exp\&#39;e9rience utilisateur, l&#39;interface doit perm
 </c:DBMS>
 <c:PhysicalDiagrams>
 <o:PhysicalDiagram Id="o5">
-<a:ObjectID>3675B013-157F-4743-9404-8BAF54EC3855</a:ObjectID>
-<a:Name>Classes métier</a:Name>
-<a:Code>Classes_metier</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
+<a:ObjectID>A07F9421-F844-4ABD-9CD6-C216C4A45654</a:ObjectID>
+<a:Name>classe métier</a:Name>
+<a:Code>classe_metier</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
+<a:ModificationDate>1600695689</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {2EE5A611-C64A-4187-B35C-31369AB797FC}
-DAT 1600090026</a:History>
+<a:History>ORG {325B9555-48C7-4C31-A5D1-5BC921B087EE}
+DAT 1600695123</a:History>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\PDM]
@@ -4527,7 +1889,7 @@ Shadow=0
 [DisplayPreferences\Symbol\OOMPORT]
 DISPNAMEFont=Arial,8,N
 DISPNAMEFont color=0 0 0
-AutoAdjustToText=No
+AutoAdjustToText=Yes
 Keep aspect=No
 Keep center=No
 Keep size=No
@@ -4623,17 +1985,17 @@ Shadow=0
 <a:PaperSource>15</a:PaperSource>
 <c:Symbols>
 <o:ReferenceSymbol Id="o6">
-<a:ModificationDate>1600095392</a:ModificationDate>
-<a:Rect>((-16827,2337), (-450,3587))</a:Rect>
-<a:ListOfPoints>((-850,2962),(-16427,2962))</a:ListOfPoints>
+<a:CreationDate>1600695689</a:CreationDate>
+<a:ModificationDate>1600695689</a:ModificationDate>
+<a:Rect>((-16909,10360), (1033,11610))</a:Rect>
+<a:ListOfPoints>((633,10985),(-16509,10985))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
-<a:LineColor>16744448</a:LineColor>
+<a:LineColor>12615680</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>CENTER 0 Arial,8,N
 SOURCE 0 Arial,8,N
 DESTINATION 0 Arial,8,N</a:FontList>
-<a:AutomaticRoutingState>3</a:AutomaticRoutingState>
 <c:SourceSymbol>
 <o:TableSymbol Ref="o7"/>
 </c:SourceSymbol>
@@ -4644,10 +2006,10 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:Reference Ref="o9"/>
 </c:Object>
 </o:ReferenceSymbol>
-<o:TableSymbol Id="o7">
+<o:TableSymbol Id="o8">
+<a:ModificationDate>1600695716</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-850,-109), (8778,5359))</a:Rect>
-<a:ShadowStyle>1</a:ShadowStyle>
+<a:Rect>((-22764,9025), (-13314,13025))</a:Rect>
 <a:LineColor>128</a:LineColor>
 <a:FillColor>4227327</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -4668,9 +2030,10 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Table Ref="o10"/>
 </c:Object>
 </o:TableSymbol>
-<o:TableSymbol Id="o8">
+<o:TableSymbol Id="o7">
+<a:ModificationDate>1600695716</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-20049,1151), (-12505,5149))</a:Rect>
+<a:Rect>((-3575,8328), (6801,12822))</a:Rect>
 <a:LineColor>128</a:LineColor>
 <a:FillColor>4227327</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -4699,153 +2062,193 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DefaultDiagram>
 <c:Tables>
 <o:Table Id="o10">
-<a:ObjectID>CD3F9E15-D781-479B-A2B3-7BAEE010FA92</a:ObjectID>
-<a:Name>Mesure</a:Name>
-<a:Code>Mesure</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
+<a:ObjectID>0661D929-14CF-4803-82FA-4E97EC45BFCE</a:ObjectID>
+<a:Name>Stade</a:Name>
+<a:Code>Stade</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600093643</a:ModificationDate>
+<a:ModificationDate>1600695680</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {E520F9AA-4CA4-478F-B8B4-C088560063AD}
-DAT 1600090026</a:History>
+<a:History>ORG {49D270F8-4E93-45AD-AB94-805F51E8D9E7}
+DAT 1600695123
+ATT PRIK</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o12">
-<a:ObjectID>001B5F8C-B416-4444-A57E-A9C37F69FB3A</a:ObjectID>
-<a:Name>numZone</a:Name>
-<a:Code>numZone</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
-<a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
-<a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {D08C4857-D7C6-4E84-BC65-845AA1650B89}
-DAT 1600090026</a:History>
-<a:DataType>int</a:DataType>
-</o:Column>
-<o:Column Id="o13">
-<a:ObjectID>3405DA20-CF49-40BC-BD95-3AE0745E53E7</a:ObjectID>
-<a:Name>horoDate</a:Name>
-<a:Code>horoDate</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
-<a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
-<a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {A8C07B9F-0679-4BC1-963D-0C6D3C31E6F5}
-DAT 1600090026</a:History>
-<a:DataType>datetime</a:DataType>
-</o:Column>
-<o:Column Id="o14">
-<a:ObjectID>DD3AB239-535A-4068-8368-2F55E4544265</a:ObjectID>
-<a:Name>fahrenheit</a:Name>
-<a:Code>fahrenheit</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
-<a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
-<a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {DA924D78-1A36-45F5-A846-29596499F422}
-DAT 1600090026</a:History>
-<a:DataType>float</a:DataType>
-</o:Column>
-<o:Column Id="o15">
-<a:ObjectID>DA5192E0-0732-446B-B46D-29B9B44C332F</a:ObjectID>
-<a:Name>Stade</a:Name>
-<a:Code>Stade</a:Code>
-<a:CreationDate>1600093554</a:CreationDate>
-<a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600093713</a:ModificationDate>
-<a:Modifier>UTI307</a:Modifier>
-<a:DataType>varchar(254)</a:DataType>
-<a:Length>254</a:Length>
-</o:Column>
-</c:Columns>
-<c:Indexes>
-<o:Index Id="o16">
-<a:ObjectID>1B638943-C02E-41EE-B049-DE18D218C65B</a:ObjectID>
-<a:Name>ASSOCIATION1_FK</a:Name>
-<a:Code>ASSOCIATION1_FK</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
-<a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
-<a:Modifier>UTI307</a:Modifier>
-<c:LinkedObject>
-<o:Reference Ref="o9"/>
-</c:LinkedObject>
-</o:Index>
-</c:Indexes>
-</o:Table>
-<o:Table Id="o11">
-<a:ObjectID>0BB794BE-3471-4A5E-94EC-0E785432708F</a:ObjectID>
-<a:Name>Stade</a:Name>
-<a:Code>Stade</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
-<a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
-<a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {BF2155BB-3078-4758-9460-0888097AD0EB}
-DAT 1600090026</a:History>
-<a:TotalSavingCurrency/>
-<c:Columns>
-<o:Column Id="o17">
-<a:ObjectID>24C71D7E-EF99-4ADB-A7C2-FDCBED6541D9</a:ObjectID>
+<a:ObjectID>20D9D00A-258D-441C-99B2-AA15C47E5060</a:ObjectID>
 <a:Name>nom</a:Name>
 <a:Code>nom</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
+<a:CreationDate>1600695123</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
+<a:ModificationDate>1600695234</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {CD30EA07-BD94-4EF3-B216-7AD0FACC827E}
-DAT 1600090026</a:History>
+<a:History>ORG {16340489-62D0-4B29-BEAC-DD24C98405FC}
+DAT 1600695123
+ATT MAND
+ATT PRIM</a:History>
 <a:DataType>varchar(254)</a:DataType>
 <a:Length>254</a:Length>
+<a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 </c:Columns>
+<c:Keys>
+<o:Key Id="o13">
+<a:ObjectID>846CAC29-F234-4256-AEA1-01E5E9B085A7</a:ObjectID>
+<a:Name>Cle_1</a:Name>
+<a:Code>Cle_1</a:Code>
+<a:CreationDate>1600695217</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600695234</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+<c:Key.Columns>
+<o:Column Ref="o12"/>
+</c:Key.Columns>
+</o:Key>
+</c:Keys>
+<c:Indexes>
+<o:Index Id="o14">
+<a:ObjectID>2E120CEC-220C-499E-B67F-7A3A9AFB39BE</a:ObjectID>
+<a:Name>ASSOCIATION_1_FK</a:Name>
+<a:Code>ASSOCIATION_1_FK</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600695680</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+</o:Index>
+</c:Indexes>
+<c:PrimaryKey>
+<o:Key Ref="o13"/>
+</c:PrimaryKey>
+</o:Table>
+<o:Table Id="o11">
+<a:ObjectID>B7F2A029-B608-4AE5-89C3-45FA7E9D50C5</a:ObjectID>
+<a:Name>Mesure</a:Name>
+<a:Code>Mesure</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600695746</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+<a:History>ORG {40215A58-2A96-4984-B36C-C191F0853021}
+DAT 1600695123
+ATT PRIK</a:History>
+<a:TotalSavingCurrency/>
+<c:Columns>
+<o:Column Id="o15">
+<a:ObjectID>6CD8F8A5-F74D-479A-8ED5-373C100FFEB7</a:ObjectID>
+<a:Name>numZone</a:Name>
+<a:Code>numZone</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600695505</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+<a:History>ORG {C707A2D8-DBDD-4511-B2D9-A00E0918C931}
+DAT 1600695123
+ATT MAND
+ATT PRIM</a:History>
+<a:DataType>int</a:DataType>
+<a:Column.Mandatory>1</a:Column.Mandatory>
+</o:Column>
+<o:Column Id="o16">
+<a:ObjectID>A67E7C49-091A-480A-B036-C93A1F027FE4</a:ObjectID>
+<a:Name>dateHeure</a:Name>
+<a:Code>dateHeure</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600695746</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+<a:History>ORG {1EB3166A-DDA1-41D8-A3ED-F28CA88B5A0D}
+DAT 1600695123
+ATT MAND
+ATT PRIM
+ATT DTTP</a:History>
+<a:DataType>datetime</a:DataType>
+<a:Column.Mandatory>1</a:Column.Mandatory>
+</o:Column>
+<o:Column Id="o17">
+<a:ObjectID>D0AC2AEA-8696-4F13-A064-5A793A73EC85</a:ObjectID>
+<a:Name>fahreneit</a:Name>
+<a:Code>fahreneit</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600695123</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+<a:History>ORG {AAC23C7B-4C52-4F7F-B459-724C7840507D}
+DAT 1600695123</a:History>
+<a:DataType>float</a:DataType>
+</o:Column>
+</c:Columns>
+<c:Keys>
+<o:Key Id="o18">
+<a:ObjectID>C49984B4-974C-46A6-8FAF-03CEDE5E5658</a:ObjectID>
+<a:Name>Cle_1</a:Name>
+<a:Code>Cle_1</a:Code>
+<a:CreationDate>1600695497</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600695505</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+<c:Key.Columns>
+<o:Column Ref="o15"/>
+<o:Column Ref="o16"/>
+</c:Key.Columns>
+</o:Key>
+</c:Keys>
+<c:PrimaryKey>
+<o:Key Ref="o18"/>
+</c:PrimaryKey>
 </o:Table>
 </c:Tables>
 <c:References>
 <o:Reference Id="o9">
-<a:ObjectID>1D7BAF0B-3192-4552-A1B2-06D8D20E51E5</a:ObjectID>
-<a:Name>Association_1</a:Name>
-<a:Code>association1</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
+<a:ObjectID>8A967885-7C03-4985-AEAA-145656ECC6F1</a:ObjectID>
+<a:Name>Reference_1</a:Name>
+<a:Code>Reference_1</a:Code>
+<a:CreationDate>1600695689</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
+<a:ModificationDate>1600695689</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
-<a:History>ORG {E65DD0BC-10E4-4A1C-93F8-C838DF3625BB}
-DAT 1600090026
-ATT MAND</a:History>
 <a:Cardinality>0..*</a:Cardinality>
 <a:UpdateConstraint>1</a:UpdateConstraint>
 <a:DeleteConstraint>1</a:DeleteConstraint>
-<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
-{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
-{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,17=java.util.HashSet
-
-</a:ExtendedAttributesText>
 <c:ParentTable>
-<o:Table Ref="o11"/>
+<o:Table Ref="o10"/>
 </c:ParentTable>
 <c:ChildTable>
-<o:Table Ref="o10"/>
+<o:Table Ref="o11"/>
 </c:ChildTable>
+<c:ParentKey>
+<o:Key Ref="o13"/>
+</c:ParentKey>
+<c:Joins>
+<o:ReferenceJoin Id="o19">
+<a:ObjectID>295B32BE-F141-4DC6-965B-93000FB5BE2E</a:ObjectID>
+<a:CreationDate>1600695689</a:CreationDate>
+<a:Creator>UTI307</a:Creator>
+<a:ModificationDate>1600697138</a:ModificationDate>
+<a:Modifier>UTI307</a:Modifier>
+<c:Object1>
+<o:Column Ref="o12"/>
+</c:Object1>
+</o:ReferenceJoin>
+</c:Joins>
 </o:Reference>
 </c:References>
 <c:DefaultGroups>
-<o:Group Id="o18">
-<a:ObjectID>FE67958D-7C50-45A6-920D-288E7E052FEC</a:ObjectID>
+<o:Group Id="o20">
+<a:ObjectID>F42443D2-6C41-436C-AA23-00F4FAF6820D</a:ObjectID>
 <a:Name>PUBLIC</a:Name>
 <a:Code>PUBLIC</a:Code>
-<a:CreationDate>1600089914</a:CreationDate>
+<a:CreationDate>1600695118</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600089914</a:ModificationDate>
+<a:ModificationDate>1600695118</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
 </o:Group>
 </c:DefaultGroups>
 <c:TargetModels>
-<o:TargetModel Id="o19">
-<a:ObjectID>3A5D947C-0E5A-485F-907C-87214EFF2988</a:ObjectID>
+<o:TargetModel Id="o21">
+<a:ObjectID>6CE829B5-0043-4E6F-ACF0-B004E9C3749D</a:ObjectID>
 <a:Name>MySQL 5.0</a:Name>
 <a:Code>MYSQL50</a:Code>
-<a:CreationDate>1600089924</a:CreationDate>
+<a:CreationDate>1600695119</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
 <a:ModificationDate>1242731549</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
@@ -4857,18 +2260,18 @@ ATT MAND</a:History>
 <o:Shortcut Ref="o4"/>
 </c:SessionShortcuts>
 </o:TargetModel>
-<o:TargetModel Id="o20">
-<a:ObjectID>578BE809-5953-4969-B08F-71D8D245DC07</a:ObjectID>
-<a:Name>v 3.x.y - multistade</a:Name>
-<a:Code>v_3_x_y___multistade</a:Code>
-<a:CreationDate>1600090026</a:CreationDate>
+<o:TargetModel Id="o22">
+<a:ObjectID>DD83FC3E-AD1A-4A64-B22F-9059DF1EC222</a:ObjectID>
+<a:Name>v.3.0.0</a:Name>
+<a:Code>v_3_0_0</a:Code>
+<a:CreationDate>1600695123</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1600090026</a:ModificationDate>
+<a:ModificationDate>1600695427</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
-<a:TargetModelURL>file:///C|/Users/UTI307/git/repository/doc/v 3.x.y - multistade.moo</a:TargetModelURL>
-<a:TargetModelID>622F1E53-4D4A-4936-8578-50084900A636</a:TargetModelID>
+<a:TargetModelURL>file:///%[PRJ_ROOT_DIR]%/v.3.0.0.moo</a:TargetModelURL>
+<a:TargetModelID>E7B3C53B-5E10-469D-A1BE-E65F2B24259E</a:TargetModelID>
 <a:TargetModelClassID>18112060-1A4B-11D1-83D9-444553540000</a:TargetModelClassID>
-<a:TargetModelLastModificationDate>1600094533</a:TargetModelLastModificationDate>
+<a:TargetModelLastModificationDate>1600695427</a:TargetModelLastModificationDate>
 <c:SessionShortcuts>
 <o:Shortcut Ref="o3"/>
 </c:SessionShortcuts>
