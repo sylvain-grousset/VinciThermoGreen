@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="lib/jfreechart-1.0.19/lib/orsonpdf-1.6-eval.jar"/>
 	<classpathentry kind="lib" path="lib/jfreechart-1.0.19/lib/servlet.jar"/>
 	<classpathentry kind="lib" path="lib/jfreechart-1.0.19/lib/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="lib/Connector J 8.0/mysql-connector-java-8.0.21.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
