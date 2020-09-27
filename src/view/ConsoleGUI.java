@@ -334,7 +334,12 @@ public class ConsoleGUI extends JFrame {
 		pnlBounds.add(lbAlerte);
 	}
 	
+	
+	
 	public static void main(String[] args)  throws ParseException {
+		
+		//Connection à la base de données local 
+		connectDatabase();
 		
 		//Construit et affiche l'IHM
 		ConsoleGUI monIHM = new ConsoleGUI();
@@ -361,12 +366,31 @@ public class ConsoleGUI extends JFrame {
 	}
 	
 	/**
+	 * <p> Connection à la base de données</p>
+	 * <p>Base de données local sous MySQL
+	 */
+	public static void connectDatabase() {
+		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
+		String username = "root";
+		String password = "P@ssw0rdsio";
+		
+		try (Connection c = DriverManager.getConnection(url, username, password)){
+		System.out.println("Database connected ! ");
+		} catch (SQLException e) {
+			throw new IllegalStateException("Cannot connect bdatabase !", e);
+
+		}	
+	}
+	
+	
+	/**
 	 * <p>Transfert les données de la collection vers un tableau d'objets</p>
 	 * <p>La température est en degré Fahrenheit</p>
 	 * 
 	 * @param ArrayList<Mesure>
 	 * @return Object[][]
 	 */
+	
 	private static JTable setTable(ArrayList<Mesure> mesures) {
 		
 		float min = 0;
