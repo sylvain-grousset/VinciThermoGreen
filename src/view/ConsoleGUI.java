@@ -36,6 +36,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import control.Controller;
 import model.Mesure;
+import java.sql.*;
 
 /**
  * <p>ConsoleGUI : IHM de l'application de consultation des températures</p>
