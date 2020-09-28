@@ -8,12 +8,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import model.Mesure;
+import base.Donnees;
 
 /**
  * <p>
@@ -37,12 +43,61 @@ public class Controller {
 	 * </p>
 	 */
 	private ArrayList<Mesure> lesMesures = new ArrayList<Mesure>();
+	
 
-	public Controller() throws ParseException {
+	
+	public Controller() throws ParseException, SQLException {	
+		
+		Donnees a = new Donnees();
+		
+			ArrayList mesures = new ArrayList();
+			mesures = a.openDatabase("SELECT MESURE.numZone, dateHeure, fahreneit FROM MESURE");
+			
+			for(int i=0 ; i<mesures.size() ; i++) {
+				System.out.println(mesures.get(i));
+			}
+		
 
-		lireCSV("data\\mesures.csv");
+		//lireCSV("data\\mesures.csv");
 	}
 
+	/**
+	 * <p> Connection à la base de données</p>
+	 * <p>Base de données local sous MySQL
+	 */
+//	public static void connectDatabase() {
+//		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
+//		String username = "root";
+//		String password = "P@ssw0rdsio";
+//		
+//		
+//		try (Connection c = DriverManager.getConnection(url, username, password)){
+//		System.out.println("Database connected ! ");
+//		
+//		Statement stmt = c.createStatement();
+//		ResultSet rs = stmt.executeQuery("SELECT * FROM MESURE");
+//		
+//		while (rs.next()) {
+//			//System.out.println("Nom Stade :" + rs.getString("nom_stade") + "... dateStade : " + rs.getString("dateHeure") + " ... fahreneit : " + rs.getString("fahreneit"));  
+//			
+//			String numZone = rs.getString("numZone");
+//			Date horoDate = strToDate(rs.getString("dateHeure"));
+//			float fahrenheit = Float.parseFloat(rs.getString(3));
+//			
+//			Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
+//			lesMesures.add(laMesure);
+//			
+//		}
+//		
+//		} catch (SQLException e) {
+//			throw new IllegalStateException("Cannot connect database !", e);
+//	
+//		}
+//		
+//		
+//	}
+	
+	
 	/**
 	 * <p>Lit un fichier de type CSV (Comma Separated Values)</p>
 	 * <p>Le fichier contient les mesures de temp&eacute;rature de la pelouse.</p>
@@ -52,51 +107,51 @@ public class Controller {
 	 * @throws ParseException
 	 * @since 2.0.0
 	 */
-	public void lireCSV(String filePath) throws ParseException {
-
-		try {
-			File f = new File(filePath);
-			FileReader fr = new FileReader(f);
-			BufferedReader br = new BufferedReader(fr);
-
-			try {
-				// Chaque ligne est un enregistrement de données
-				String records = br.readLine();
-
-				// Chaque enregistrement contient des champs
-				String[] fields = null;
-				String numZone = null;
-				Date horoDate = null;
-				float fahrenheit;
-
-				while (records != null) {
-					// Affecte les champs de l'enregistrement courant dans un
-					// tableau de chaine
-					fields = records.split(";");
-
-					// Affecte les champs aux paramètre du constructeur de
-					// mesure
-					numZone = fields[0];
-					horoDate = strToDate(fields[1]);
-					fahrenheit = Float.parseFloat(fields[2]);
-
-					// Instancie une Mesure
-					Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
-					lesMesures.add(laMesure);
-
-					// Enregistrement suivant
-					records = br.readLine();
-				}
-
-				br.close();
-				fr.close();
-			} catch (IOException exception) {
-				System.out.println("Erreur lors de la lecture : " + exception.getMessage());
-			}
-		} catch (FileNotFoundException exception) {
-			System.out.println("Le fichier n'a pas été trouvé");
-		}
-	}
+//	public void lireCSV(String filePath) throws ParseException {
+//
+//		try {
+//			File f = new File(filePath);
+//			FileReader fr = new FileReader(f);
+//			BufferedReader br = new BufferedReader(fr);
+//
+//			try {
+//				// Chaque ligne est un enregistrement de données
+//				String records = br.readLine();
+//
+//				// Chaque enregistrement contient des champs
+//				String[] fields = null;
+//				String numZone = null;
+//				Date horoDate = null;
+//				float fahrenheit;
+//
+//				while (records != null) {
+//					// Affecte les champs de l'enregistrement courant dans un
+//					// tableau de chaine
+//					fields = records.split(";");
+//
+//					// Affecte les champs aux paramètre du constructeur de
+//					// mesure
+//					numZone = fields[0];
+//					horoDate = strToDate(fields[1]);
+//					fahrenheit = Float.parseFloat(fields[2]);
+//
+//					// Instancie une Mesure
+//					Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
+//					lesMesures.add(laMesure);
+//
+//					// Enregistrement suivant
+//					records = br.readLine();
+//				}
+//
+//				br.close();
+//				fr.close();
+//			} catch (IOException exception) {
+//				System.out.println("Erreur lors de la lecture : " + exception.getMessage());
+//			}
+//		} catch (FileNotFoundException exception) {
+//			System.out.println("Le fichier n'a pas été trouvé");
+//		}
+//	}
 
 	/**
 	 * <p>

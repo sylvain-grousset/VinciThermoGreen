@@ -144,7 +144,7 @@ public class ConsoleGUI extends JFrame {
 	 */
 	JPanel pnlBounds = new JPanel();
 
-	public ConsoleGUI() throws ParseException {
+	public ConsoleGUI() throws ParseException, SQLException {
 		//Appelle le constructeur de la classe mère
 		super();
 		control = new Controller();
@@ -336,10 +336,8 @@ public class ConsoleGUI extends JFrame {
 	
 	
 	
-	public static void main(String[] args)  throws ParseException {
+	public static void main(String[] args)  throws ParseException, SQLException {
 		
-		//Connection à la base de données local 
-		connectDatabase();
 		
 		//Construit et affiche l'IHM
 		ConsoleGUI monIHM = new ConsoleGUI();
@@ -363,23 +361,6 @@ public class ConsoleGUI extends JFrame {
 		monIHM.setChart();
 		System.out.println("After set chart in main()");
 		monIHM.setVisible(true);
-	}
-	
-	/**
-	 * <p> Connection à la base de données</p>
-	 * <p>Base de données local sous MySQL
-	 */
-	public static void connectDatabase() {
-		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
-		String username = "root";
-		String password = "P@ssw0rdsio";
-		
-		try (Connection c = DriverManager.getConnection(url, username, password)){
-		System.out.println("Database connected ! ");
-		} catch (SQLException e) {
-			throw new IllegalStateException("Cannot connect bdatabase !", e);
-
-		}	
 	}
 	
 	
