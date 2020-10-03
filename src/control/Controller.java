@@ -49,48 +49,21 @@ public class Controller {
 	public Controller() throws ParseException, SQLException {	
 		
 		Donnees a = new Donnees();
-			ArrayList mesures = new ArrayList();
+			ArrayList<String>mesures = new ArrayList<String>();
 			
 			a.openDatabase();
-			//a.selectAllDatas();
+			mesures = a.selectAllDatas();
 			
-			
-			String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
-			String username = "root";
-			String password = "P@ssw0rdsio";
-			
-			try {
+			System.out.println(mesures);
 				
-				Connection conn = DriverManager.getConnection(url, username, password);
-				System.out.println("Database connected ! ");
-				Statement stmt = conn.createStatement();
-				
-				ArrayList<String> lesResults = new ArrayList<String>();
-				
-				stmt = conn.createStatement();
-				
-				ResultSet rs = stmt.executeQuery("SELECT MESURE.numZone, dateHeure, fahreneit FROM MESURE");
-
 				String [] fields = null;
 				String numZone = null;
 				Date horoDate = null;
 				float fahrenheit;
-				
-				int i=0;
-				while(rs.next()) {
-					
-					if(i>=3) {
-						i=0;
-					}
-					i++;
-					lesResults.add(rs.getString("numZone") +","+rs.getString("dateHeure") + "," + rs.getString("fahreneit"));
-					//System.out.println(rs.getString("numZone") +","+rs.getString("dateHeure") + "," + rs.getString("fahreneit"));
-					
-				}
 
 					//System.out.println(lesResults);
-				for(int j=0 ; j<lesResults.size() ; j++) {
-					fields = lesResults.get(j).split(",");
+				for(int j=0 ; j<mesures.size() ; j++) {
+					fields = mesures.get(j).split(",");
 					numZone = fields[0];
 					horoDate = strToDate(fields[1]);
 					fahrenheit = Float.parseFloat(fields[2]);
@@ -100,17 +73,6 @@ public class Controller {
 					
 					
 				}
-				
-				
-				
-			} catch (SQLException e) {
-				
-				throw new IllegalStateException("Cannot connect database !", e);
-				
-			}
-			
-			
-		
 
 		//lireCSV("data\\mesures.csv");
 	}
