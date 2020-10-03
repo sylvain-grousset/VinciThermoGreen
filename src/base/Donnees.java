@@ -6,7 +6,6 @@ import java.util.Date;
 
 import javax.sound.midi.Soundbank;
 
-import com.sun.java.swing.plaf.windows.TMSchema.Control;
 
 import model.Mesure;
 import java.util.ResourceBundle.Control;
@@ -82,7 +81,7 @@ public class Donnees {
 		int i=0;
 		while(rs.next()) {
 			
-			if(i>=3) {
+			if(i>=rsmd.getColumnCount()) {
 				i=0;
 			}
 			i++;
@@ -90,21 +89,7 @@ public class Donnees {
 			//System.out.println(rs.getString("numZone") +","+rs.getString("dateHeure") + "," + rs.getString("fahreneit"));
 			
 		}
-		return lesResults;
-
-			//System.out.println(lesResults);
-		for(int j=0 ; j<lesResults.size() ; j++) {
-			fields = lesResults.get(j).split(",");
-			numZone = fields[0];
-			horoDate = strToDate(fields[1]);
-			fahrenheit = Float.parseFloat(fields[2]);
-			
-			Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
-			lesMesures.add(laMesure);
-			
-			
-		}
-		
+		return lesResults;	
 		
 	}
 	
