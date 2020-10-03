@@ -2,19 +2,33 @@ package base;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.sound.midi.Soundbank;
 
+import com.sun.java.swing.plaf.windows.TMSchema.Control;
+
 import model.Mesure;
+import java.util.ResourceBundle.Control;
+
 
 public class Donnees {
 
 	private static Statement stmt;
 	private Connection conn;
+	private Control ctrl;
 	
 	public Donnees() {
 		
 		
+	}
+
+	public Control getCtrl() {
+		return ctrl;
+	}
+
+	public void setCtrl(Control ctrl) {
+		this.ctrl = ctrl;
 	}
 
 	public static Statement getStmt() {
@@ -33,9 +47,7 @@ public class Donnees {
 		this.conn = conn;
 	}
 	
-	public ArrayList openDatabase(String Query) {
-		
-		ArrayList<String> lesResults = new ArrayList<String>();
+	public void openDatabase() {
 		
 		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
 		String username = "root";
@@ -45,9 +57,7 @@ public class Donnees {
 			
 			Connection conn = DriverManager.getConnection(url, username, password);
 			System.out.println("Database connected ! ");
-			setConn(conn);
-			return lesResults = requestDB(Query, conn);
-			
+			setConn(conn);		
 			
 		} catch (SQLException e) {
 			
@@ -56,30 +66,44 @@ public class Donnees {
 		}
 }
 	
-	public ArrayList requestDB(String SQLQuery, Connection conn) throws SQLException {
-		
-		
+	public ArrayList selectAllDatas() throws SQLException {
 		
 		ArrayList<String> lesResults = new ArrayList<String>();
-		int i=0;
 		stmt = conn.createStatement();
 		
-		ResultSet rs = stmt.executeQuery(SQLQuery);
+		ResultSet rs = stmt.executeQuery("SELECT MESURE.numZone, dateHeure, fahreneit FROM MESURE");
 		ResultSetMetaData rsmd = rs.getMetaData();
-			
-	
+
+		String [] fields = null;
+		String numZone = null;
+		Date horoDate = null;
+		float fahrenheit;
 		
+		int i=0;
 		while(rs.next()) {
+			
+			if(i>=3) {
+				i=0;
+			}
+			i++;
+			lesResults.add(rs.getString("numZone") +","+rs.getString("dateHeure") + "," + rs.getString("fahreneit"));
 			//System.out.println(rs.getString("numZone") +","+rs.getString("dateHeure") + "," + rs.getString("fahreneit"));
-//			if (i>=rsmd.getColumnCount()) {
-//				i=0;
-//			}
-//			i++;
-//			lesResults.add(rs.getString(i));
 			
 		}
-		
 		return lesResults;
+
+			//System.out.println(lesResults);
+		for(int j=0 ; j<lesResults.size() ; j++) {
+			fields = lesResults.get(j).split(",");
+			numZone = fields[0];
+			horoDate = strToDate(fields[1]);
+			fahrenheit = Float.parseFloat(fields[2]);
+			
+			Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
+			lesMesures.add(laMesure);
+			
+			
+		}
 		
 		
 	}
