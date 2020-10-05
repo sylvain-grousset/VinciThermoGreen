@@ -43,43 +43,52 @@ public class Controller {
 	 * </p>
 	 */
 	private ArrayList<Mesure> lesMesures = new ArrayList<Mesure>();
-	
 
-	
-	public Controller() throws ParseException, SQLException {	
+	private Donnees a = new Donnees();
+
+	public Controller() throws ParseException, SQLException {
+		a.openDatabase();
+		// lireCSV("data\\mesures.csv");
+	}
+
+	public ArrayList comboStade() throws SQLException {
+		ArrayList<String> lesStades = new ArrayList<String>();
 		
-		Donnees a = new Donnees();
-			ArrayList<String>mesures = new ArrayList<String>();
-			
-			a.openDatabase();
-			mesures = a.selectAllDatas();
-			
-			System.out.println(mesures);
-				
-				String [] fields = null;
-				String numZone = null;
-				Date horoDate = null;
-				float fahrenheit;
+		System.out.println(a.returnAllStade());
+		return lesStades = a.returnAllStade();
+	}
 
-					//System.out.println(lesResults);
-				for(int j=0 ; j<mesures.size() ; j++) {
-					fields = mesures.get(j).split(",");
-					numZone = fields[0];
-					horoDate = strToDate(fields[1]);
-					fahrenheit = Float.parseFloat(fields[2]);
-					
-					Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
-					lesMesures.add(laMesure);
-					
-					
-				}
+	public void allDatas() throws SQLException, ParseException {
 
-		//lireCSV("data\\mesures.csv");
+		ArrayList<String> mesures = new ArrayList<String>();
+		mesures = a.selectAllDatas();
+
+		System.out.println(mesures);
+
+		String[] fields = null;
+		String numZone = null;
+		Date horoDate = null;
+		float fahrenheit;
+
+		// System.out.println(lesResults);
+		for (int j = 0; j < mesures.size(); j++) {
+			fields = mesures.get(j).split(",");
+			numZone = fields[0];
+			horoDate = strToDate(fields[1]);
+			fahrenheit = Float.parseFloat(fields[2]);
+
+			Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
+			lesMesures.add(laMesure);
+
+		}
 	}
 
 	/**
-	 * <p> Connection à la base de données</p>
-	 * <p>Base de données local sous MySQL
+	 * <p>
+	 * Connection à la base de données
+	 * </p>
+	 * <p>
+	 * Base de données local sous MySQL
 	 */
 //	public static void connectDatabase() {
 //		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
@@ -112,11 +121,14 @@ public class Controller {
 //		
 //		
 //	}
-	
-	
+
 	/**
-	 * <p>Lit un fichier de type CSV (Comma Separated Values)</p>
-	 * <p>Le fichier contient les mesures de temp&eacute;rature de la pelouse.</p>
+	 * <p>
+	 * Lit un fichier de type CSV (Comma Separated Values)
+	 * </p>
+	 * <p>
+	 * Le fichier contient les mesures de temp&eacute;rature de la pelouse.
+	 * </p>
 	 * 
 	 * @author Jérôme Valenti
 	 * @return
@@ -211,7 +223,9 @@ public class Controller {
 	}
 
 	/**
-	 * <p>Convertion d'une String en Date</p>
+	 * <p>
+	 * Convertion d'une String en Date
+	 * </p>
 	 * 
 	 * @param strDate
 	 * @return Date

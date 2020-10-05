@@ -37,6 +37,8 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import control.Controller;
 import model.Mesure;
 import java.sql.*;
+import base.Donnees;
+import java.awt.FlowLayout;
 
 /**
  * <p>ConsoleGUI : IHM de l'application de consultation des températures</p>
@@ -147,7 +149,7 @@ public class ConsoleGUI extends JFrame {
 	public ConsoleGUI() throws ParseException, SQLException {
 		//Appelle le constructeur de la classe mère
 		super();
-		control = new Controller();
+//		control = new Controller();
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img\\vinci_ico.jpg"));
 		setTitle("Vinci Thermo Green");
 		setSize(712, 510);
@@ -161,7 +163,7 @@ public class ConsoleGUI extends JFrame {
 		getContentPane().setLayout(null);
 		
 		//Définit le JPanel des critères
-		pnlCriteria.setBounds(10, 10, 325, 145);
+		pnlCriteria.setBounds(10, 72, 325, 145);
 		pnlCriteria.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Filtrage", TitledBorder.LEADING, TitledBorder.TOP, null, Color.GRAY));
 		pnlCriteria.setBackground(UIManager.getColor("Label.background"));
 		pnlCriteria.setLayout(null);
@@ -231,7 +233,7 @@ public class ConsoleGUI extends JFrame {
 		pnlCriteria.add(lblLogoVinci);
 
 		//Définit le JScrollPane qui reçoit la JTable
-		scrollPane.setBounds(10, 160, 325, 310);
+		scrollPane.setBounds(10, 228, 325, 242);
 		pane.add(scrollPane);
 		
 		//Définit le JPanel des paramètres du graphique
@@ -332,8 +334,37 @@ public class ConsoleGUI extends JFrame {
 		lbAlerte.setIcon(new ImageIcon("img\\s_green_button.png"));
 		lbAlerte.setBounds(270, 42, 75, 75);
 		pnlBounds.add(lbAlerte);
+		
+		JPanel JPanel_choix_stade = new JPanel();
+		FlowLayout fl_JPanel_choix_stade = (FlowLayout) JPanel_choix_stade.getLayout();
+		JPanel_choix_stade.setBorder(new TitledBorder(null, "Stade", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		JPanel_choix_stade.setBounds(10, 10, 325, 63);
+		getContentPane().add(JPanel_choix_stade);
+		
+		JComboBox choixStade = new JComboBox();
+		addStadeToComboBox(choixStade);
+		JPanel_choix_stade.add(choixStade);
+		
+		
+		
+		JButton validerChoixStade = new JButton("Valider");
+		validerChoixStade.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		JPanel_choix_stade.add(validerChoixStade);
+		
 	}
 	
+
+	public void addStadeToComboBox(JComboBox choixStade) throws SQLException {
+		ArrayList<String> lesStades = new ArrayList<String>();
+			lesStades = control.comboStade();
+			for(int i =0; i<lesStades.size() ; i++) {
+				choixStade.addItem(lesStades.get(i));
+			
+			}
+	}
 	
 	
 	public static void main(String[] args)  throws ParseException, SQLException {
@@ -345,7 +376,8 @@ public class ConsoleGUI extends JFrame {
 		
 		//Instancie un contrôleur pour prendre en charge l'IHM
 		control = new Controller();
-
+		control.allDatas();
+		
 		//Demande l'acquisition des data
 //		uneMesure = new Mesure();
 		lesMesures = control.getLesMesures();
@@ -533,13 +565,15 @@ public class ConsoleGUI extends JFrame {
 	 */
 	class filtrerData implements ActionListener {
         public void actionPerformed(ActionEvent e){
-
+        	
         	lesMesures = control.filtrerLesMesure(choixZone.getSelectedItem().toString());
-        	System.out.println("Filtrer Celsius : " + rdbtnCelsius.isSelected() + 
-        				" Fahrenheit : " + rdbtnFahrenheit.isSelected() + 
-        				" choix : " + choixZone.getSelectedItem() + 
-        				" début : " + dateDebut.getText() );
-        	displayLesMesures(lesMesures);
+        	System.out.println(choixZone.getSelectedItem().toString());
+        	
+//        	System.out.println("Filtrer Celsius : " + rdbtnCelsius.isSelected() + 
+//        				" Fahrenheit : " + rdbtnFahrenheit.isSelected() + 
+//        				" choix : " + choixZone.getSelectedItem() + 
+//        				" début : " + dateDebut.getText() );
+        	//displayLesMesures(lesMesures);
         	
         	//Construit le tableau d'objet
     		laTable = setTable(lesMesures);
@@ -547,10 +581,10 @@ public class ConsoleGUI extends JFrame {
     		//Definit le JScrollPane qui va recevoir la JTable
     		scrollPane.setViewportView(laTable);
     		
-    		System.out.println("Before setChart in filtrerData()");
+    		//System.out.println("Before setChart in filtrerData()");
     		//affiche le graphique
     		setChart();
-    		System.out.println("After setChart in filtrerData()");
+    		//System.out.println("After setChart in filtrerData()");
         }
 	}
 	

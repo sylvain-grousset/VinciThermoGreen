@@ -55,8 +55,10 @@ public class Donnees {
 		try {
 			
 			Connection conn = DriverManager.getConnection(url, username, password);
-			System.out.println("Database connected ! ");
+			System.out.println("Connexion base OK !");
 			setConn(conn);		
+			
+			
 			
 		} catch (SQLException e) {
 			
@@ -90,6 +92,24 @@ public class Donnees {
 			
 		}
 		return lesResults;	
+		
+	}
+	
+	
+	public ArrayList returnAllStade() throws SQLException {
+		
+		ArrayList<String> lesStades = new ArrayList<String>();
+		stmt = conn.createStatement();
+		
+		ResultSet rs = stmt.executeQuery("SELECT STADE.nom FROM STADE");
+		ResultSetMetaData rsmd = rs.getMetaData();
+		
+		while(rs.next()) {
+			lesStades.add(rs.getString("nom"));
+		}
+		return lesStades;
+		
+		
 		
 	}
 	
