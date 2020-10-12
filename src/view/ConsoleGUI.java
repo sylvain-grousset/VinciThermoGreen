@@ -343,10 +343,17 @@ public class ConsoleGUI extends JFrame {
 		getContentPane().add(JPanel_choix_stade);
 		
 		JComboBox choixStade = new JComboBox();
+		
+		//Appel de cette méthode pour ajouter le nom des stade dans la comboBox
 		addStadeToComboBox(choixStade);
+		
 		JPanel_choix_stade.add(choixStade);
 		
 		JButton validerChoixStade = new JButton("Valider");	
+		
+		//Lorsque le bouton VALIDER est cliqué : 
+		//On envoit au control.sortByStade la String de la comboBox sélectionnée
+		//Puis on set une nouvelle table pour actualiser les données avec les nouvelles
 		validerChoixStade.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -365,7 +372,10 @@ public class ConsoleGUI extends JFrame {
 		
 	}
 	
-
+	/**
+	 * <p>Ajoute le nom de tous les stades dans la comboBox choixStade </p>
+	 * @param JComboBox
+	 */
 	public void addStadeToComboBox(JComboBox<String> choixStade) throws SQLException {
 		ArrayList<String> lesStades = new ArrayList<String>();
 			lesStades = control.comboStade(lesStades);

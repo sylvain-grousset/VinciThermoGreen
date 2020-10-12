@@ -51,6 +51,12 @@ public class Controller {
 		// lireCSV("data\\mesures.csv");
 	}
 
+	/**
+	 * <p>Traite les données concernant le triage des mesures par le nom du stade</p>
+	 * <p>D'abord on clear les mesures actuelles</p>
+	 * <p>Puis on instancie les nouvelles mesures</p>
+	 * @param String stade
+	 */
 	public void sortByStade(String stade) throws SQLException, ParseException{
 		ArrayList<String> lesResults = new ArrayList<String>();
 		lesResults = a.sortByStade(stade);
@@ -83,6 +89,11 @@ public class Controller {
 		return lesStades = a.returnAllStade();
 	}
 
+	
+	/**
+	 * <p>Affiche toutes les mesures de tous les stades</p>
+	 * <p>Methode appellée qu'une fois --> dès l'ouverture de l'appli.</p>
+	 */
 	public void allDatas() throws SQLException, ParseException {
 
 		ArrayList<String> mesures = new ArrayList<String>();
@@ -108,44 +119,6 @@ public class Controller {
 		}
 	}
 
-	/**
-	 * <p>
-	 * Connection à la base de données
-	 * </p>
-	 * <p>
-	 * Base de données local sous MySQL
-	 */
-//	public static void connectDatabase() {
-//		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
-//		String username = "root";
-//		String password = "P@ssw0rdsio";
-//		
-//		
-//		try (Connection c = DriverManager.getConnection(url, username, password)){
-//		System.out.println("Database connected ! ");
-//		
-//		Statement stmt = c.createStatement();
-//		ResultSet rs = stmt.executeQuery("SELECT * FROM MESURE");
-//		
-//		while (rs.next()) {
-//			//System.out.println("Nom Stade :" + rs.getString("nom_stade") + "... dateStade : " + rs.getString("dateHeure") + " ... fahreneit : " + rs.getString("fahreneit"));  
-//			
-//			String numZone = rs.getString("numZone");
-//			Date horoDate = strToDate(rs.getString("dateHeure"));
-//			float fahrenheit = Float.parseFloat(rs.getString(3));
-//			
-//			Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
-//			lesMesures.add(laMesure);
-//			
-//		}
-//		
-//		} catch (SQLException e) {
-//			throw new IllegalStateException("Cannot connect database !", e);
-//	
-//		}
-//		
-//		
-//	}
 
 	/**
 	 * <p>

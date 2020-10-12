@@ -41,6 +41,11 @@ public class Donnees {
 		this.conn = conn;
 	}
 	
+	
+	/**
+	 * <p>Connection à la base de données</p>
+	 * <p>Base de données local sous MySQL</p>
+	 */
 	public void openDatabase() {
 		
 		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
@@ -62,7 +67,11 @@ public class Donnees {
 		}
 }
 	
-	public ArrayList selectAllDatas() throws SQLException {
+	/**
+	 * <p>Methode selectionnant toutes les mesures de la BDD</p>
+	 * @return ArrayList 
+	 */
+	public ArrayList<String> selectAllDatas() throws SQLException {
 		
 		ArrayList<String> lesResults = new ArrayList<String>();
 		stmt = conn.createStatement();
@@ -90,7 +99,11 @@ public class Donnees {
 		
 	}
 	
-	
+	/**
+	 * <p>Methode selectionnant les mesures en fonction du stade</p>
+	 * @param String stade
+	 * @return ArrayList 
+	 */
 	public ArrayList<String> sortByStade(String stade) throws SQLException{
 		ArrayList<String> lesResults = new ArrayList<String>();
 		stmt = conn.createStatement();
@@ -112,23 +125,21 @@ public class Donnees {
 		return lesResults;	
 	}
 	
+	/**
+	 * <p>Interoge la BDD pour en extraire tous les noms des stades</p>
+	 * @return ArrayList 
+	 */
 	public ArrayList<String> returnAllStade() throws SQLException {
 		
 		ArrayList<String> lesStades = new ArrayList<String>();
 		stmt = conn.createStatement();
 		
 		ResultSet rs = stmt.executeQuery("SELECT STADE.nom FROM STADE");
-		ResultSetMetaData rsmd = rs.getMetaData();
 		
 		while(rs.next()) {
 			lesStades.add(rs.getString("nom"));
 		}
 		return lesStades;
 		
-		
-		
-	}
-	
-	
-	
+	}	
 }

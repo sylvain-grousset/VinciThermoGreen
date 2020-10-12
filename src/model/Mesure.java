@@ -44,10 +44,6 @@ public class Mesure {
 		this.fahrenheit = pFahrenheit;
 	}
 	
-	public void deleteALLMesures() {
-		
-	}
-
 	public String getNumZone() {
 		return numZone;
 	}
