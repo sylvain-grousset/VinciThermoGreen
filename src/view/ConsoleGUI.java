@@ -194,10 +194,10 @@ public class ConsoleGUI extends JFrame {
 		//TODO peupler la liste avec un équivalent à SELECT DISTINCT
 		//TODO implémenter la classe métier Zone pour peupler une JComboBox<Zone>
 		choixZone.addItem("*");
-		choixZone.addItem("01");
-		choixZone.addItem("02");
-		choixZone.addItem("03");
-		choixZone.addItem("04");
+		choixZone.addItem("1");
+		choixZone.addItem("2");
+		choixZone.addItem("3");
+		choixZone.addItem("4");
 		
 		JLabel lblZone = new JLabel("Zone");
 		lblZone.setFont(new Font("Consolas", Font.PLAIN, 12));
@@ -522,19 +522,19 @@ public class ConsoleGUI extends JFrame {
 			uneMesure = lesMesures.get(i);
 
 			switch (uneMesure.getNumZone()) {
-			case "01":
+			case "1":
 				dataChart.addValue((Number)uneMesure.getCelsius(),uneMesure.getNumZone(),i1);
 				i1++;
 				break;
-			case "02":
+			case "2":
 				dataChart.addValue((Number)uneMesure.getCelsius(),uneMesure.getNumZone(),i2);
 				i2++;
 				break;
-			case "03":
+			case "3":
 				dataChart.addValue((Number)uneMesure.getCelsius(),uneMesure.getNumZone(),i3);
 				i3++;
 				break;
-			case "04":
+			case "4":
 				dataChart.addValue((Number)uneMesure.getCelsius(),uneMesure.getNumZone(),i4);
 				i4++;
 				break;
@@ -585,7 +585,6 @@ public class ConsoleGUI extends JFrame {
 	 */
 	class filtrerData implements ActionListener {
         public void actionPerformed(ActionEvent e){
-        	
         	lesMesures = control.filtrerLesMesure(choixZone.getSelectedItem().toString());
         	System.out.println(choixZone.getSelectedItem().toString());
         	

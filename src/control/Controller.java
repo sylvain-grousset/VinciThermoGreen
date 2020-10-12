@@ -83,6 +83,10 @@ public class Controller {
 
 	}
 	
+	public void sortByZone(String stade, String zone) throws SQLException, ParseException{
+		
+	}
+	
 	
 	public ArrayList<String> comboStade(ArrayList<String> lesStades) throws SQLException {		
 		System.out.println(a.returnAllStade());
