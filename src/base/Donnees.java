@@ -3,11 +3,6 @@ package base;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
-
-import javax.sound.midi.Soundbank;
-
-
-import model.Mesure;
 import java.util.ResourceBundle.Control;
 
 
@@ -96,7 +91,28 @@ public class Donnees {
 	}
 	
 	
-	public ArrayList returnAllStade() throws SQLException {
+	public ArrayList<String> sortByStade(String stade) throws SQLException{
+		ArrayList<String> lesResults = new ArrayList<String>();
+		stmt = conn.createStatement();
+		String query = "SELECT MESURE.numZone, dateHeure, fahreneit FROM MESURE WHERE nom_stade = '"+stade+"'";
+		ResultSet rs = stmt.executeQuery(query);
+		ResultSetMetaData rsmd = rs.getMetaData();
+		
+		int i=0;
+		while(rs.next()) {
+			
+			if(i>=rsmd.getColumnCount()) {
+				i=0;
+			}
+			i++;
+			lesResults.add(rs.getString("numZone") +","+rs.getString("dateHeure") + "," + rs.getString("fahreneit"));
+			//System.out.println(rs.getString("numZone") +","+rs.getString("dateHeure") + "," + rs.getString("fahreneit"));
+			
+		}
+		return lesResults;	
+	}
+	
+	public ArrayList<String> returnAllStade() throws SQLException {
 		
 		ArrayList<String> lesStades = new ArrayList<String>();
 		stmt = conn.createStatement();

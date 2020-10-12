@@ -35,6 +35,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import control.Controller;
+import jdk.nashorn.internal.ir.ThrowNode;
 import model.Mesure;
 import java.sql.*;
 import base.Donnees;
@@ -345,11 +346,19 @@ public class ConsoleGUI extends JFrame {
 		addStadeToComboBox(choixStade);
 		JPanel_choix_stade.add(choixStade);
 		
-		
-		
-		JButton validerChoixStade = new JButton("Valider");
-		validerChoixStade.addActionListener(new ActionListener() {
+		JButton validerChoixStade = new JButton("Valider");	
+		validerChoixStade.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
+				try {
+					control.sortByStade(choixStade.getSelectedItem().toString());
+					lesMesures = control.getLesMesures();
+					
+					laTable = setTable(lesMesures);
+					scrollPane.setViewportView(laTable);
+				} catch (SQLException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		JPanel_choix_stade.add(validerChoixStade);
@@ -357,9 +366,9 @@ public class ConsoleGUI extends JFrame {
 	}
 	
 
-	public void addStadeToComboBox(JComboBox choixStade) throws SQLException {
+	public void addStadeToComboBox(JComboBox<String> choixStade) throws SQLException {
 		ArrayList<String> lesStades = new ArrayList<String>();
-			lesStades = control.comboStade();
+			lesStades = control.comboStade(lesStades);
 			for(int i =0; i<lesStades.size() ; i++) {
 				choixStade.addItem(lesStades.get(i));
 			
@@ -369,14 +378,15 @@ public class ConsoleGUI extends JFrame {
 	
 	public static void main(String[] args)  throws ParseException, SQLException {
 		
+		//Instancie un contrôleur pour prendre en charge l'IHM
+		control = new Controller();
+		control.allDatas();
 		
 		//Construit et affiche l'IHM
 		ConsoleGUI monIHM = new ConsoleGUI();
 		monIHM.setLocation(100,100);
 		
-		//Instancie un contrôleur pour prendre en charge l'IHM
-		control = new Controller();
-		control.allDatas();
+		
 		
 		//Demande l'acquisition des data
 //		uneMesure = new Mesure();

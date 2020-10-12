@@ -51,9 +51,34 @@ public class Controller {
 		// lireCSV("data\\mesures.csv");
 	}
 
-	public ArrayList comboStade() throws SQLException {
-		ArrayList<String> lesStades = new ArrayList<String>();
+	public void sortByStade(String stade) throws SQLException, ParseException{
+		ArrayList<String> lesResults = new ArrayList<String>();
+		lesResults = a.sortByStade(stade);
 		
+		String[] fields = null;
+		String numZone = null;
+		Date horoDate = null;
+		float fahrenheit;
+		
+		lesMesures.clear();
+		
+		// System.out.println(lesResults);
+		for (int j = 0; j < lesResults.size(); j++) {
+			fields = lesResults.get(j).split(",");
+			numZone = fields[0];
+			horoDate = strToDate(fields[1]);
+			fahrenheit = Float.parseFloat(fields[2]);
+			
+			Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
+			lesMesures.add(laMesure);
+			
+		}
+		System.out.println(lesMesures);
+
+	}
+	
+	
+	public ArrayList<String> comboStade(ArrayList<String> lesStades) throws SQLException {		
 		System.out.println(a.returnAllStade());
 		return lesStades = a.returnAllStade();
 	}

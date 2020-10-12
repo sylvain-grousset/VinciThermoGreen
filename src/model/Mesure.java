@@ -43,6 +43,10 @@ public class Mesure {
 		this.horoDate = pDate;
 		this.fahrenheit = pFahrenheit;
 	}
+	
+	public void deleteALLMesures() {
+		
+	}
 
 	public String getNumZone() {
 		return numZone;
