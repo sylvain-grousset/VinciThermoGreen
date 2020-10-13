@@ -66,6 +66,12 @@ public class ConsoleGUI extends JFrame {
 	JRadioButton rdbtnFahrenheit = new JRadioButton("Fahrenheit");
 
 	/**
+	 * <p>Liste de choix d'un stade</>
+	 * @see JComboBox
+	 */
+	JComboBox<String> choixStade = new JComboBox<String>();
+	
+	/**
 	 * <p>Liste de choix d'une zone</>
 	 * @see JComboBox
 	 */
@@ -193,11 +199,13 @@ public class ConsoleGUI extends JFrame {
 		//un bouchon "Quick & Dirty" pour peupler la liste déroulante
 		//TODO peupler la liste avec un équivalent à SELECT DISTINCT
 		//TODO implémenter la classe métier Zone pour peupler une JComboBox<Zone>
-		choixZone.addItem("*");
-		choixZone.addItem("1");
-		choixZone.addItem("2");
-		choixZone.addItem("3");
-		choixZone.addItem("4");
+//		choixZone.addItem("*");
+//		choixZone.addItem("1");
+//		choixZone.addItem("2");
+//		choixZone.addItem("3");
+//		choixZone.addItem("4");
+
+		
 		
 		JLabel lblZone = new JLabel("Zone");
 		lblZone.setFont(new Font("Consolas", Font.PLAIN, 12));
@@ -344,8 +352,11 @@ public class ConsoleGUI extends JFrame {
 		
 		JComboBox choixStade = new JComboBox();
 		
-		//Appel de cette méthode pour ajouter le nom des stade dans la comboBox
+		//Appel de cette méthode pour ajouter le nom des stade dans la comboBox choixStade
 		addStadeToComboBox(choixStade);
+		
+		//Appel de cette méthode pour ajouter les numeros des zones dans la comboBox choixZone
+		addZoneToComboBox(choixZone, choixStade);
 		
 		JPanel_choix_stade.add(choixStade);
 		
@@ -359,7 +370,7 @@ public class ConsoleGUI extends JFrame {
 				try {
 					control.sortByStade(choixStade.getSelectedItem().toString());
 					lesMesures = control.getLesMesures();
-					
+					addZoneToComboBox(choixZone, choixStade);
 					laTable = setTable(lesMesures);
 					scrollPane.setViewportView(laTable);
 				} catch (SQLException | ParseException e1) {
@@ -371,6 +382,22 @@ public class ConsoleGUI extends JFrame {
 		JPanel_choix_stade.add(validerChoixStade);
 		
 	}
+	
+	/**
+	 * <p>Ajoute les numZone en fonction du stade dans la comboBox choixZone  </p>
+	 * @param JComboBox
+	 */
+	public void addZoneToComboBox(JComboBox<String> choixZone, JComboBox<String> choixStade) throws SQLException{
+		ArrayList<String> lesZones = new ArrayList();
+		String stade = choixStade.getSelectedItem().toString();
+		
+		lesZones = control.comboZone(lesZones, stade);
+		choixZone.addItem("*");
+		for(int i=0 ; i<lesZones.size() ; i++) {
+			choixZone.addItem(lesZones.get(i));
+		}
+	}
+	
 	
 	/**
 	 * <p>Ajoute le nom de tous les stades dans la comboBox choixStade </p>
@@ -596,7 +623,6 @@ public class ConsoleGUI extends JFrame {
         	
         	//Construit le tableau d'objet
     		laTable = setTable(lesMesures);
-
     		//Definit le JScrollPane qui va recevoir la JTable
     		scrollPane.setViewportView(laTable);
     		

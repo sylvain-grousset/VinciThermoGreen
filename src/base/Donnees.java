@@ -67,6 +67,18 @@ public class Donnees {
 		}
 }
 	
+	public ArrayList<String> returnAllZones(ArrayList lesZones, String stade) throws SQLException{
+		stmt = conn.createStatement();
+		
+		ResultSet rs = stmt.executeQuery("SELECT DISTINCT numZone FROM MESURE WHERE nom_stade = '"+stade+"'");
+		
+		while(rs.next()) {
+			lesZones.add(rs.getString("numZone"));
+		}
+		return lesZones;
+		
+	}
+	
 	/**
 	 * <p>Methode selectionnant toutes les mesures de la BDD</p>
 	 * @return ArrayList 

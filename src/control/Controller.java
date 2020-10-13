@@ -82,9 +82,9 @@ public class Controller {
 		System.out.println(lesMesures);
 
 	}
-	
-	public void sortByZone(String stade, String zone) throws SQLException, ParseException{
-		
+
+	public ArrayList<String> comboZone(ArrayList<String> lesZones, String stade) throws SQLException{
+		return lesZones = a.returnAllZones(lesZones, stade);
 	}
 	
 	
