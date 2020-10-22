@@ -67,7 +67,7 @@ public class Donnees {
 		}
 }
 	
-	public ArrayList<String> returnAllZones(ArrayList lesZones, String stade) throws SQLException{
+	public ArrayList<String> returnAllZones(ArrayList<String> lesZones, String stade) throws SQLException{
 		stmt = conn.createStatement();
 		
 		ResultSet rs = stmt.executeQuery("SELECT DISTINCT numZone FROM MESURE WHERE nom_stade = '"+stade+"'");
