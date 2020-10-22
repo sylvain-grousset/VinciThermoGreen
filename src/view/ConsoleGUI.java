@@ -385,7 +385,8 @@ public class ConsoleGUI extends JFrame {
 	
 	/**
 	 * <p>Ajoute les numZone en fonction du stade dans la comboBox choixZone  </p>
-	 * @param JComboBox
+	 * @param JComboBox choixZone
+	 * @param JComboBox choixStade
 	 */
 	public void addZoneToComboBox(JComboBox<String> choixZone, JComboBox<String> choixStade) throws SQLException{
 		ArrayList<String> lesZones = new ArrayList<String>();
