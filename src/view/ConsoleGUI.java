@@ -399,16 +399,9 @@ public class ConsoleGUI extends JFrame {
 		
 		choixZone.removeAllItems();
 		
-//		for(int j=1 ; j<choixZone.getItemCount() ; j++) {
-//			choixZone.removeItemAt(j);
-//			System.out.println("Je reset l'item n°"+j);
-//			//System.out.println("Count du reset: "+choixZone.getItemCount());
-//		}
 		choixZone.addItem("*");
 		for(int i=0 ; i<lesZones.size() ; i++) {
 			choixZone.addItem(lesZones.get(i));
-			System.out.println("J'ajoute la zone n°"+lesZones.get(i));
-			//System.out.println("Count de l'ajout : "+choixZone.getItemCount());
 		}
 	}
 	
