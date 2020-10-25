@@ -8,9 +8,9 @@ import java.util.Date;
  * <p>Des capteurs mesure régulièrement la température de la pelouse.</p>
  * <p>Pour chaque capteur :</p>
  * <ul>
- * <li>les mesures sont donn&eacute;es en degr&eacute; Fahrenheit;<br /></li>
- * <li>localis&eacute;es par le d&eacute;coupage du terrain en zones;<br /></li>
- * <li>horadat&eacute;ee par la date et l'heure.<br /></li>
+ * <li>les mesures sont donn&eacute;es en degr&eacute; Fahrenheit;</li>
+ * <li>localis&eacute;es par le d&eacute;coupage du terrain en zones;</li>
+ * <li>horadat&eacute;ee par la date et l'heure.</li>
  * </ul> 
  * 
  * @author jvalenti

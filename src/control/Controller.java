@@ -1,18 +1,10 @@
 /**
- * @author Jérôme Valenti 
+ * @author GROUSSET Sylvain 
  */
 package control;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,20 +18,20 @@ import base.Donnees;
  * Le cont&ocirc;lleur :
  * </p>
  * <ol>
- * <li>lit les mesures de température dans un fichier texte</li>
- * <li>retourne la collection des mesures<br />
+ * <li>lit les mesures de température dans une base de données</li></br>
+ * <li>retourne la collection des mesures
  * </li>
  * </ol>
  * 
- * @author Jérôme Valenti
- * @version 2.0.0
+ * @author GROUSSET Sylvain
+ * @version 3.0.0
  *
  */
 public class Controller {
 
 	/**
 	 * <p>
-	 * Les mesures lues dans le fichier des relevés de températures
+	 * Les mesures lues dans une base de données des relevés de températures
 	 * </p>
 	 */
 	private ArrayList<Mesure> lesMesures = new ArrayList<Mesure>();
@@ -54,7 +46,7 @@ public class Controller {
 	 * <p>Traite les données concernant le triage des mesures par le nom du stade</p>
 	 * <p>D'abord on clear les mesures actuelles</p>
 	 * <p>Puis on instancie les nouvelles mesures</p>
-	 * @param String stade
+	 * @param stade
 	 */
 	public void sortByStade(String stade) throws SQLException, ParseException{
 		ArrayList<String> lesResults = new ArrayList<String>();
@@ -66,8 +58,7 @@ public class Controller {
 		float fahrenheit;
 		
 		lesMesures.clear();
-		
-		// System.out.println(lesResults);
+
 		for (int j = 0; j < lesResults.size(); j++) {
 			fields = lesResults.get(j).split(",");
 			numZone = fields[0];
@@ -82,11 +73,23 @@ public class Controller {
 
 	}
 
+	/**
+	 * <p>Alimente la combobox des zones</p>
+	 * @param lesZones
+	 * @param stade
+	 * @return
+	 * @throws SQLException
+	 */
 	public ArrayList<String> comboZone(ArrayList<String> lesZones, String stade) throws SQLException{
 		return lesZones = database.returnAllZones(lesZones, stade);
 	}
 	
-	
+	/**
+	 * <p>Alimente la combobox des Stades</p>
+	 * @param lesStades
+	 * @return
+	 * @throws SQLException
+	 */
 	public ArrayList<String> comboStade(ArrayList<String> lesStades) throws SQLException {		
 		System.out.println(database.returnAllStade());
 		return lesStades = database.returnAllStade();
@@ -95,7 +98,7 @@ public class Controller {
 	
 	/**
 	 * <p>Affiche toutes les mesures de tous les stades</p>
-	 * <p>Methode appellée qu'une fois --> dès l'ouverture de l'appli.</p>
+	 * <p>Methode appellée qu'une fois dès l'ouverture de l'appli.</p>
 	 */
 	public void allDatas() throws SQLException, ParseException {
 
@@ -130,7 +133,7 @@ public class Controller {
 	 * <ol>
 	 * <li>la zone (null = toutes les zones)</li>
 	 * <li>la date de d&eacute;but (null = &agrave; partir de l'origine)</li>
-	 * <li>la date de fin (null = jusqu'&agrave; la fin)<br />
+	 * <li>la date de fin (null = jusqu'&agrave; la fin)
 	 * </li>
 	 * </ol>
 	 */
@@ -157,7 +160,7 @@ public class Controller {
 	 * Retourne la collection des mesures
 	 * </p>
 	 * 
-	 * @return ArrayList<Mesure>
+	 * @return ArrayList
 	 */
 	public ArrayList<Mesure> getLesMesures() {
 

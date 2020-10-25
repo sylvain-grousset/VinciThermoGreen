@@ -2,9 +2,13 @@ package base;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.ResourceBundle.Control;
 
+/**
+ * <p>Etablit la connection avec la BDD et s'occupe des requetes avec celle ci</p>
+ * @author Sylvain
+ * @version 3.0.0
+ */
 
 public class Donnees {
 
@@ -67,6 +71,14 @@ public class Donnees {
 		}
 }
 	
+	/**
+	 * <p>Méthode retournant toutes les zones d'un stade</p>
+	 * <p>Elle alimente la comboBox zone</p>
+	 * @param lesZones
+	 * @param stade
+	 * @return AzzayList
+	 * @throws SQLException
+	 */
 	public ArrayList<String> returnAllZones(ArrayList<String> lesZones, String stade) throws SQLException{
 		stmt = conn.createStatement();
 		
@@ -81,7 +93,8 @@ public class Donnees {
 	
 	/**
 	 * <p>Methode selectionnant toutes les mesures de la BDD</p>
-	 * @return ArrayList 
+	 * @return
+	 * @throws SQLException
 	 */
 	public ArrayList<String> selectAllDatas() throws SQLException {
 		
@@ -90,11 +103,6 @@ public class Donnees {
 		
 		ResultSet rs = stmt.executeQuery("SELECT MESURE.numZone, dateHeure, fahreneit FROM MESURE");
 		ResultSetMetaData rsmd = rs.getMetaData();
-
-		String [] fields = null;
-		String numZone = null;
-		Date horoDate = null;
-		float fahrenheit;
 		
 		int i=0;
 		while(rs.next()) {
@@ -113,8 +121,9 @@ public class Donnees {
 	
 	/**
 	 * <p>Methode selectionnant les mesures en fonction du stade</p>
-	 * @param String stade
-	 * @return ArrayList 
+	 * @param stade
+	 * @return
+	 * @throws SQLException
 	 */
 	public ArrayList<String> sortByStade(String stade) throws SQLException{
 		ArrayList<String> lesResults = new ArrayList<String>();
@@ -139,7 +148,8 @@ public class Donnees {
 	
 	/**
 	 * <p>Interoge la BDD pour en extraire tous les noms des stades</p>
-	 * @return ArrayList 
+	 * @return
+	 * @throws SQLException
 	 */
 	public ArrayList<String> returnAllStade() throws SQLException {
 		

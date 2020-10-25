@@ -35,17 +35,15 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import control.Controller;
-import jdk.nashorn.internal.ir.ThrowNode;
 import model.Mesure;
 import java.sql.*;
-import base.Donnees;
 import java.awt.FlowLayout;
 
 /**
  * <p>ConsoleGUI : IHM de l'application de consultation des températures</p>
  * <p>Projet Vinci Thermo Green</p>
- * @author Jérôme Valenti
- * @version 2.0.0
+ * @author GROUSSET Sylvain
+ * @version 3.0.0
  * @see control.Controller
  * @see model.Mesure
  */
@@ -66,13 +64,13 @@ public class ConsoleGUI extends JFrame {
 	JRadioButton rdbtnFahrenheit = new JRadioButton("Fahrenheit");
 
 	/**
-	 * <p>Liste de choix d'un stade</>
+	 * <p>Liste de choix d'un stade</p>
 	 * @see JComboBox
 	 */
 	JComboBox<String> choixStade = new JComboBox<String>();
 	
 	/**
-	 * <p>Liste de choix d'une zone</>
+	 * <p>Liste de choix d'une zone</p>
 	 * @see JComboBox
 	 */
 	JComboBox<String> choixZone = new JComboBox<String>();
@@ -156,7 +154,6 @@ public class ConsoleGUI extends JFrame {
 	public ConsoleGUI() throws ParseException, SQLException {
 		//Appelle le constructeur de la classe mère
 		super();
-//		control = new Controller();
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img\\vinci_ico.jpg"));
 		setTitle("Vinci Thermo Green");
 		setSize(712, 510);
@@ -195,17 +192,6 @@ public class ConsoleGUI extends JFrame {
 		
 		choixZone.setBounds(115, 50, 100, 20);
 		pnlCriteria.add(choixZone);
-		
-		//un bouchon "Quick & Dirty" pour peupler la liste déroulante
-		//TODO peupler la liste avec un équivalent à SELECT DISTINCT
-		//TODO implémenter la classe métier Zone pour peupler une JComboBox<Zone>
-//		choixZone.addItem("*");
-//		choixZone.addItem("1");
-//		choixZone.addItem("2");
-//		choixZone.addItem("3");
-//		choixZone.addItem("4");
-
-		
 		
 		JLabel lblZone = new JLabel("Zone");
 		lblZone.setFont(new Font("Consolas", Font.PLAIN, 12));
@@ -384,9 +370,10 @@ public class ConsoleGUI extends JFrame {
 	}
 	
 	/**
-	 * <p>Ajoute les numZone en fonction du stade dans la comboBox choixZone  </p>
-	 * @param JComboBox choixZone
-	 * @param JComboBox choixStade
+	 * <p>Ajoute les numZone en fonction du stade dans la comboBox choixZone </p>
+	 * @param choixZone
+	 * @param choixStade
+	 * @throws SQLException
 	 */
 	public void addZoneToComboBox(JComboBox<String> choixZone, JComboBox<String> choixStade) throws SQLException{
 		ArrayList<String> lesZones = new ArrayList<String>();
@@ -409,7 +396,8 @@ public class ConsoleGUI extends JFrame {
 	
 	/**
 	 * <p>Ajoute le nom de tous les stades dans la comboBox choixStade </p>
-	 * @param JComboBox
+	 * @param choixStade
+	 * @throws SQLException
 	 */
 	public void addStadeToComboBox(JComboBox<String> choixStade) throws SQLException {
 		ArrayList<String> lesStades = new ArrayList<String>();
@@ -455,7 +443,7 @@ public class ConsoleGUI extends JFrame {
 	 * <p>Transfert les données de la collection vers un tableau d'objets</p>
 	 * <p>La température est en degré Fahrenheit</p>
 	 * 
-	 * @param ArrayList<Mesure>
+	 * @param ArrayList
 	 * @return Object[][]
 	 */
 	
@@ -541,7 +529,7 @@ public class ConsoleGUI extends JFrame {
 	 * <li>alimente le container des donn&eacute;es</li>
 	 * <li>Fabrique un graphique lin&eacute;aire -&gt; ChartFactory.createLineChart</li>
 	 * <li>Englobe le graphique dans un panel sp&eacute;cifique -&gt; new ChartPanel(chart)</li>
-	 * <li>Englobe ce panel dans un JPanle de l'IHM -&gt; pnlGraph.add(chartPanel)<br /></li>
+	 * <li>Englobe ce panel dans un JPanle de l'IHM -&gt; pnlGraph.add(chartPanel)</li>
 	 * </ol>
 	 * @author Jérôme Valenti
 	 * @see JFreeChart
