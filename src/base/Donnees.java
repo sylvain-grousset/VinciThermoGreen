@@ -48,9 +48,9 @@ public class Donnees {
 	 */
 	public void openDatabase() {
 		
-		String url = "jdbc:mysql://localhost:3306/thermogreen?serverTimezone=UTC";
-		String username = "root";
-		String password = "P@ssw0rdsio";
+		String url = "jdbc:mysql://localhost:3306/vinci?serverTimezone=UTC";
+		String username = "adminVinci";
+		String password = "vinciThermogreen";
 		
 		try {
 			

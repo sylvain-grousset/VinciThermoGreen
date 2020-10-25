@@ -1,4 +1,15 @@
--- Persistance des objets VinciThermoGreen
+
+CREATE DATABASE VINCI;
+
+
+USE VINCI;
+
+
+CREATE USER 'adminVinci'@'localhost' IDENTIFIED BY 'vinciThermogreen';
+
+
+GRANT ALL ON VINCI.* TO 'adminVinci'@'localhost';
+
 
 CREATE TABLE STADE(
 	nom varchar(255),
@@ -17,18 +28,6 @@ CONSTRAINT PK_MESURE PRIMARY KEY (numZone, dateHeure, nom_stade),
 CONSTRAINT FK_nom_stade FOREIGN KEY (nom_stade) REFERENCES STADE(nom)
 );
 
-INSERT INTO STADE VALUES ('Parc des Princes');
-INSERT INTO STADE VALUES ('Vélodrome');
-CREATE TABLE MESURE(
-	
-    numZone int,
-    dateHeure dateTime,
-    fahreneit float,
-    nom_stade varchar(255),
-    
-CONSTRAINT PK_MESURE PRIMARY KEY (numZone, dateHeure, nom_stade),
-CONSTRAINT FK_nom_stade FOREIGN KEY (nom_stade) REFERENCES STADE(nom)
-);
 
 INSERT INTO STADE VALUES ('Parc des Princes');
 INSERT INTO STADE VALUES ('Vélodrome');
