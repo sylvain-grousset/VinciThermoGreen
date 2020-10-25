@@ -44,11 +44,10 @@ public class Controller {
 	 */
 	private ArrayList<Mesure> lesMesures = new ArrayList<Mesure>();
 
-	private Donnees a = new Donnees();
+	private Donnees database = new Donnees();
 
 	public Controller() throws ParseException, SQLException {
-		a.openDatabase();
-		// lireCSV("data\\mesures.csv");
+		database.openDatabase();
 	}
 
 	/**
@@ -59,7 +58,7 @@ public class Controller {
 	 */
 	public void sortByStade(String stade) throws SQLException, ParseException{
 		ArrayList<String> lesResults = new ArrayList<String>();
-		lesResults = a.sortByStade(stade);
+		lesResults = database.sortByStade(stade);
 		
 		String[] fields = null;
 		String numZone = null;
@@ -84,13 +83,13 @@ public class Controller {
 	}
 
 	public ArrayList<String> comboZone(ArrayList<String> lesZones, String stade) throws SQLException{
-		return lesZones = a.returnAllZones(lesZones, stade);
+		return lesZones = database.returnAllZones(lesZones, stade);
 	}
 	
 	
 	public ArrayList<String> comboStade(ArrayList<String> lesStades) throws SQLException {		
-		System.out.println(a.returnAllStade());
-		return lesStades = a.returnAllStade();
+		System.out.println(database.returnAllStade());
+		return lesStades = database.returnAllStade();
 	}
 
 	
@@ -101,7 +100,7 @@ public class Controller {
 	public void allDatas() throws SQLException, ParseException {
 
 		ArrayList<String> mesures = new ArrayList<String>();
-		mesures = a.selectAllDatas();
+		mesures = database.selectAllDatas();
 
 		System.out.println(mesures);
 
@@ -123,65 +122,6 @@ public class Controller {
 		}
 	}
 
-
-	/**
-	 * <p>
-	 * Lit un fichier de type CSV (Comma Separated Values)
-	 * </p>
-	 * <p>
-	 * Le fichier contient les mesures de temp&eacute;rature de la pelouse.
-	 * </p>
-	 * 
-	 * @author Jérôme Valenti
-	 * @return
-	 * @throws ParseException
-	 * @since 2.0.0
-	 */
-//	public void lireCSV(String filePath) throws ParseException {
-//
-//		try {
-//			File f = new File(filePath);
-//			FileReader fr = new FileReader(f);
-//			BufferedReader br = new BufferedReader(fr);
-//
-//			try {
-//				// Chaque ligne est un enregistrement de données
-//				String records = br.readLine();
-//
-//				// Chaque enregistrement contient des champs
-//				String[] fields = null;
-//				String numZone = null;
-//				Date horoDate = null;
-//				float fahrenheit;
-//
-//				while (records != null) {
-//					// Affecte les champs de l'enregistrement courant dans un
-//					// tableau de chaine
-//					fields = records.split(";");
-//
-//					// Affecte les champs aux paramètre du constructeur de
-//					// mesure
-//					numZone = fields[0];
-//					horoDate = strToDate(fields[1]);
-//					fahrenheit = Float.parseFloat(fields[2]);
-//
-//					// Instancie une Mesure
-//					Mesure laMesure = new Mesure(numZone, horoDate, fahrenheit);
-//					lesMesures.add(laMesure);
-//
-//					// Enregistrement suivant
-//					records = br.readLine();
-//				}
-//
-//				br.close();
-//				fr.close();
-//			} catch (IOException exception) {
-//				System.out.println("Erreur lors de la lecture : " + exception.getMessage());
-//			}
-//		} catch (FileNotFoundException exception) {
-//			System.out.println("Le fichier n'a pas été trouvé");
-//		}
-//	}
 
 	/**
 	 * <p>
