@@ -13,8 +13,8 @@ import java.util.Date;
  * <li>horadat&eacute;ee par la date et l'heure.</li>
  * </ul> 
  * 
- * @author jvalenti
- * @version 2.0.0
+ * @author sgrousset
+ * @version 3.0.0
  *
  */
 public class Mesure {
