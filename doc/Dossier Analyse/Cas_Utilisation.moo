@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{85E6FBAD-86B8-43A2-9750-69A1AF3D6051}" Label="" LastModificationDate="1604068031" Name="v.2.0.0" Objects="292" Symbols="64" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
+<?PowerDesigner AppLocale="UTF16" ID="{85E6FBAD-86B8-43A2-9750-69A1AF3D6051}" Label="" LastModificationDate="1604249477" Name="v.2.0.0" Objects="292" Symbols="62" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -3960,7 +3960,7 @@ Shadow=0</a:DisplayPreferences>
 <a:CreationDate>1460101853</a:CreationDate>
 <a:ModificationDate>1460102394</a:ModificationDate>
 <a:CenterTextOffset>(-25, 75)</a:CenterTextOffset>
-<a:Rect>((-11912,2625), (-7113,9975))</a:Rect>
+<a:Rect>((-11949,2625), (-7075,9975))</a:Rect>
 <a:ListOfPoints>((-9847,2625),(-9487,6750),(-7880,9975))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -3979,7 +3979,7 @@ Shadow=0</a:DisplayPreferences>
 <o:DependencySymbol Id="o140">
 <a:CreationDate>1460102323</a:CreationDate>
 <a:ModificationDate>1460102394</a:ModificationDate>
-<a:Rect>((-2195,2700), (3563,10800))</a:Rect>
+<a:Rect>((-2195,2700), (3600,10800))</a:Rect>
 <a:ListOfPoints>((2906,2700),(1163,7275),(-2195,10800))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -5200,7 +5200,6 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <o:InteractionFragmentSymbol Id="o205">
 <a:CreationDate>1460104350</a:CreationDate>
 <a:ModificationDate>1603622901</a:ModificationDate>
-<a:RegionConditionPositionList>((2500,300))</a:RegionConditionPositionList>
 <a:Rect>((-26473,15023), (18063,27759))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>128</a:LineColor>
@@ -5225,7 +5224,6 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <o:InteractionFragmentSymbol Id="o207">
 <a:CreationDate>1460364724</a:CreationDate>
 <a:ModificationDate>1603622901</a:ModificationDate>
-<a:RegionConditionPositionList>((2500,300))</a:RegionConditionPositionList>
 <a:Rect>((-26714,-13484), (17313,-4510))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>128</a:LineColor>
@@ -5739,7 +5737,7 @@ Shadow=0</a:DisplayPreferences>
 <o:MessageSymbol Id="o211">
 <a:CreationDate>1460293018</a:CreationDate>
 <a:ModificationDate>1460315331</a:ModificationDate>
-<a:Rect>((-19649,20127), (-800,21455))</a:Rect>
+<a:Rect>((-19649,20127), (-800,21453))</a:Rect>
 <a:ListOfPoints>((-800,20427),(-19649,20427))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -5760,7 +5758,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o215">
 <a:CreationDate>1460292934</a:CreationDate>
 <a:ModificationDate>1460315331</a:ModificationDate>
-<a:Rect>((-19649,23602), (-350,24930))</a:Rect>
+<a:Rect>((-19649,23602), (-350,24928))</a:Rect>
 <a:ListOfPoints>((-19649,23902),(-350,23902))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -5781,7 +5779,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o218">
 <a:CreationDate>1460292885</a:CreationDate>
 <a:ModificationDate>1460315331</a:ModificationDate>
-<a:Rect>((-19649,26302), (-351,27630))</a:Rect>
+<a:Rect>((-19649,26302), (-351,27628))</a:Rect>
 <a:ListOfPoints>((-351,26602),(-19649,26602))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -5934,7 +5932,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Code>mesurer</a:Code>
 <a:CreationDate>1460102671</a:CreationDate>
 <a:Creator>Prof-SLAM</a:Creator>
-<a:ModificationDate>1604068031</a:ModificationDate>
+<a:ModificationDate>1604249477</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
 <a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
@@ -6541,12 +6539,12 @@ Fin du cas d\rquote utilisation.\par
 <a:Code>v_3_0_0</a:Code>
 <a:CreationDate>1603459241</a:CreationDate>
 <a:Creator>Sylvain</a:Creator>
-<a:ModificationDate>1604068181</a:ModificationDate>
+<a:ModificationDate>1604249441</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
 <a:TargetModelURL>file:///%[PRJ_ROOT_DIR]%/v.3.0.0.moo</a:TargetModelURL>
 <a:TargetModelID>E7B3C53B-5E10-469D-A1BE-E65F2B24259E</a:TargetModelID>
 <a:TargetModelClassID>18112060-1A4B-11D1-83D9-444553540000</a:TargetModelClassID>
-<a:TargetModelLastModificationDate>1604070334</a:TargetModelLastModificationDate>
+<a:TargetModelLastModificationDate>1604237063</a:TargetModelLastModificationDate>
 <c:SessionShortcuts>
 <o:Shortcut Ref="o143"/>
 </c:SessionShortcuts>
