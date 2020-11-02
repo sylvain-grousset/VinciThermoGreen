@@ -163,5 +163,21 @@ public class Donnees {
 		}
 		return lesStades;
 		
-	}	
+	}
+	
+	public boolean connexion(String login, String mdp) throws SQLException {
+		
+		stmt = conn.createStatement();
+		
+		ResultSet rs = stmt.executeQuery("SELECT USERS.nom FROM USERS WHERE passwd = '"+mdp+"'");
+		
+		while (rs.next()) {
+			if(rs.getString(0).compareTo(mdp) == 0) {
+				System.out.println("C'est true");
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
