@@ -76,7 +76,7 @@ public class Donnees {
 	 * <p>Elle alimente la comboBox zone</p>
 	 * @param lesZones
 	 * @param stade
-	 * @return AzzayList
+	 * @return ArrayList
 	 * @throws SQLException
 	 */
 	public ArrayList<String> returnAllZones(ArrayList<String> lesZones, String stade) throws SQLException{
@@ -169,11 +169,10 @@ public class Donnees {
 		
 		stmt = conn.createStatement();
 		
-		ResultSet rs = stmt.executeQuery("SELECT USERS.nom FROM USERS WHERE passwd = '"+mdp+"'");
+		ResultSet rs = stmt.executeQuery("SELECT USERS.MDP FROM USERS WHERE login = '"+login+"'");
 		
 		while (rs.next()) {
-			if(rs.getString(0).compareTo(mdp) == 0) {
-				System.out.println("C'est true");
+			if(rs.getString("mdp").compareTo(mdp) == 0) {
 				return true;
 			}
 		}

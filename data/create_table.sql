@@ -28,6 +28,16 @@ CONSTRAINT PK_MESURE PRIMARY KEY (numZone, dateHeure, nom_stade),
 CONSTRAINT FK_nom_stade FOREIGN KEY (nom_stade) REFERENCES STADE(nom)
 );
 
+CREATE TABLE USERS(
+
+	login varchar(255),
+	nom varchar(255),
+	prenom varchar(255),
+	mdp varchar(255)
+	
+);
+
+
 
 INSERT INTO STADE VALUES ('Parc des Princes');
 INSERT INTO STADE VALUES ('Vélodrome');

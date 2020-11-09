@@ -185,4 +185,13 @@ public class Controller {
 		laDate = leFormat.parse(strDate);
 		return laDate;
 	}
+	
+	public void login(String login, String mdp) throws SQLException {
+		if(database.connexion(login, mdp) == true) {
+			System.out.println("Connexion OK");
+		}else {
+			System.out.println("LOGIN/MDP INCCORECT");
+		}
+	}
+	
 }

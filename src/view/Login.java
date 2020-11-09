@@ -15,27 +15,32 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 import javax.swing.JPasswordField;
 
 import base.Donnees;
 import control.Controller;
-import jdk.nashorn.internal.ir.ThrowNode;
 
 public class Login extends JFrame{
 	private JTextField login;
 	private JPasswordField passwordField;
-
 	private static Controller control;
+	
 	
 	/**
 	 * Launch the application.
+	 * @throws SQLException 
+	 * @throws ParseException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException, SQLException {
 		
+		control = new Controller();
+	
 		Login loginIHM = new Login();
 		loginIHM.setLocation(100,100);
 		loginIHM.setVisible(true);
+		
 	}
 
 	/**
@@ -70,10 +75,16 @@ public class Login extends JFrame{
 		
 		JButton submitLogin = new JButton("Submit");
 		submitLogin.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				
-				control.login(login.getText(), passwordField.getText());
+				try {
+					control.login(login.getText(), passwordField.getText());
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 			}
 		});
