@@ -49,7 +49,7 @@ import java.awt.FlowLayout;
  */
 public class ConsoleGUI extends JFrame {
 
-	private static Controller control;
+	private Controller control = new Controller();
 	/**
 	 * <p>Container intermédiaire JPanel</p>
 	 * <p>Contient les critères de filtrage des données de la table</p>
@@ -409,22 +409,16 @@ public class ConsoleGUI extends JFrame {
 	}
 	
 	
-	public static void main(String[] args)  throws ParseException, SQLException {
+	public void startUp() throws ParseException, SQLException {
+		System.out.println("Chui là");
 		
-		//Instancie un contrôleur pour prendre en charge l'IHM
-		control = new Controller();
 		control.allDatas();
 		
-		//Construit et affiche l'IHM
 		ConsoleGUI monIHM = new ConsoleGUI();
 		monIHM.setLocation(100,100);
 		
-		
-		
-		//Demande l'acquisition des data
-//		uneMesure = new Mesure();
 		lesMesures = control.getLesMesures();
-				
+		
 		//Construit le tableau d'objet
 		laTable = setTable(lesMesures);
 		
@@ -436,7 +430,39 @@ public class ConsoleGUI extends JFrame {
 		monIHM.setChart();
 		System.out.println("After set chart in main()");
 		monIHM.setVisible(true);
+		
 	}
+	
+	
+	
+//	public static void main(String[] args)  throws ParseException, SQLException {
+//		
+//		//Instancie un contrôleur pour prendre en charge l'IHM
+//		control = new Controller();
+//		control.allDatas();
+//		
+//		//Construit et affiche l'IHM
+//		ConsoleGUI monIHM = new ConsoleGUI();
+//		monIHM.setLocation(100,100);
+//		
+//		
+//		
+//		//Demande l'acquisition des data
+////		uneMesure = new Mesure();
+//		lesMesures = control.getLesMesures();
+//				
+//		//Construit le tableau d'objet
+//		laTable = setTable(lesMesures);
+//		
+//		//Definit le JScrollPane qui va recevoir la JTable
+//		scrollPane.setViewportView(laTable);
+//		
+//		System.out.println("Before set chart in main()");
+//		//affiche le graphique
+//		monIHM.setChart();
+//		System.out.println("After set chart in main()");
+//		monIHM.setVisible(true);
+//	}
 	
 	
 	/**

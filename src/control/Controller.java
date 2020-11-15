@@ -12,6 +12,7 @@ import java.util.Date;
 
 import model.Mesure;
 import base.Donnees;
+import view.*;
 
 /**
  * <p>
@@ -38,6 +39,13 @@ public class Controller {
 
 	private Donnees database = new Donnees();
 
+	private static ConsoleGUI monIHM;
+	private static Login login;
+	
+	public static void main(String[] args) throws ParseException, SQLException {
+		login = new Login();
+	}
+	
 	public Controller() throws ParseException, SQLException {
 		database.openDatabase();
 	}
@@ -186,11 +194,13 @@ public class Controller {
 		return laDate;
 	}
 	
-	public void login(String login, String mdp) throws SQLException {
+	public boolean login(String login, String mdp) throws SQLException {
 		if(database.connexion(login, mdp) == true) {
 			System.out.println("Connexion OK");
+			return true;
 		}else {
 			System.out.println("LOGIN/MDP INCCORECT");
+			return false;
 		}
 	}
 	

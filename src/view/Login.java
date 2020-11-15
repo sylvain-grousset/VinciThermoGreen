@@ -7,9 +7,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
@@ -25,29 +23,20 @@ import control.Controller;
 public class Login extends JFrame{
 	private JTextField login;
 	private JPasswordField passwordField;
+	
 	private static Controller control;
-	
-	
-	/**
-	 * Launch the application.
-	 * @throws SQLException 
-	 * @throws ParseException 
-	 */
-	public static void main(String[] args) throws ParseException, SQLException {
-		
-		control = new Controller();
-	
-		Login loginIHM = new Login();
-		loginIHM.setLocation(100,100);
-		loginIHM.setVisible(true);
-		
-	}
+	private ConsoleGUI console = new ConsoleGUI();
 
 	/**
 	 * Create the application.
+	 * @throws SQLException 
+	 * @throws ParseException 
 	 */
-	public Login() {
+	public Login() throws ParseException, SQLException {
 		super();
+		
+		control = new Controller();
+		
 		setSize(712, 510);
 		setResizable(false);
 		setFont(new Font("Consolas", Font.PLAIN, 12));
@@ -80,8 +69,11 @@ public class Login extends JFrame{
 			public void mouseClicked(MouseEvent arg0) {
 				
 				try {
-					control.login(login.getText(), passwordField.getText());
-				} catch (SQLException e) {
+					if(control.login(login.getText(), passwordField.getText()) == true) {
+						setVisible(false);
+						console.startUp();
+					}
+				} catch (SQLException | ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -95,5 +87,8 @@ public class Login extends JFrame{
 		passwordField.setToolTipText("");
 		passwordField.setBounds(204, 224, 237, 42);
 		getContentPane().add(passwordField);
+		
+		setLocation(100,100);
+		setVisible(true);
 	}
 }
