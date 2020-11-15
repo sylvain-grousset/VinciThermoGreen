@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle.Control;
 
+
 /**
  * <p>Etablit la connection avec la BDD et s'occupe des requetes avec celle ci</p>
  * @author Sylvain

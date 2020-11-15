@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="lib/jfreechart-1.0.19/lib/servlet.jar"/>
 	<classpathentry kind="lib" path="lib/jfreechart-1.0.19/lib/swtgraphics2d.jar"/>
 	<classpathentry kind="lib" path="lib/Connector J 8.0/mysql-connector-java-8.0.21.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sylvain/Downloads/jBCrypt-0.4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
