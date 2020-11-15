@@ -408,7 +408,12 @@ public class ConsoleGUI extends JFrame {
 			}
 	}
 	
-	
+	/**
+	 * <p>Point de départ pour démarrer (créer) l'application dans cette classe</p>
+	 * <p>(Remplace le main)</p>
+	 * @throws ParseException
+	 * @throws SQLException
+	 */
 	public void startUp() throws ParseException, SQLException {
 		System.out.println("Chui là");
 		

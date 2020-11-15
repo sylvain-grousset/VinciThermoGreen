@@ -165,6 +165,13 @@ public class Donnees {
 		
 	}
 	
+	/**
+	 * <p>Vérifie si les informations de connexion sont concordants</p>
+	 * @param login
+	 * @param mdp
+	 * @return boolean
+	 * @throws SQLException
+	 */
 	public boolean connexion(String login, String mdp) throws SQLException {
 		
 		stmt = conn.createStatement();

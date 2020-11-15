@@ -38,8 +38,6 @@ public class Controller {
 	private ArrayList<Mesure> lesMesures = new ArrayList<Mesure>();
 
 	private Donnees database = new Donnees();
-
-	private static ConsoleGUI monIHM;
 	private static Login login;
 	
 	public static void main(String[] args) throws ParseException, SQLException {
@@ -194,6 +192,15 @@ public class Controller {
 		return laDate;
 	}
 	
+	
+	/**
+	 * <p>Fait le liens pour envoyer les infos de connexion entre la classe Login et Donnees</p>
+	 * <p>Return true si les infos sont bonnes.</p>
+	 * @param login
+	 * @param mdp
+	 * @return boolean
+	 * @throws SQLException
+	 */
 	public boolean login(String login, String mdp) throws SQLException {
 		if(database.connexion(login, mdp) == true) {
 			System.out.println("Connexion OK");

@@ -17,7 +17,6 @@ import java.text.ParseException;
 
 import javax.swing.JPasswordField;
 
-import base.Donnees;
 import control.Controller;
 
 public class Login extends JFrame{
@@ -63,6 +62,11 @@ public class Login extends JFrame{
 		getContentPane().add(lblForgotPassword);
 		
 		JButton submitLogin = new JButton("Submit");
+		
+		//EventListener sur le bouton "Submit"
+		//Envoie les infos de connexion à la méthode "login" du controller
+		//Si le résultat est true, rends invisible la fenetre de login 
+		//Puis appelle le point de départ de la classe ConsoleGUI pour démarrer l'application et la rendre visible
 		submitLogin.addMouseListener(new MouseAdapter() {
 			@SuppressWarnings("deprecation")
 			@Override
