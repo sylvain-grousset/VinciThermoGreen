@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -74,6 +75,7 @@ public class Login extends JFrame{
 				
 				try {
 					if(control.login(login.getText(), passwordField.getText()) == true) {
+						JOptionPane.showMessageDialog(null, "Connexion réussie");
 						setVisible(false);
 						console.startUp();
 					}

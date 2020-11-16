@@ -4,17 +4,20 @@
 package control;
 
 
+import java.security.CryptoPrimitive;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import model.Mesure;
 import base.Donnees;
 import view.*;
 
-/**
+/**	
  * <p>
  * Le cont&ocirc;lleur :
  * </p>

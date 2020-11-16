@@ -180,11 +180,17 @@ public class Donnees {
 		ResultSet rs = stmt.executeQuery("SELECT USERS.MDP FROM USERS WHERE login = '"+login+"'");
 		
 		while (rs.next()) {
-			if(rs.getString("mdp").compareTo(mdp) == 0) {
+			
+			if(BCrypt.checkpw(mdp, rs.getString("mdp")) == true){
 				return true;
 			}
 		}
 		
 		return false;
 	}
+	
+
+	
+	
+	
 }
