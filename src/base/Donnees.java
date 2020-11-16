@@ -3,7 +3,7 @@ package base;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle.Control;
-
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  * <p>Etablit la connection avec la BDD et s'occupe des requetes avec celle ci</p>
