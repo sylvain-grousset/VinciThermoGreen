@@ -28,14 +28,16 @@ CONSTRAINT PK_MESURE PRIMARY KEY (numZone, dateHeure, nom_stade),
 CONSTRAINT FK_nom_stade FOREIGN KEY (nom_stade) REFERENCES STADE(nom)
 );
 
+DROP TABLE USERS;
 CREATE TABLE USERS(
 
 	login varchar(255),
 	nom varchar(255),
 	prenom varchar(255),
-	mdp varchar(255)
-	
+	mdp varchar(255),
+	roleAdmin boolean
 );
+INSERT INTO USERS VALUES ('SGROUSSET', 'GROUSSET', 'Sylvain', '$2a$10$sMTpVdUic7zYkUv0dE16POzx8Ukdr/UBJP0STXzd/8XW0UZwUh/x6', true);
 
 
 
@@ -57,7 +59,4 @@ INSERT INTO MESURE VALUES (1, '2020-05-13 07:24:45', 35, 'Parc des Princes');
 INSERT INTO MESURE VALUES (2, '2020-05-13 12:19:38', 46, 'Parc des Princes');
 INSERT INTO MESURE VALUES (3, '2020-05-13 19:00:12', 68, 'Parc des Princes');
 INSERT INTO MESURE VALUES (4, '2020-05-13 00:08:45', 43, 'Parc des Princes');
-INSERT INTO USERS VALUES ('SGROUSSET', 'GROUSSET', 'Sylvain', 'bpsen');
-
-$2a$10$sMTpVdUic7zYkUv0dE16POzx8Ukdr/UBJP0STXzd/8XW0UZwUh/x6
 
