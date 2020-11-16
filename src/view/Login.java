@@ -26,7 +26,7 @@ public class Login extends JFrame{
 	
 	private static Controller control;
 	private ConsoleGUI console = new ConsoleGUI();
-
+	
 	/**
 	 * Create the application.
 	 * @throws SQLException 

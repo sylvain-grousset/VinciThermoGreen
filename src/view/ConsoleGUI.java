@@ -38,6 +38,11 @@ import control.Controller;
 import model.Mesure;
 import java.sql.*;
 import java.awt.FlowLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * <p>ConsoleGUI : IHM de l'application de consultation des températures</p>
@@ -366,6 +371,18 @@ public class ConsoleGUI extends JFrame {
 			}
 		});
 		JPanel_choix_stade.add(validerChoixStade);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("D\u00E9connexion");
+		menuBar.add(mntmNewMenuItem);
+		
+		//TROUVER UN MOYEN DE RECUP LE LOGIN DE L'UTILISATEUR DANS UN IF control.roleAdminController == true ALORS ON CREE L'ITEM CREE CI DESSOUS
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Cr\u00E9er compte");
+		menuBar.add(mntmNewMenuItem_1);
 		
 	}
 	

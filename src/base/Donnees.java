@@ -189,6 +189,21 @@ public class Donnees {
 		return false;
 	}
 	
+	public boolean roleAdmin(String login) throws SQLException {
+		stmt = conn.createStatement();
+		
+		ResultSet rs = stmt.executeQuery("SELECT USERS.roleAdmin FROM USERS WHERE login = '"+login+"'");
+		
+		while (rs.next()) {
+			
+			if(rs.getString("roleAdmin") == "true"){
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 
 	
 	

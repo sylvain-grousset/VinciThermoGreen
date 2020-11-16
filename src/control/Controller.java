@@ -214,4 +214,13 @@ public class Controller {
 		}
 	}
 	
+	public boolean roleAdminController(String login) throws SQLException {
+		if(database.roleAdmin(login) == true) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	
 }
