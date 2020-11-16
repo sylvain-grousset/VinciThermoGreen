@@ -156,6 +156,16 @@ public class ConsoleGUI extends JFrame {
 	 */
 	JPanel pnlBounds = new JPanel();
 
+	
+	public String loginUtilisateur;
+	
+	
+	
+	public void setLoginUtilisateur(String loginUtilisateur) {
+		this.loginUtilisateur = loginUtilisateur;
+	}
+
+
 	public ConsoleGUI() throws ParseException, SQLException {
 		//Appelle le constructeur de la classe mère
 		super();
@@ -379,12 +389,19 @@ public class ConsoleGUI extends JFrame {
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("D\u00E9connexion");
 		menuBar.add(mntmNewMenuItem);
-		
+	
+		System.out.println("LOGIN : ------------"+loginUtilisateur);
 		//TROUVER UN MOYEN DE RECUP LE LOGIN DE L'UTILISATEUR DANS UN IF control.roleAdminController == true ALORS ON CREE L'ITEM CREE CI DESSOUS
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Cr\u00E9er compte");
-		menuBar.add(mntmNewMenuItem_1);
+		if(control.roleAdminController(loginUtilisateur) == true) {
+			System.out.println("Je suis dans crée compte :" +loginUtilisateur);
+			JMenuItem mntmNewMenuItem_1 = new JMenuItem("Cr\u00E9er compte");
+			menuBar.add(mntmNewMenuItem_1);
+		}
+		
+		
 		
 	}
+	
 	
 	/**
 	 * <p>Ajoute les numZone en fonction du stade dans la comboBox choixZone </p>

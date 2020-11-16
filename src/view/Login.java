@@ -27,6 +27,18 @@ public class Login extends JFrame{
 	private static Controller control;
 	private ConsoleGUI console = new ConsoleGUI();
 	
+	
+	
+	
+	
+	public JTextField getLogin() {
+		return login;
+	}
+
+
+
+
+
 	/**
 	 * Create the application.
 	 * @throws SQLException 
@@ -76,6 +88,8 @@ public class Login extends JFrame{
 				try {
 					if(control.login(login.getText(), passwordField.getText()) == true) {
 						JOptionPane.showMessageDialog(null, "Connexion réussie");
+						System.out.println("LOGINNNNNNNNNN :"+login.getText());
+						console.setLoginUtilisateur(login.getText());
 						setVisible(false);
 						console.startUp();
 					}
