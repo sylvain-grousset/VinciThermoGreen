@@ -11,8 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.mindrot.jbcrypt.BCrypt;
-
 import model.Mesure;
 import base.Donnees;
 import view.*;

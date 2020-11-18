@@ -193,13 +193,13 @@ public class Donnees {
 		stmt = conn.createStatement();
 		
 		ResultSet rs = stmt.executeQuery("SELECT USERS.roleAdmin FROM USERS WHERE login = '"+login+"'");
-		
-		while (rs.next()) {
 			
-			if(rs.getString("roleAdmin") == "true"){
-				return true;
+			while(rs.next()) {
+				if(rs.getString(1).compareTo("1") == 0){
+					return true;
+				}
 			}
-		}
+		
 		
 		return false;
 	}
