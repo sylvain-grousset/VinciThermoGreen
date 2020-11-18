@@ -54,7 +54,7 @@ public class Login extends JFrame{
 		setFont(new Font("Consolas", Font.PLAIN, 12));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img\\vinci_ico.jpg"));
-		setTitle("Vinci Thermo Green");
+		setTitle("Connexion");
 		getContentPane().setLayout(null);
 		
 		login = new JTextField();
@@ -88,7 +88,6 @@ public class Login extends JFrame{
 				try {
 					if(control.login(login.getText(), passwordField.getText()) == true) {
 						JOptionPane.showMessageDialog(null, "Connexion réussie");
-						System.out.println("LOGINNNNNNNNNN :"+login.getText());
 						console.setLoginUtilisateur(login.getText());
 						setVisible(false);
 						console.startUp();

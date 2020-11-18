@@ -157,12 +157,12 @@ public class ConsoleGUI extends JFrame {
 	JPanel pnlBounds = new JPanel();
 
 	
-	public String loginUtilisateur;
+	private static String loginUtilisateur;
 	
 	
 	
 	public void setLoginUtilisateur(String loginUtilisateur) {
-		this.loginUtilisateur = loginUtilisateur;
+		ConsoleGUI.loginUtilisateur = loginUtilisateur;
 	}
 
 
@@ -171,7 +171,7 @@ public class ConsoleGUI extends JFrame {
 		super();
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img\\vinci_ico.jpg"));
 		setTitle("Vinci Thermo Green");
-		setSize(712, 510);
+		setSize(715, 554);
 		setResizable(false);
 		setFont(new Font("Consolas", Font.PLAIN, 12));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -182,7 +182,7 @@ public class ConsoleGUI extends JFrame {
 		getContentPane().setLayout(null);
 		
 		//Définit le JPanel des critères
-		pnlCriteria.setBounds(10, 72, 325, 145);
+		pnlCriteria.setBounds(10, 85, 325, 145);
 		pnlCriteria.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Filtrage", TitledBorder.LEADING, TitledBorder.TOP, null, Color.GRAY));
 		pnlCriteria.setBackground(UIManager.getColor("Label.background"));
 		pnlCriteria.setLayout(null);
@@ -243,11 +243,11 @@ public class ConsoleGUI extends JFrame {
 		pnlCriteria.add(lblLogoVinci);
 
 		//Définit le JScrollPane qui reçoit la JTable
-		scrollPane.setBounds(10, 228, 325, 242);
+		scrollPane.setBounds(10, 241, 325, 273);
 		pane.add(scrollPane);
 		
 		//Définit le JPanel des paramètres du graphique
-		pnlParam.setBounds(340, 10, 355, 335);
+		pnlParam.setBounds(344, 55, 355, 335);
 		pnlParam.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Graphique des temp\u00E9ratures", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(128, 128, 128)));
 		pnlParam.setBackground(UIManager.getColor("Label.background"));
 		pnlParam.setLayout(null);
@@ -314,7 +314,7 @@ public class ConsoleGUI extends JFrame {
 		pnlGraph.setLayout(null);
 		
 		//Définit le JPanel des bornes nominales
-		pnlBounds.setBounds(340, 346, 355, 124);
+		pnlBounds.setBounds(344, 390, 355, 124);
 		pnlBounds.setBorder(new TitledBorder(null, "D\u00E9bord des valeurs nominales", TitledBorder.LEADING, TitledBorder.TOP, null, Color.GRAY));
 		pnlBounds.setBackground(UIManager.getColor("Label.background"));
 		pnlBounds.setLayout(null);
@@ -348,7 +348,7 @@ public class ConsoleGUI extends JFrame {
 		JPanel JPanel_choix_stade = new JPanel();
 		FlowLayout fl_JPanel_choix_stade = (FlowLayout) JPanel_choix_stade.getLayout();
 		JPanel_choix_stade.setBorder(new TitledBorder(null, "Stade", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		JPanel_choix_stade.setBounds(10, 10, 325, 63);
+		JPanel_choix_stade.setBounds(10, 11, 325, 63);
 		getContentPane().add(JPanel_choix_stade);
 		
 		JComboBox choixStade = new JComboBox();
@@ -382,26 +382,29 @@ public class ConsoleGUI extends JFrame {
 		});
 		JPanel_choix_stade.add(validerChoixStade);
 		
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
+		JButton ButtonDeconnexion = new JButton("Deconnexion");
+		ButtonDeconnexion.setBounds(551, 21, 108, 23);
+		getContentPane().add(ButtonDeconnexion);
 		
+		JButton ButtonCreerCompte = new JButton("Cr\u00E9er compte");
+		ButtonCreerCompte.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+
+					CreateAccount a = new CreateAccount();
+
+			}
+		});
+		ButtonCreerCompte.setBounds(404, 21, 108, 23);
+		getContentPane().add(ButtonCreerCompte);
 		
+		ButtonCreerCompte.setVisible(false);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("D\u00E9connexion");
-		menuBar.add(mntmNewMenuItem);
-	
-		System.out.println("LOGIN : ------------"+loginUtilisateur);
-		//TROUVER UN MOYEN DE RECUP LE LOGIN DE L'UTILISATEUR DANS UN IF control.roleAdminController == true ALORS ON CREE L'ITEM CREE CI DESSOUS
 		if(control.roleAdminController(loginUtilisateur) == true) {
-			System.out.println("Je suis dans crée compte :" +loginUtilisateur);
-			JMenuItem mntmNewMenuItem_1 = new JMenuItem("Cr\u00E9er compte");
-			menuBar.add(mntmNewMenuItem_1);
+			ButtonCreerCompte.setVisible(true);
 		}
-		
-		
-		
 	}
-	
+
 	
 	/**
 	 * <p>Ajoute les numZone en fonction du stade dans la comboBox choixZone </p>
