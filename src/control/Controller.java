@@ -213,11 +213,17 @@ public class Controller {
 	}
 	
 	public boolean roleAdminController(String login) throws SQLException {
+		System.out.println("Database.login = : "+database.roleAdmin(login));
 		if(database.roleAdmin(login) == true) {
 			return true;
 		}else {
 			return false;
 		}
+	}
+	
+	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox) throws SQLException {
+		database.createAccount(login, nom, prenom, mdp, adminChckBox);
+		
 	}
 	
 	

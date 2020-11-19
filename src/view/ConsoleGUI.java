@@ -383,6 +383,19 @@ public class ConsoleGUI extends JFrame {
 		JPanel_choix_stade.add(validerChoixStade);
 		
 		JButton ButtonDeconnexion = new JButton("Deconnexion");
+		ButtonDeconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				try {
+					Login l = new Login();
+					setVisible(false);
+				} catch (ParseException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
 		ButtonDeconnexion.setBounds(551, 21, 108, 23);
 		getContentPane().add(ButtonDeconnexion);
 		
@@ -390,18 +403,22 @@ public class ConsoleGUI extends JFrame {
 		ButtonCreerCompte.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-
 					CreateAccount a = new CreateAccount();
 
 			}
 		});
-		ButtonCreerCompte.setBounds(404, 21, 108, 23);
+		ButtonCreerCompte.setBounds(386, 21, 126, 23);
 		getContentPane().add(ButtonCreerCompte);
 		
-		ButtonCreerCompte.setVisible(false);
+		JLabel lblShowUser = new JLabel("Connecté sous l'utilisateur : "+loginUtilisateur);
+		lblShowUser.setBounds(404, 0, 279, 14);
+		getContentPane().add(lblShowUser);
 		
+		System.out.println("control.roleAdminController = : "+control.roleAdminController(loginUtilisateur));
 		if(control.roleAdminController(loginUtilisateur) == true) {
 			ButtonCreerCompte.setVisible(true);
+		}else {
+			ButtonCreerCompte.setVisible(false);
 		}
 	}
 

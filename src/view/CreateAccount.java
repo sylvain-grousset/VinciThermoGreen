@@ -15,7 +15,12 @@ import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
+import org.mindrot.jbcrypt.BCrypt;
+
+import control.Controller;
 
 public class CreateAccount extends JFrame {
 
@@ -25,6 +30,7 @@ public class CreateAccount extends JFrame {
 	private JLabel lblPrnom;
 	private JPasswordField passwordField;
 
+	private static Controller control;
 
 	
 	public CreateAccount() {
@@ -74,6 +80,27 @@ public class CreateAccount extends JFrame {
 		JButton btnConfirmer = new JButton("Confirmer");
 		btnConfirmer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					control = new Controller();
+				} catch (ParseException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				String mdp = BCrypt.hashpw(passwordField.getText(), BCrypt.gensalt(10));
+				String nom = textFieldNom.getText();
+				String prenom = textFieldPrenom.getText();
+				String login = prenom.charAt(0)+nom; 
+				boolean adminCheckBox = chckbxAdmin.isSelected();
+				
+				try {
+					control.createAccount(login, nom, prenom, mdp, adminCheckBox);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
 		});
 		btnConfirmer.setBounds(229, 220, 98, 26);

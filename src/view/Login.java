@@ -19,6 +19,8 @@ import java.text.ParseException;
 import javax.swing.JPasswordField;
 
 import control.Controller;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Login extends JFrame{
 	private JTextField login;
@@ -49,7 +51,7 @@ public class Login extends JFrame{
 		
 		control = new Controller();
 		
-		setSize(712, 510);
+		setSize(405, 315);
 		setResizable(false);
 		setFont(new Font("Consolas", Font.PLAIN, 12));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -58,8 +60,7 @@ public class Login extends JFrame{
 		getContentPane().setLayout(null);
 		
 		login = new JTextField();
-		login.setBounds(204, 171, 237, 42);
-		login.setText("Login");
+		login.setBounds(121, 79, 145, 29);
 		getContentPane().add(login);
 		login.setColumns(10);
 		
@@ -71,7 +72,7 @@ public class Login extends JFrame{
 				
 			}
 		});
-		lblForgotPassword.setBounds(204, 277, 237, 14);
+		lblForgotPassword.setBounds(121, 148, 237, 14);
 		getContentPane().add(lblForgotPassword);
 		
 		JButton submitLogin = new JButton("Submit");
@@ -99,15 +100,23 @@ public class Login extends JFrame{
 				
 			}
 		});
-		submitLogin.setBounds(454, 224, 109, 42);
+		submitLogin.setBounds(227, 173, 83, 29);
 		getContentPane().add(submitLogin);
 		
 		passwordField = new JPasswordField();
 		passwordField.setToolTipText("");
-		passwordField.setBounds(204, 224, 237, 42);
+		passwordField.setBounds(121, 119, 145, 29);
 		getContentPane().add(passwordField);
 		
-		setLocation(100,100);
+		JLabel lblNewLabel = new JLabel("Login ");
+		lblNewLabel.setBounds(65, 86, 46, 14);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setBounds(36, 126, 75, 14);
+		getContentPane().add(lblPassword);
+		
+		setLocation(660,200);
 		setVisible(true);
 	}
 }

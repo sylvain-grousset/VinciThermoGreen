@@ -203,6 +203,17 @@ public class Donnees {
 		return false;
 	}
 	
+	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox)  throws SQLException{
+		stmt = conn.createStatement();
+		
+		if(adminChckBox == true) {
+			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '1')");
+		}else {
+			stmt.executeUpdate ("INSERT INTO USERS (login, nom, prenom, mdp) VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"')");
+		}
+		
+	}
+	
 
 	
 	
