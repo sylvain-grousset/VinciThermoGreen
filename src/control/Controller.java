@@ -1,10 +1,8 @@
 /**
- * @author GROUSSET Sylvain 
+ * @author GROUSSET Sylvain
  */
 package control;
 
-
-import java.security.CryptoPrimitive;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,7 +24,10 @@ import view.*;
  * </ol>
  * 
  * @author GROUSSET Sylvain
- * @version 3.0.0
+ * @version 3.1.0
+ * @see view.*;
+ * @see model.Mesure;
+ * @see base.Donnees;
  *
  */
 public class Controller {
@@ -38,11 +39,13 @@ public class Controller {
 	 */
 	private ArrayList<Mesure> lesMesures = new ArrayList<Mesure>();
 
+
 	private Donnees database = new Donnees();
-	private static Login login;
+	
 	
 	public static void main(String[] args) throws ParseException, SQLException {
-		login = new Login();
+		@SuppressWarnings("unused")
+		Login login = new Login();
 	}
 	
 	public Controller() throws ParseException, SQLException {
@@ -212,8 +215,14 @@ public class Controller {
 		}
 	}
 	
+	
+	/**
+	 * <p>Envoie le login de l'utilisateur à la methode roleAdmin de la classe Donnees pour savoir si celui ci est administrateur</p>
+	 * @param login
+	 * @return boolean
+	 * @throws SQLException
+	 */
 	public boolean roleAdminController(String login) throws SQLException {
-		System.out.println("Database.roleAdmin = : "+database.roleAdmin(login));
 		if(database.roleAdmin(login) == true) {
 			return true;
 		}else {
@@ -221,9 +230,18 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * <p>Envoie les informations entrees par l'administrateur pour creer le compte d'un utilisateur</p>
+	 * <p>Les infos sont envoyees dans la methode createAccount de la classe Donnees</p>
+	 * @param login
+	 * @param nom
+	 * @param prenom
+	 * @param mdp
+	 * @param adminChckBox
+	 * @throws SQLException
+	 */
 	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox) throws SQLException {
 		database.createAccount(login, nom, prenom, mdp, adminChckBox);
-		
 	}
 	
 	

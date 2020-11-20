@@ -7,8 +7,10 @@ import org.mindrot.jbcrypt.BCrypt;
 
 /**
  * <p>Etablit la connection avec la BDD et s'occupe des requetes avec celle ci</p>
+ * <p>Projet Vinci Thermo Green</p>
  * @author Sylvain
- * @version 3.0.0
+ * @version 3.1.0
+ * @see org.mindrot.jbcrypt.BCrypt;
  */
 
 public class Donnees {

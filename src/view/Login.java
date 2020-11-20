@@ -1,7 +1,7 @@
 package view;
 
 
-import java.awt.EventQueue;
+
 import java.awt.Font;
 import java.awt.Toolkit;
 
@@ -19,9 +19,17 @@ import java.text.ParseException;
 import javax.swing.JPasswordField;
 
 import control.Controller;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 
+/**
+ * <p>Formulaire de connexion</p>
+ * <p>Projet Vinci Thermo Green</p>
+ * @author Sylvain
+ * @version 3.1.0
+ * @see control.Controller
+ */
+
+
+@SuppressWarnings("serial")
 public class Login extends JFrame{
 	private JTextField login;
 	private JPasswordField passwordField;

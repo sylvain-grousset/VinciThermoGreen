@@ -1,14 +1,10 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 import java.awt.Font;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.FlowLayout;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JCheckBox;
@@ -22,9 +18,19 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import control.Controller;
 
+/**
+ * <p>CreateAccount : Formulaire pour creer un compte utilisateur</p>
+ * <p>Projet Vinci Thermo Green</p>
+ * @author Sylvain
+ * @version 3.1.0
+ * @see control.Controller
+ * 
+ */
+
+@SuppressWarnings("serial")
 public class CreateAccount extends JFrame {
 
-	private JPanel contentPane;
+
 	private JTextField textFieldNom;
 	private JTextField textFieldPrenom;
 	private JLabel lblPrnom;
@@ -84,10 +90,10 @@ public class CreateAccount extends JFrame {
 				try {
 					control = new Controller();
 				} catch (ParseException | SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				
+				@SuppressWarnings("deprecation")
 				String mdp = BCrypt.hashpw(passwordField.getText(), BCrypt.gensalt(10));
 				String nom = textFieldNom.getText();
 				String prenom = textFieldPrenom.getText();
@@ -97,7 +103,6 @@ public class CreateAccount extends JFrame {
 				try {
 					control.createAccount(login, nom, prenom, mdp, adminCheckBox);
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				

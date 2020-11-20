@@ -1,6 +1,3 @@
-/**
- * @author Jérôme Valenti
- */
 package view;
 import java.awt.Color;
 import java.awt.Container;
@@ -38,9 +35,6 @@ import control.Controller;
 import model.Mesure;
 import java.sql.*;
 import java.awt.FlowLayout;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -48,10 +42,11 @@ import java.awt.event.MouseEvent;
  * <p>ConsoleGUI : IHM de l'application de consultation des températures</p>
  * <p>Projet Vinci Thermo Green</p>
  * @author GROUSSET Sylvain
- * @version 3.0.0
+ * @version 3.1.0
  * @see control.Controller
  * @see model.Mesure
  */
+@SuppressWarnings("serial")
 public class ConsoleGUI extends JFrame {
 
 	private Controller control = new Controller();
@@ -147,6 +142,7 @@ public class ConsoleGUI extends JFrame {
 	/**
 	 * <p>Tableau d'objet pour alimenter la JTable</p>
 	 */
+	@SuppressWarnings("unused")
 	private static Object[][] data;
 
 	/**
@@ -166,6 +162,7 @@ public class ConsoleGUI extends JFrame {
 	}
 
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public ConsoleGUI() throws ParseException, SQLException {
 		//Appelle le constructeur de la classe mère
 		super();
@@ -346,6 +343,7 @@ public class ConsoleGUI extends JFrame {
 		pnlBounds.add(lbAlerte);
 		
 		JPanel JPanel_choix_stade = new JPanel();
+		@SuppressWarnings("unused")
 		FlowLayout fl_JPanel_choix_stade = (FlowLayout) JPanel_choix_stade.getLayout();
 		JPanel_choix_stade.setBorder(new TitledBorder(null, "Stade", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		JPanel_choix_stade.setBounds(10, 11, 325, 63);
@@ -387,10 +385,10 @@ public class ConsoleGUI extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				try {
+					@SuppressWarnings("unused")
 					Login l = new Login();
 					setVisible(false);
 				} catch (ParseException | SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				
@@ -403,6 +401,7 @@ public class ConsoleGUI extends JFrame {
 		ButtonCreerCompte.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+					@SuppressWarnings("unused")
 					CreateAccount a = new CreateAccount();
 
 			}
@@ -414,7 +413,9 @@ public class ConsoleGUI extends JFrame {
 		lblShowUser.setBounds(404, 0, 279, 14);
 		getContentPane().add(lblShowUser);
 		
-		System.out.println("control.roleAdminController = : "+control.roleAdminController(loginUtilisateur));
+		
+		//Si le controlleur indique que l'utilisateur passe en parametre est Administrateur
+		//Alors on rend le button creerCompte visible
 		if(control.roleAdminController(loginUtilisateur) == true) {
 			ButtonCreerCompte.setVisible(true);
 		}else {
@@ -469,7 +470,6 @@ public class ConsoleGUI extends JFrame {
 	 * @throws SQLException
 	 */
 	public void startUp() throws ParseException, SQLException {
-		System.out.println("Chui là");
 		
 		control.allDatas();
 		
@@ -650,27 +650,7 @@ public class ConsoleGUI extends JFrame {
 				break;
 			}
 		}
-
-		//un bouchon pour tester
-		// Set data ((Number)temp,zone,dateHeure)
-//        dataChart.addValue((Number)1.0, "01", 1);
-//        dataChart.addValue((Number)5.0, "02", 1);
-//        dataChart.addValue((Number)4.0, "01", 2);
-//        dataChart.addValue((Number)7.0, "02", 2);
-//        dataChart.addValue((Number)3.0, "01", 3);
-//        dataChart.addValue((Number)6.0, "02", 3);
-//        dataChart.addValue((Number)5.0, "01", 4);
-//        dataChart.addValue((Number)8.0, "02", 4);
-//        dataChart.addValue((Number)5.0, "01", 5);
-//        dataChart.addValue((Number)4.0, "02", 5);
-//        dataChart.addValue((Number)7.0, "01", 6);
-//        dataChart.addValue((Number)4.0, "02", 6);
-//        dataChart.addValue((Number)7.0, "01", 7);
-//        dataChart.addValue((Number)2.0, "02", 7);
-//        dataChart.addValue((Number)8.0, "01", 8);
-//        dataChart.addValue((Number)1.0, "02", 8);
-//		System.out.println(dataChart.getRowCount() + " lignes " + dataChart.getColumnCount() + " colonnes");
-		
+	
 		JFreeChart chart = ChartFactory.createLineChart(
                 null,       				// chart title
                 "Heure",					// domain axis label
@@ -689,7 +669,7 @@ public class ConsoleGUI extends JFrame {
 	}
 	/**
 	 * <p>Classe interne qui gère le clique sur le bouton filtrer
-	 * @author Jérôme Valenti
+	 * @author Sylvain GROUSSET
 	 */
 	class filtrerData implements ActionListener {
         public void actionPerformed(ActionEvent e){
@@ -714,6 +694,7 @@ public class ConsoleGUI extends JFrame {
         }
 	}
 	
+	@SuppressWarnings("unused")
 	private void displayLesMesures(ArrayList<Mesure> uneCollection){
 
 		for (int i = 0; i < uneCollection.size(); i++) {
