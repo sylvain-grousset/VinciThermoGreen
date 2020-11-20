@@ -209,7 +209,7 @@ public class Donnees {
 		if(adminChckBox == true) {
 			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '1')");
 		}else {
-			stmt.executeUpdate ("INSERT INTO USERS (login, nom, prenom, mdp) VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"')");
+			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '0')");
 		}
 		
 	}

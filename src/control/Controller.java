@@ -213,7 +213,7 @@ public class Controller {
 	}
 	
 	public boolean roleAdminController(String login) throws SQLException {
-		System.out.println("Database.login = : "+database.roleAdmin(login));
+		System.out.println("Database.roleAdmin = : "+database.roleAdmin(login));
 		if(database.roleAdmin(login) == true) {
 			return true;
 		}else {
