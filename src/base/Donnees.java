@@ -64,9 +64,7 @@ public class Donnees {
 			Connection conn = DriverManager.getConnection(url, username, password);
 			System.out.println("Connexion base OK !");
 			setConn(conn);		
-			
-			
-			
+	
 		} catch (SQLException e) {
 			
 			throw new IllegalStateException("Cannot connect database !", e);
@@ -250,9 +248,6 @@ public class Donnees {
 			return false;
 		}
 	}
-	
-
-	
 	
 	
 }

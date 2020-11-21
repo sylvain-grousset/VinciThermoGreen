@@ -131,5 +131,7 @@ public class CreateAccount extends JFrame {
 		btnQuitterAnnuler.setBounds(84, 220, 131, 26);
 		getContentPane().add(btnQuitterAnnuler);
 		setVisible(true);
+		
 	}
+	
 }

@@ -2,7 +2,7 @@ package view;
 
 
 
-import java.awt.Cursor;
+
 import java.awt.Font;
 import java.awt.Toolkit;
 
@@ -11,16 +11,17 @@ import javax.swing.JTextField;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.ParseException;
 
 import javax.swing.JPasswordField;
 
-import org.mindrot.jbcrypt.BCrypt;
+
+import java.awt.Color;
 
 import control.Controller;
 
@@ -41,15 +42,10 @@ public class Login extends JFrame{
 	private static Controller control;
 	private ConsoleGUI console = new ConsoleGUI();
 	
-	
-	
-	
-	
+
 	public JTextField getLogin() {
 		return login;
 	}
-
-
 
 
 
@@ -60,6 +56,7 @@ public class Login extends JFrame{
 	 */
 	public Login() throws ParseException, SQLException {
 		super();
+		
 		
 		control = new Controller();
 		
@@ -76,55 +73,56 @@ public class Login extends JFrame{
 		getContentPane().add(login);
 		login.setColumns(10);
 		
-		JLabel lblForgotPassword = new JLabel("Forgot my password");
+		//JLabel lblForgotPassword = new JLabel("Forgot my password");
 		
 		//Lorsque l'utilisateur clique sur le label,
 		//cela crée un showInputDialog en demandant le login, puis un showOptionDialog demandant le MDP
 		//Puis le MDP est crypté et envoyé au controlleur
-		lblForgotPassword.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0)  {
-				String loginUtil = JOptionPane.showInputDialog(null,"Votre login :", "Password reset", JOptionPane.INFORMATION_MESSAGE);
-				
-				if(loginUtil != null) {
-					
-					JPanel panel = new JPanel();
-					JLabel label = new JLabel("Entrez un nouveau mot de passe :");
-					JPasswordField pass = new JPasswordField(10);
-					panel.add(label);
-					panel.add(pass);
-					String[] options = new String[]{"OK", "Cancel"};
-					
-					int option = JOptionPane.showOptionDialog(null, panel, "Password reset",
-					                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
-					                         null, options, options[0]);
-					
-					if(option == 0) {
-						
-						String mdp = BCrypt.hashpw(new String(pass.getPassword()), BCrypt.gensalt(10));
-						try {
-							if(control.updatePassword(loginUtil, mdp) == true) {
-								JOptionPane.showMessageDialog(null, "Mot de passe modifié avec succès !");
-							}else {
-								JOptionPane.showMessageDialog(null, "Le login entré n'existe pas, Veuillez re-essayer !");
-							}
-						} catch (SQLException e) {
-							e.printStackTrace();
-						}
-
-					}
-
-				}
-
-			}
-			//Modifie le curseur lorsque l'utilisateur passe sa souris sur le label.
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				lblForgotPassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			}
-		});
-		lblForgotPassword.setBounds(121, 148, 237, 14);
-		getContentPane().add(lblForgotPassword);
+//		lblForgotPassword.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent arg0)  {
+//				String loginUtil = JOptionPane.showInputDialog(null,"Votre login :", "Password reset", JOptionPane.INFORMATION_MESSAGE);
+//				
+//				if(loginUtil != null) {
+//					
+//					JPanel panel = new JPanel();
+//					JLabel label = new JLabel("Entrez un nouveau mot de passe :");
+//					JPasswordField pass = new JPasswordField(10);
+//					panel.add(label);
+//					panel.add(pass);
+//					String[] options = new String[]{"OK", "Cancel"};
+//					
+//					int option = JOptionPane.showOptionDialog(null, panel, "Password reset",
+//					                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+//					                         null, options, options[0]);
+//					
+//					if(option == 0) {
+//						
+//						String mdp = BCrypt.hashpw(new String(pass.getPassword()), BCrypt.gensalt(10));
+//						try {
+//							if(control.updatePassword(loginUtil, mdp) == true) {
+//								JOptionPane.showMessageDialog(null, "Mot de passe modifié avec succès !");
+//							}else {
+//								JOptionPane.showMessageDialog(null, "Le login entré n'existe pas, Veuillez re-essayer !");
+//							}
+//						} catch (SQLException e) {
+//							e.printStackTrace();
+//						}
+//
+//					}
+//
+//				}
+//
+//			}
+//			
+//			//Modifie le curseur lorsque l'utilisateur passe sa souris sur le label.
+//			@Override
+//			public void mouseEntered(MouseEvent arg0) {
+//				lblForgotPassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+//			}
+//		});
+//		lblForgotPassword.setBounds(121, 148, 237, 14);
+//		getContentPane().add(lblForgotPassword);
 		
 		JButton submitLogin = new JButton("Submit");
 		
@@ -143,6 +141,10 @@ public class Login extends JFrame{
 						console.setLoginUtilisateur(login.getText());
 						setVisible(false);
 						console.startUp();
+					}else {
+						JOptionPane.showMessageDialog(null, "Login/MDP incorrect");
+						passwordField.setText("");
+						login.setText("");
 					}
 				} catch (SQLException | ParseException e) {
 					e.printStackTrace();
@@ -166,7 +168,41 @@ public class Login extends JFrame{
 		lblPassword.setBounds(36, 126, 75, 14);
 		getContentPane().add(lblPassword);
 		
+		JLabel lblDBStatus = new JLabel("");
+		lblDBStatus.setBounds(121, 11, 121, 14);
+		getContentPane().add(lblDBStatus);
+		
 		setLocation(660,200);
 		setVisible(true);
+		
+		
+		JLabel lblNewLabel_1 = new JLabel("Database status :");
+		lblNewLabel_1.setBounds(10, 11, 115, 14);
+		getContentPane().add(lblNewLabel_1);
+		checkDB(lblDBStatus);
+		
 	}
+	
+	
+	private void checkDB(JLabel DBStatus) {
+		String url = "jdbc:mysql://localhost:3306/vinci?serverTimezone=UTC";
+		String username = "adminVinci";
+		String password = "vinciThermogreen";
+		
+		try {
+			
+			DriverManager.getConnection(url, username, password);
+			System.out.println("Connexion base OK !");	
+			DBStatus.setForeground(Color.GREEN);
+			DBStatus.setText("DATABASE OK");
+			
+		} catch (SQLException e) {	
+			DBStatus.setForeground(Color.RED);
+
+			DBStatus.setText("DATABASE ERROR");
+			
+		}
+	}
+
+	
 }

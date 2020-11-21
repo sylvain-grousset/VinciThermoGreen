@@ -347,7 +347,7 @@ public class ConsoleGUI extends JFrame {
 		@SuppressWarnings("unused")
 		FlowLayout fl_JPanel_choix_stade = (FlowLayout) JPanel_choix_stade.getLayout();
 		JPanel_choix_stade.setBorder(new TitledBorder(null, "Stade", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		JPanel_choix_stade.setBounds(10, 11, 325, 63);
+		JPanel_choix_stade.setBounds(10, 25, 325, 63);
 		getContentPane().add(JPanel_choix_stade);
 		
 		JComboBox choixStade = new JComboBox();
