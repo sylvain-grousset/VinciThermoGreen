@@ -2,6 +2,7 @@ package view;
 
 
 
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Toolkit;
 
@@ -10,6 +11,7 @@ import javax.swing.JTextField;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -17,6 +19,8 @@ import java.sql.SQLException;
 import java.text.ParseException;
 
 import javax.swing.JPasswordField;
+
+import org.mindrot.jbcrypt.BCrypt;
 
 import control.Controller;
 
@@ -73,11 +77,50 @@ public class Login extends JFrame{
 		login.setColumns(10);
 		
 		JLabel lblForgotPassword = new JLabel("Forgot my password");
+		
+		//Lorsque l'utilisateur clique sur le label,
+		//cela crée un showInputDialog en demandant le login, puis un showOptionDialog demandant le MDP
+		//Puis le MDP est crypté et envoyé au controlleur
 		lblForgotPassword.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0)  {
+				String loginUtil = JOptionPane.showInputDialog(null,"Votre login :", "Password reset", JOptionPane.INFORMATION_MESSAGE);
 				
-				
+				if(loginUtil != null) {
+					
+					JPanel panel = new JPanel();
+					JLabel label = new JLabel("Entrez un nouveau mot de passe :");
+					JPasswordField pass = new JPasswordField(10);
+					panel.add(label);
+					panel.add(pass);
+					String[] options = new String[]{"OK", "Cancel"};
+					
+					int option = JOptionPane.showOptionDialog(null, panel, "Password reset",
+					                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+					                         null, options, options[0]);
+					
+					if(option == 0) {
+						
+						String mdp = BCrypt.hashpw(new String(pass.getPassword()), BCrypt.gensalt(10));
+						try {
+							if(control.updatePassword(loginUtil, mdp) == true) {
+								JOptionPane.showMessageDialog(null, "Mot de passe modifié avec succès !");
+							}else {
+								JOptionPane.showMessageDialog(null, "Le login entré n'existe pas, Veuillez re-essayer !");
+							}
+						} catch (SQLException e) {
+							e.printStackTrace();
+						}
+
+					}
+
+				}
+
+			}
+			//Modifie le curseur lorsque l'utilisateur passe sa souris sur le label.
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				lblForgotPassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			}
 		});
 		lblForgotPassword.setBounds(121, 148, 237, 14);
@@ -102,7 +145,6 @@ public class Login extends JFrame{
 						console.startUp();
 					}
 				} catch (SQLException | ParseException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				

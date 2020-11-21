@@ -172,6 +172,7 @@ public class ConsoleGUI extends JFrame {
 		setResizable(false);
 		setFont(new Font("Consolas", Font.PLAIN, 12));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 		
 		//Pane pointe sur le container racine
 		Container pane = getContentPane();

@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -17,6 +18,8 @@ import java.awt.event.ActionEvent;
 import org.mindrot.jbcrypt.BCrypt;
 
 import control.Controller;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * <p>CreateAccount : Formulaire pour creer un compte utilisateur</p>
@@ -102,6 +105,12 @@ public class CreateAccount extends JFrame {
 				
 				try {
 					control.createAccount(login, nom, prenom, mdp, adminCheckBox);
+					JOptionPane.showMessageDialog(null, "Compte ajouté avec succès !");
+					
+					textFieldNom.setText("");
+					textFieldPrenom.setText("");
+					passwordField.setText("");
+					
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -110,6 +119,17 @@ public class CreateAccount extends JFrame {
 		});
 		btnConfirmer.setBounds(229, 220, 98, 26);
 		getContentPane().add(btnConfirmer);
+		
+		JButton btnQuitterAnnuler = new JButton("Annuler/Quitter");
+		btnQuitterAnnuler.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+					setVisible(false);
+			
+			}
+		});
+		btnQuitterAnnuler.setBounds(84, 220, 131, 26);
+		getContentPane().add(btnQuitterAnnuler);
 		setVisible(true);
 	}
 }

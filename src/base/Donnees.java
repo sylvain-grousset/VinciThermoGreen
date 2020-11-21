@@ -191,6 +191,12 @@ public class Donnees {
 		return false;
 	}
 	
+	/**
+	 * <p>Check si l'utilisateur donné en paramètre à le rôle d'administrateur</p>
+	 * @param login
+	 * @return boolean
+	 * @throws SQLException
+	 */
 	public boolean roleAdmin(String login) throws SQLException {
 		stmt = conn.createStatement();
 		
@@ -205,6 +211,16 @@ public class Donnees {
 		return false;
 	}
 	
+	
+	/**
+	 * <p>Créer un compte utilisateur dans la base de données</p>
+	 * @param login
+	 * @param nom
+	 * @param prenom
+	 * @param mdp
+	 * @param adminChckBox
+	 * @throws SQLException
+	 */
 	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox)  throws SQLException{
 		stmt = conn.createStatement();
 		
@@ -214,6 +230,25 @@ public class Donnees {
 			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '0')");
 		}
 		
+	}
+	
+	/**
+	 * <p>Modifie le mot de passe d'un utilisateur dans la base de données</p>
+	 * @param login
+	 * @param mdp
+	 * @return boolean
+	 * @throws SQLException
+	 */
+	public boolean updatePassword(String login, String mdp) throws SQLException {
+		stmt = conn.createStatement();
+		
+		int rs = stmt.executeUpdate("UPDATE USERS SET mdp = '"+mdp+"' WHERE LOGIN = '"+login+"'");
+		
+		if (rs == 1) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 
