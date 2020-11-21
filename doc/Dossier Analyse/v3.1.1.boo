@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{F4B4695D-3384-4258-B40A-15D9A32E2AA2}" Label="" LastModificationDate="1605906220" Name="v3.1.0" Objects="219" Symbols="30" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
+<?PowerDesigner AppLocale="UTF16" ID="{F4B4695D-3384-4258-B40A-15D9A32E2AA2}" Label="" LastModificationDate="1605965934" Name="v3.1.0" Objects="219" Symbols="41" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -13,7 +13,7 @@
 <a:Code>v3_1_0</a:Code>
 <a:CreationDate>1604331086</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1605905930</a:ModificationDate>
+<a:ModificationDate>1605965934</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -3391,7 +3391,7 @@ ColnFKNameUse=No</a:ModelOptionsText>
 <a:Code>classe_metier</a:Code>
 <a:CreationDate>1605905893</a:CreationDate>
 <a:Creator>Sylvain</a:Creator>
-<a:ModificationDate>1605905930</a:ModificationDate>
+<a:ModificationDate>1605962508</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
@@ -3773,7 +3773,7 @@ Keep center=No
 Keep size=No
 Width=4800
 Height=3600
-Brush color=174 228 255
+Brush color=255 128 0
 Fill Color=Yes
 Brush style=6
 Brush bitmap mode=12
@@ -3782,7 +3782,7 @@ Brush gradient color=255 255 255
 Brush background image=
 Custom shape=
 Custom text mode=0
-Pen=1 0 0 128 255
+Pen=1 0 128 0 0
 Shadow color=192 192 192
 Shadow=0
 
@@ -3823,7 +3823,7 @@ Shadow=0
 [DisplayPreferences\Symbol\OOMPORT]
 DISPNAMEFont=Arial,8,N
 DISPNAMEFont color=0 0 0
-AutoAdjustToText=Yes
+AutoAdjustToText=No
 Keep aspect=No
 Keep center=No
 Keep size=No
@@ -3942,8 +3942,8 @@ Shadow=0</a:DisplayPreferences>
 <c:Symbols>
 <o:AssociationSymbol Id="o6">
 <a:CreationDate>1605905903</a:CreationDate>
-<a:ModificationDate>1605905903</a:ModificationDate>
-<a:Rect>((-6143,83), (4445,2030))</a:Rect>
+<a:ModificationDate>1605962513</a:ModificationDate>
+<a:Rect>((-6143,108), (4445,2055))</a:Rect>
 <a:ListOfPoints>((4045,1087),(-5743,1087))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -3963,11 +3963,11 @@ SOURCE 0 Arial,8,N</a:FontList>
 </o:AssociationSymbol>
 <o:ClassSymbol Id="o8">
 <a:CreationDate>1605905903</a:CreationDate>
-<a:ModificationDate>1605905903</a:ModificationDate>
+<a:ModificationDate>1605962508</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-12283,-823), (-5743,2997))</a:Rect>
 <a:LineColor>128</a:LineColor>
-<a:FillColor>4227327</a:FillColor>
+<a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
 QDNM 0 Arial,8,N
@@ -3978,7 +3978,7 @@ Operations 0 Arial,8,N
 InnerClassifiers 0 Arial,8,N
 LABL 0 Arial,8,N</a:FontList>
 <a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>64</a:GradientFillMode>
+<a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
 <o:Class Ref="o10"/>
@@ -3986,11 +3986,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o7">
 <a:CreationDate>1605905903</a:CreationDate>
-<a:ModificationDate>1605905903</a:ModificationDate>
+<a:ModificationDate>1605962513</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((4045,-2997), (12283,2771))</a:Rect>
+<a:Rect>((4045,-1647), (12283,4121))</a:Rect>
 <a:LineColor>128</a:LineColor>
-<a:FillColor>4227327</a:FillColor>
+<a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
 QDNM 0 Arial,8,N
@@ -4001,7 +4001,7 @@ Operations 0 Arial,8,N
 InnerClassifiers 0 Arial,8,N
 LABL 0 Arial,8,N</a:FontList>
 <a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>64</a:GradientFillMode>
+<a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
 <o:Class Ref="o11"/>
@@ -4009,11 +4009,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o12">
 <a:CreationDate>1605905930</a:CreationDate>
-<a:ModificationDate>1605906223</a:ModificationDate>
+<a:ModificationDate>1605962519</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-9315,10017), (237,17733))</a:Rect>
-<a:LineColor>16744448</a:LineColor>
-<a:FillColor>16770222</a:FillColor>
+<a:Rect>((-4365,7692), (5187,15408))</a:Rect>
+<a:LineColor>128</a:LineColor>
+<a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
 QDNM 0 Arial,8,N
@@ -5199,7 +5199,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o46">
 <a:CreationDate>1605866478</a:CreationDate>
 <a:ModificationDate>1605867040</a:ModificationDate>
-<a:Rect>((-15062,-8466), (15136,-6234))</a:Rect>
+<a:Rect>((-15062,-8466), (15136,-5746))</a:Rect>
 <a:ListOfPoints>((-14662,-7766),(14736,-7766))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -5263,7 +5263,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o52">
 <a:CreationDate>1605866239</a:CreationDate>
 <a:ModificationDate>1605867042</a:ModificationDate>
-<a:Rect>((-15062,-1041), (15136,695))</a:Rect>
+<a:Rect>((-15062,-1041), (15136,705))</a:Rect>
 <a:ListOfPoints>((14736,-341),(-14662,-341))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -5285,7 +5285,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o54">
 <a:CreationDate>1605866232</a:CreationDate>
 <a:ModificationDate>1605867045</a:ModificationDate>
-<a:Rect>((-15062,4059), (15136,5795))</a:Rect>
+<a:Rect>((-15062,4059), (15136,5805))</a:Rect>
 <a:ListOfPoints>((14736,4759),(-14662,4759))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -5307,7 +5307,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o56">
 <a:CreationDate>1605866229</a:CreationDate>
 <a:ModificationDate>1605866748</a:ModificationDate>
-<a:Rect>((-15062,6159), (15136,7895))</a:Rect>
+<a:Rect>((-15062,6159), (15136,7905))</a:Rect>
 <a:ListOfPoints>((-14662,6859),(14736,6859))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -5407,7 +5407,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Code>Stade</a:Code>
 <a:CreationDate>1605905903</a:CreationDate>
 <a:Creator>Sylvain</a:Creator>
-<a:ModificationDate>1605905903</a:ModificationDate>
+<a:ModificationDate>1605965934</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -5441,7 +5441,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Code>Mesure</a:Code>
 <a:CreationDate>1605905903</a:CreationDate>
 <a:Creator>Sylvain</a:Creator>
-<a:ModificationDate>1605905903</a:ModificationDate>
+<a:ModificationDate>1605965934</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -5497,7 +5497,7 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Code>Users</a:Code>
 <a:CreationDate>1605905930</a:CreationDate>
 <a:Creator>Sylvain</a:Creator>
-<a:ModificationDate>1605906220</a:ModificationDate>
+<a:ModificationDate>1605965934</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -5577,10 +5577,14 @@ DISPNAME 0 Arial,8,U</a:FontList>
 <a:Code>Association_1</a:Code>
 <a:CreationDate>1605905903</a:CreationDate>
 <a:Creator>Sylvain</a:Creator>
-<a:ModificationDate>1605905903</a:ModificationDate>
+<a:ModificationDate>1605965934</a:ModificationDate>
 <a:Modifier>Sylvain</a:Modifier>
-<a:RoleAMultiplicity>1..1</a:RoleAMultiplicity>
-<a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
+<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,138={78C31404-0EE5-4FD0-9038-EE396B305F05},roleBContainer,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;
+
+</a:ExtendedAttributesText>
 <c:Object1>
 <o:Class Ref="o10"/>
 </c:Object1>
