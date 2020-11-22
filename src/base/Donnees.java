@@ -66,7 +66,7 @@ public class Donnees {
 	
 		} catch (SQLException e) {
 			
-			throw new IllegalStateException("Cannot connect database !", e);
+			
 			
 		}
 }

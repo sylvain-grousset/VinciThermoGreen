@@ -156,7 +156,6 @@ public class ConsoleGUI extends JFrame {
 	private static String loginUtilisateur;
 	
 	
-	
 	public void setLoginUtilisateur(String loginUtilisateur) {
 		ConsoleGUI.loginUtilisateur = loginUtilisateur;
 	}
@@ -173,7 +172,7 @@ public class ConsoleGUI extends JFrame {
 		setFont(new Font("Consolas", Font.PLAIN, 12));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-		
+		control.openDatabase();
 		//Pane pointe sur le container racine
 		Container pane = getContentPane();
 		//Fixe le Layout de la racine à Absolute
@@ -374,7 +373,6 @@ public class ConsoleGUI extends JFrame {
 					laTable = setTable(lesMesures);
 					scrollPane.setViewportView(laTable);
 				} catch (SQLException | ParseException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}

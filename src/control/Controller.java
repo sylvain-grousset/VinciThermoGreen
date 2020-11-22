@@ -49,9 +49,13 @@ public class Controller {
 	}
 	
 	public Controller() throws ParseException, SQLException {
-		database.openDatabase();
+
 	}
 
+	public void openDatabase() {
+		database.openDatabase();
+	}
+	
 	/**
 	 * <p>Traite les données concernant le triage des mesures par le nom du stade</p>
 	 * <p>D'abord on clear les mesures actuelles</p>

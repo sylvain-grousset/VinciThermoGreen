@@ -40,7 +40,7 @@ public class Login extends JFrame{
 	private JPasswordField passwordField;
 	
 	private static Controller control;
-	private ConsoleGUI console = new ConsoleGUI();
+	private ConsoleGUI console;
 	
 
 	public JTextField getLogin() {
@@ -139,6 +139,7 @@ public class Login extends JFrame{
 					if(control.login(login.getText(), passwordField.getText()) == true) {
 						JOptionPane.showMessageDialog(null, "Connexion réussie");
 						console.setLoginUtilisateur(login.getText());
+						console = new ConsoleGUI();
 						setVisible(false);
 						console.startUp();
 					}else {
