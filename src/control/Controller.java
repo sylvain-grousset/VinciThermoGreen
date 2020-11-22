@@ -245,21 +245,21 @@ public class Controller {
 		database.createAccount(login, nom, prenom, mdp, adminChckBox);
 	}
 	
-	
-	/**
-	 * <p>Envoie à la méthode updatePassword de la classe Donnees le login et le MDP de l'utilisateur</p>
-	 * <p>pour que celui ci soit modifié dans la base de données</p>
-	 * @param login
-	 * @param mdp
-	 * @return boolean
-	 * @throws SQLException
-	 */
-	public boolean updatePassword(String login, String mdp) throws SQLException {
-		if(database.updatePassword(login, mdp) == true) {
-			return true;
-		}else {
-			return false;
-		}
-	}
+//	
+//	/**
+//	 * <p>Envoie à la méthode updatePassword de la classe Donnees le login et le MDP de l'utilisateur</p>
+//	 * <p>pour que celui ci soit modifié dans la base de données</p>
+//	 * @param login
+//	 * @param mdp
+//	 * @return boolean
+//	 * @throws SQLException
+//	 */
+//	public boolean updatePassword(String login, String mdp) throws SQLException {
+//		if(database.updatePassword(login, mdp) == true) {
+//			return true;
+//		}else {
+//			return false;
+//		}
+//	}
 	
 }

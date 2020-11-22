@@ -35,7 +35,6 @@ public class Donnees {
 	public static Statement getStmt() {
 		return stmt;
 	}
-
 	public static void setStmt(Statement stmt) {
 		Donnees.stmt = stmt;
 	}
