@@ -104,6 +104,7 @@ public class CreateAccount extends JFrame {
 				boolean adminCheckBox = chckbxAdmin.isSelected();
 				
 				try {
+					control.openDatabase();
 					control.createAccount(login, nom, prenom, mdp, adminCheckBox);
 					JOptionPane.showMessageDialog(null, "Compte ajouté avec succès !");
 					

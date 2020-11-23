@@ -59,7 +59,7 @@ public class Donnees {
 		String password = "vinciThermogreen";
 		
 		try {
-			
+
 			Connection conn = DriverManager.getConnection(url, username, password);
 			System.out.println("Connexion base OK !");
 			setConn(conn);		
@@ -178,8 +178,7 @@ public class Donnees {
 		
 		ResultSet rs = stmt.executeQuery("SELECT USERS.MDP FROM USERS WHERE login = '"+login+"'");
 		
-		while (rs.next()) {
-			
+		while (rs.next()) {		
 			if(BCrypt.checkpw(mdp, rs.getString("mdp")) == true){
 				return true;
 			}

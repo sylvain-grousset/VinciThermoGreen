@@ -136,10 +136,11 @@ public class Login extends JFrame{
 			public void mouseClicked(MouseEvent arg0) {
 				
 				try {
+					control.openDatabase();
 					if(control.login(login.getText(), passwordField.getText()) == true) {
 						JOptionPane.showMessageDialog(null, "Connexion réussie");
-						console.setLoginUtilisateur(login.getText());
 						console = new ConsoleGUI();
+						console.setLoginUtilisateur(login.getText());
 						setVisible(false);
 						console.startUp();
 					}else {
@@ -192,8 +193,7 @@ public class Login extends JFrame{
 		
 		try {
 			
-			DriverManager.getConnection(url, username, password);
-			System.out.println("Connexion base OK !");	
+			DriverManager.getConnection(url, username, password);	
 			DBStatus.setForeground(Color.GREEN);
 			DBStatus.setText("DATABASE OK");
 			
