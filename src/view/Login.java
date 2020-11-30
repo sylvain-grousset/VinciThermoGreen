@@ -73,6 +73,10 @@ public class Login extends JFrame{
 		getContentPane().add(login);
 		login.setColumns(10);
 		
+		// ---------------------------A SUPRIMMER QUAND TERMINÉ -------------------------------------------------------------------------
+		login.setText("SGROUSSET");
+		// ---------------------------A SUPRIMMER QUAND TERMINÉ -------------------------------------------------------------------------
+		
 		//JLabel lblForgotPassword = new JLabel("Forgot my password");
 		
 		//Lorsque l'utilisateur clique sur le label,

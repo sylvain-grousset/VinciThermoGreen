@@ -16,6 +16,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -37,6 +38,10 @@ import java.sql.*;
 import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 /**
  * <p>ConsoleGUI : IHM de l'application de consultation des températures</p>
@@ -155,9 +160,21 @@ public class ConsoleGUI extends JFrame {
 	
 	private static String loginUtilisateur;
 	
+	private static String choixStadeUtilisateur;
+	
 	
 	public void setLoginUtilisateur(String loginUtilisateur) {
 		ConsoleGUI.loginUtilisateur = loginUtilisateur;
+	}
+
+	
+	public static String getChoixStadeUtilisateur() {
+		return choixStadeUtilisateur;
+	}
+
+
+	public static void setChoixStadeUtilisateur(String choixStadeUtilisateur) {
+		ConsoleGUI.choixStadeUtilisateur = choixStadeUtilisateur;
 	}
 
 
@@ -317,29 +334,81 @@ public class ConsoleGUI extends JFrame {
 		pnlBounds.setLayout(null);
 		pane.add(pnlBounds);
 		
+		//Label contenant les valeurs du Slider minimum
+		JLabel value_SliderMin = new JLabel("");
+		value_SliderMin.setBounds(253, 51, 21, 14);
+		pnlBounds.add(value_SliderMin);
+		
+		//Label contenant les valeurs du Slider Maximum
+		JLabel value_SliderMax = new JLabel("");
+		value_SliderMax.setBounds(253, 87, 21, 14);
+		pnlBounds.add(value_SliderMax);
+		
+		
+		JSlider slider_mini = new JSlider();
+		slider_mini.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				value_SliderMin.setText(String.valueOf(slider_mini.getValue()));
+			}
+		});
+		
+		slider_mini.setMinimum(-20);
+		slider_mini.setMaximum(50);
+		slider_mini.setBounds(16, 40, 231, 25);
+		pnlBounds.add(slider_mini);
+		
+		JSlider slider_maxi = new JSlider();
+		slider_maxi.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				value_SliderMax.setText(String.valueOf(slider_maxi.getValue()));
+			}
+		});
+		
+		slider_maxi.setMinimum(-20);
+		slider_maxi.setMaximum(50);
+		slider_maxi.setBounds(16, 76, 231, 25);
+		pnlBounds.add(slider_maxi);
+		
+		int[] a = control.defaultSliderValue(choixStadeUtilisateur);
+		
+		slider_mini.setValue(a[0]);
+		slider_maxi.setValue(a[1]);
+		
+		
 		JButton btnDebord = new JButton("D\u00E9bord");
+		btnDebord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+				if(slider_maxi.getValue() < slider_mini.getValue()) {
+					JOptionPane.showMessageDialog(null, "La valeur maxi ne peut pas être inferieur à la valeur minimum !");
+				}else {
+					if(control.updateMinMax(choixStadeUtilisateur, slider_maxi.getValue(), slider_mini.getValue()) == true) {
+						JOptionPane.showMessageDialog(null, "Températures modifiées avec succès !");
+					}
+				}
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
 		btnDebord.setBounds(266, 15, 79, 23);
 		pnlBounds.add(btnDebord);
 		
-		JSlider slider = new JSlider();
-		slider.setBounds(16, 40, 240, 25);
-		pnlBounds.add(slider);
-		
-		JSlider slider_1 = new JSlider();
-		slider_1.setBounds(15, 88, 240, 25);
-		pnlBounds.add(slider_1);
 		
 		JLabel lblDebordMin = new JLabel("Minimum");
 		lblDebordMin.setBounds(15, 20, 60, 14);
 		pnlBounds.add(lblDebordMin);
 		
 		JLabel lblDebordMaximum = new JLabel("Maximum");
-		lblDebordMaximum.setBounds(15, 70, 60, 14);
+		lblDebordMaximum.setBounds(16, 62, 60, 14);
 		pnlBounds.add(lblDebordMaximum);
 		
 		JLabel lbAlerte = new JLabel();
 		lbAlerte.setIcon(new ImageIcon("img\\s_green_button.png"));
-		lbAlerte.setBounds(270, 42, 75, 75);
+		lbAlerte.setBounds(287, 49, 54, 48);
 		pnlBounds.add(lbAlerte);
 		
 		JPanel JPanel_choix_stade = new JPanel();
@@ -350,6 +419,11 @@ public class ConsoleGUI extends JFrame {
 		getContentPane().add(JPanel_choix_stade);
 		
 		JComboBox choixStade = new JComboBox();
+		choixStade.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				setChoixStadeUtilisateur(choixStade.getSelectedItem().toString());
+			}
+		});
 		
 		//Appel de cette méthode pour ajouter le nom des stade dans la comboBox choixStade
 		addStadeToComboBox(choixStade);
@@ -367,6 +441,11 @@ public class ConsoleGUI extends JFrame {
 		validerChoixStade.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				try {
+					
+					int[] a = control.defaultSliderValue(choixStadeUtilisateur);
+					slider_mini.setValue(a[0]);
+					slider_maxi.setValue(a[1]);
+					
 					control.sortByStade(choixStade.getSelectedItem().toString());
 					lesMesures = control.getLesMesures();
 					addZoneToComboBox(choixZone, choixStade);
@@ -422,6 +501,7 @@ public class ConsoleGUI extends JFrame {
 		}
 	}
 
+	
 	
 	/**
 	 * <p>Ajoute les numZone en fonction du stade dans la comboBox choixZone </p>

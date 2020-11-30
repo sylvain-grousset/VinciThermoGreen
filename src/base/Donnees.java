@@ -247,5 +247,31 @@ public class Donnees {
 		}
 	}
 	
+	public boolean updateMinMax(String stade, int tempMax, int tempMin) throws SQLException {
+		stmt = conn.createStatement();
+		
+		int rs = stmt.executeUpdate("UPDATE STADE SET temp_max = "+tempMax+", temp_min = "+tempMin+" WHERE nom = '"+stade+"'");
+		
+		if (rs == 1) {
+			return true;
+		}else {
+			return false;
+		}
+
+	}
+	
+	public int[] defaultSliderValue(String stade) throws SQLException {
+		stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT temp_min, temp_max FROM STADE WHERE nom = '"+stade+"'");
+		
+		int[] a = {0,0};
+		while(rs.next()) {
+			a[0] = rs.getInt(1);
+			a[1] = rs.getInt(2);
+		}
+		return a;
+		
+	}
+	
 	
 }

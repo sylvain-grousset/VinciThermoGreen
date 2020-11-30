@@ -249,6 +249,23 @@ public class Controller {
 		database.createAccount(login, nom, prenom, mdp, adminChckBox);
 	}
 	
+	
+	public boolean updateMinMax(String stade, int tempMax, int tempMin) throws SQLException{
+		
+		if(database.updateMinMax(stade, tempMax, tempMin) == true) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public int[] defaultSliderValue(String stade) throws SQLException {
+		int[] a = database.defaultSliderValue(stade);
+		return a;
+	}
+	
+	
+	
 //	
 //	/**
 //	 * <p>Envoie à la méthode updatePassword de la classe Donnees le login et le MDP de l'utilisateur</p>
