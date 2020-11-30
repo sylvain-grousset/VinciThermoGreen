@@ -32,6 +32,8 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import control.Controller;
 import model.Mesure;
 import java.sql.*;
@@ -429,7 +431,8 @@ public class ConsoleGUI extends JFrame {
 		addStadeToComboBox(choixStade);
 		
 		//Appel de cette méthode pour ajouter les numeros des zones dans la comboBox choixZone
-		addZoneToComboBox(choixZone, choixStade);
+	//BUG A REGLER
+		//addZoneToComboBox(choixZone, choixStade);
 		
 		JPanel_choix_stade.add(choixStade);
 		
@@ -448,7 +451,8 @@ public class ConsoleGUI extends JFrame {
 					
 					control.sortByStade(choixStade.getSelectedItem().toString());
 					lesMesures = control.getLesMesures();
-					addZoneToComboBox(choixZone, choixStade);
+				//BUG A REGLER
+					//addZoneToComboBox(choixZone, choixStade);
 					laTable = setTable(lesMesures);
 					scrollPane.setViewportView(laTable);
 				} catch (SQLException | ParseException e1) {
@@ -509,23 +513,19 @@ public class ConsoleGUI extends JFrame {
 	 * @param choixStade
 	 * @throws SQLException
 	 */
-	public void addZoneToComboBox(JComboBox<String> choixZone, JComboBox<String> choixStade) throws SQLException{
-		ArrayList<String> lesZones = new ArrayList<String>();
-		String stade = choixStade.getSelectedItem().toString();
-		
-		System.out.println("Choix stade = "+stade);
-		lesZones = control.comboZone(lesZones, stade);
-		
-		System.out.println("Count : "+choixZone.getItemCount());
-		
-		
-		choixZone.removeAllItems();
-		
-		choixZone.addItem("*");
-		for(int i=0 ; i<lesZones.size() ; i++) {
-			choixZone.addItem(lesZones.get(i));
-		}
-	}
+//	public void addZoneToComboBox(JComboBox<String> choixZone, JComboBox<String> choixStade) throws SQLException{
+//		ArrayList<String> lesZones = new ArrayList<String>();
+//		String stade = choixStade.getSelectedItem().toString();
+//		
+//		lesZones = control.comboZone(lesZones, stade);
+//		
+//		choixZone.removeAllItems();
+//		
+//		choixZone.addItem("*");
+//		for(int i=0 ; i<lesZones.size() ; i++) {
+//			choixZone.addItem(lesZones.get(i));
+//		}
+//	}
 	
 	
 	/**
@@ -535,7 +535,7 @@ public class ConsoleGUI extends JFrame {
 	 */
 	public void addStadeToComboBox(JComboBox<String> choixStade) throws SQLException {
 		ArrayList<String> lesStades = new ArrayList<String>();
-			lesStades = control.comboStade(lesStades);
+			lesStades = control.comboStade(lesStades, loginUtilisateur);
 			for(int i =0; i<lesStades.size() ; i++) {
 				choixStade.addItem(lesStades.get(i));
 			

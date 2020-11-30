@@ -106,9 +106,8 @@ public class Controller {
 	 * @return
 	 * @throws SQLException
 	 */
-	public ArrayList<String> comboStade(ArrayList<String> lesStades) throws SQLException {		
-		System.out.println(database.returnAllStade());
-		return lesStades = database.returnAllStade();
+	public ArrayList<String> comboStade(ArrayList<String> lesStades, String login) throws SQLException {		
+		return lesStades = database.returnAllStade(login);
 	}
 
 	
@@ -120,8 +119,6 @@ public class Controller {
 
 		ArrayList<String> mesures = new ArrayList<String>();
 		mesures = database.selectAllDatas();
-
-		System.out.println(mesures);
 
 		String[] fields = null;
 		String numZone = null;
@@ -246,12 +243,12 @@ public class Controller {
 	 * @param adminChckBox
 	 * @throws SQLException
 	 */
-	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox) throws SQLException {
+	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox, String telephone) throws SQLException {
 		
-		database.createAccount(login, nom, prenom, mdp, adminChckBox);
+		database.createAccount(login, nom, prenom, mdp, adminChckBox, telephone);
 	}
 	
-	
+
 	public boolean updateMinMax(String stade, int tempMax, int tempMin) throws SQLException{
 		
 		if(database.updateMinMax(stade, tempMax, tempMin) == true) {

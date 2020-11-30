@@ -151,14 +151,15 @@ public class Donnees {
 	 * @return
 	 * @throws SQLException
 	 */
-	public ArrayList<String> returnAllStade() throws SQLException {
+	public ArrayList<String> returnAllStade(String login) throws SQLException {
 		
 		ArrayList<String> lesStades = new ArrayList<String>();
 		stmt = conn.createStatement();
 		
-		ResultSet rs = stmt.executeQuery("SELECT STADE.nom FROM STADE");
+		ResultSet rs = stmt.executeQuery("SELECT STADE.nom FROM STADE WHERE login = '"+login+"'");
 		
 		while(rs.next()) {
+			System.out.println("Chui ds la boucle de database");
 			lesStades.add(rs.getString("nom"));
 		}
 		return lesStades;
@@ -217,13 +218,13 @@ public class Donnees {
 	 * @param adminChckBox
 	 * @throws SQLException
 	 */
-	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox)  throws SQLException{
+	public void createAccount(String login, String nom, String prenom, String mdp, boolean adminChckBox, String telephone)  throws SQLException{
 		stmt = conn.createStatement();
 		
 		if(adminChckBox == true) {
-			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '1')");
+			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '1', '"+telephone+"')");
 		}else {
-			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '0')");
+			stmt.executeUpdate ("INSERT INTO USERS VALUES ('"+login+"','"+nom+"','"+prenom+"', '"+mdp+"', '0', '"+telephone+"')");
 		}
 		
 	}
