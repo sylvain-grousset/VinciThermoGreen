@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{6B12DEA1-3B61-41F7-A6D6-44B90C685CEF}" Label="" LastModificationDate="1606741330" Name="v3.2.0" Objects="98" Symbols="8" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
+<?PowerDesigner AppLocale="UTF16" ID="{6B12DEA1-3B61-41F7-A6D6-44B90C685CEF}" Label="" LastModificationDate="1606145224" Name="v3.2.0" Objects="106" Symbols="21" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.10.6261"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1913,9 +1913,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>association2</a:Code>
 <a:CreationDate>1606145084</a:CreationDate>
 <a:Creator>UTI307</a:Creator>
-<a:ModificationDate>1606741330</a:ModificationDate>
+<a:ModificationDate>1606145094</a:ModificationDate>
 <a:Modifier>UTI307</a:Modifier>
-<a:RoleAMultiplicity>1..1</a:RoleAMultiplicity>
+<a:RoleAMultiplicity>0..1</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
 <a:RoleANavigability>1</a:RoleANavigability>
 <a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
