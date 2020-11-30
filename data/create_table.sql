@@ -1,9 +1,9 @@
 
 CREATE DATABASE VINCI;
 
+DROP USER IF EXISTS adminVinci@localhost;
 
 USE VINCI;
-
 
 CREATE USER 'adminVinci'@'localhost' IDENTIFIED BY 'vinciThermogreen';
 
