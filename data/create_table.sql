@@ -11,10 +11,26 @@ CREATE USER 'adminVinci'@'localhost' IDENTIFIED BY 'vinciThermogreen';
 GRANT ALL ON VINCI.* TO 'adminVinci'@'localhost';
 
 
+CREATE TABLE USERS(
+
+	login varchar(255),
+	nom varchar(255),
+	prenom varchar(255),
+	mdp varchar(255),
+	roleAdmin boolean,
+	telephone varchar(10),
+	
+CONSTRAINT PK_USERS PRIMARY KEY (login)
+);
+
 CREATE TABLE STADE(
 	nom varchar(255),
+	temp_min int,
+	temp_max int,
+	login varchar(255),
 
-CONSTRAINT PK_STADE PRIMARY KEY (nom)
+CONSTRAINT PK_STADE PRIMARY KEY (nom),
+CONSTRAINT FOREIGN KEY (login) REFERENCES USERS(login)
 );
 
 CREATE TABLE MESURE(
@@ -29,20 +45,13 @@ CONSTRAINT FK_nom_stade FOREIGN KEY (nom_stade) REFERENCES STADE(nom)
 );
 
 
-CREATE TABLE USERS(
-
-	login varchar(255),
-	nom varchar(255),
-	prenom varchar(255),
-	mdp varchar(255),
-	roleAdmin boolean
-);
-
-INSERT INTO USERS VALUES ('SGROUSSET', 'GROUSSET', 'Sylvain', '$2a$10$sMTpVdUic7zYkUv0dE16POzx8Ukdr/UBJP0STXzd/8XW0UZwUh/x6', true);
 
 
-INSERT INTO STADE VALUES ('Parc des Princes');
-INSERT INTO STADE VALUES ('Velodrome');
+INSERT INTO USERS VALUES ('SGROUSSET', 'GROUSSET', 'Sylvain', '$2a$10$sMTpVdUic7zYkUv0dE16POzx8Ukdr/UBJP0STXzd/8XW0UZwUh/x6', true, '0445288407');
+
+
+INSERT INTO STADE (nom) VALUES ('Parc des Princes');
+INSERT INTO STADE (nom) VALUES ('Velodrome');
 INSERT INTO MESURE VALUES (1, '2020-04-01 06:00:00', 42, 'Velodrome');
 INSERT INTO MESURE VALUES (2, '2020-04-01 12:00:00', 51, 'Velodrome');
 INSERT INTO MESURE VALUES (3, '2020-04-01 18:00:00', 74, 'Velodrome');
