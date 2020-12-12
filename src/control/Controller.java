@@ -58,6 +58,12 @@ public class Controller {
 		database.openDatabase();
 	}
 	
+	
+	public String noTelephone(String stade) throws SQLException {
+		return database.noTelephone(stade);
+	}
+	
+	
 	/**
 	 * <p>Traite les données concernant le triage des mesures par le nom du stade</p>
 	 * <p>D'abord on clear les mesures actuelles</p>
@@ -85,7 +91,6 @@ public class Controller {
 			lesMesures.add(laMesure);
 			
 		}
-		System.out.println(lesMesures);
 
 	}
 

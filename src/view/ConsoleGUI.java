@@ -32,8 +32,9 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import com.sun.xml.internal.bind.v2.TODO;
+import com.twilio.Twilio;
 
+import sms.TwilioSMS;
 import control.Controller;
 import model.Mesure;
 import java.sql.*;
@@ -444,13 +445,33 @@ public class ConsoleGUI extends JFrame {
 		validerChoixStade.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				try {
+					TwilioSMS sms = new TwilioSMS();
 					
+					
+					//recuperation des valeurs mini et maxi en fonction du stade
 					int[] a = control.defaultSliderValue(choixStadeUtilisateur);
 					slider_mini.setValue(a[0]);
 					slider_maxi.setValue(a[1]);
 					
 					control.sortByStade(choixStade.getSelectedItem().toString());
+					
 					lesMesures = control.getLesMesures();
+					
+					for (Mesure laMesure : lesMesures) {
+						if (laMesure.getCelsius() < slider_mini.getValue() || laMesure.getCelsius() > slider_maxi.getValue()) {
+							System.out.println("ll y a des mesures qui ne sont pas dans l intervalle !");
+							try {
+								sms.envoiSMS(control.noTelephone(choixStade.getSelectedItem().toString()));
+							} catch (Exception e1) {
+
+							}
+							System.out.println(laMesure.getCelsius());
+						}else {
+							System.out.println("Toutes les mesures sont dans l'intervalle !");
+						}
+						
+					}
+					
 				//BUG A REGLER
 					//addZoneToComboBox(choixZone, choixStade);
 					laTable = setTable(lesMesures);
@@ -556,6 +577,7 @@ public class ConsoleGUI extends JFrame {
 		monIHM.setLocation(100,100);
 		
 		lesMesures = control.getLesMesures();
+		System.out.println("Dans startUp"+lesMesures);
 		
 		//Construit le tableau d'objet
 		laTable = setTable(lesMesures);
@@ -563,10 +585,8 @@ public class ConsoleGUI extends JFrame {
 		//Definit le JScrollPane qui va recevoir la JTable
 		scrollPane.setViewportView(laTable);
 		
-		System.out.println("Before set chart in main()");
 		//affiche le graphique
 		monIHM.setChart();
-		System.out.println("After set chart in main()");
 		monIHM.setVisible(true);
 		
 	}
@@ -621,7 +641,6 @@ public class ConsoleGUI extends JFrame {
 
 		if (rdbtnCelsius.isSelected()) {
 
-			System.out.println("Celsius : " + rdbtnCelsius.isSelected() + " | " + mesures.size());
 
 			// Initialisation de min et max
 			min = mesures.get(0).getCelsius();
@@ -646,7 +665,6 @@ public class ConsoleGUI extends JFrame {
 			}
 		} else {
 
-			System.out.println("Celsius : " + rdbtnCelsius.isSelected() + " | " + mesures.size());
 
 			// Initialisation de min et max
 			min = mesures.get(0).getFahrenheit();

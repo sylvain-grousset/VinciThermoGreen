@@ -131,7 +131,7 @@ public class Donnees {
 		String query = "SELECT MESURE.numZone, dateHeure, fahreneit FROM MESURE WHERE nom_stade = '"+stade+"'";
 		ResultSet rs = stmt.executeQuery(query);
 		ResultSetMetaData rsmd = rs.getMetaData();
-		
+		System.out.println("Je suis dans sortByStade");
 		int i=0;
 		while(rs.next()) {
 			
@@ -146,6 +146,24 @@ public class Donnees {
 		return lesResults;	
 	}
 	
+	public String noTelephone(String stade) throws SQLException {
+		stmt = conn.createStatement();
+		String query = "SELECT USERS.telephone FROM USERS INNER JOIN STADE on STADE.login = USERS.login WHERE STADE.nom = '"+stade+"'";
+		ResultSet rs = stmt.executeQuery(query);
+		
+		String a = null;
+		
+		while(rs.next()) {
+			a = rs.getString("telephone");
+		}
+		return a;
+		
+		
+
+		
+	}
+	
+	
 	/**
 	 * <p>Interoge la BDD pour en extraire tous les noms des stades</p>
 	 * @return
@@ -159,7 +177,6 @@ public class Donnees {
 		ResultSet rs = stmt.executeQuery("SELECT STADE.nom FROM STADE WHERE login = '"+login+"'");
 		
 		while(rs.next()) {
-			System.out.println("Chui ds la boucle de database");
 			lesStades.add(rs.getString("nom"));
 		}
 		return lesStades;
