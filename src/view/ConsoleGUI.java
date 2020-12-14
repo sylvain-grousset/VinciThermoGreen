@@ -32,8 +32,6 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import com.twilio.Twilio;
-
 import sms.TwilioSMS;
 import control.Controller;
 import model.Mesure;
@@ -50,7 +48,7 @@ import java.awt.event.ItemEvent;
  * <p>ConsoleGUI : IHM de l'application de consultation des températures</p>
  * <p>Projet Vinci Thermo Green</p>
  * @author GROUSSET Sylvain
- * @version 3.1.0
+ * @version 3.2.0
  * @see control.Controller
  * @see model.Mesure
  */
@@ -160,9 +158,14 @@ public class ConsoleGUI extends JFrame {
 	 */
 	JPanel pnlBounds = new JPanel();
 
-	
+	/**
+	 * <p>Contient le login de l'utilisateur actuellement connecté</p>
+	 */
 	private static String loginUtilisateur;
 	
+	/**
+	 * <p>Contient le nom du stade sélectionné par l'utilisateur</p>
+	 */
 	private static String choixStadeUtilisateur;
 	
 	
@@ -391,8 +394,7 @@ public class ConsoleGUI extends JFrame {
 				}
 					
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+
 				}
 				
 			}
@@ -442,11 +444,12 @@ public class ConsoleGUI extends JFrame {
 		//Lorsque le bouton VALIDER est cliqué : 
 		//On envoit au control.sortByStade la String de la comboBox sélectionnée
 		//Puis on set une nouvelle table pour actualiser les données avec les nouvelles
+		//On vérifie si il y a une mesure qui est inferieur à temp_min ou superieur à temp_max
 		validerChoixStade.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				try {
 					TwilioSMS sms = new TwilioSMS();
-					
+					lbAlerte.setIcon(new ImageIcon("img\\s_green_button.png"));
 					
 					//recuperation des valeurs mini et maxi en fonction du stade
 					int[] a = control.defaultSliderValue(choixStadeUtilisateur);
@@ -457,10 +460,11 @@ public class ConsoleGUI extends JFrame {
 					
 					lesMesures = control.getLesMesures();
 					
+					//On parcours toutes les mesures, si il y a une mesure qui est inferieur à temp_min OU superieur à temp_max ALORS on entre dans le IF et on envoit un SMS
 					for (Mesure laMesure : lesMesures) {
 						if (laMesure.getCelsius() < slider_mini.getValue() || laMesure.getCelsius() > slider_maxi.getValue()) {
-							System.out.println("ll y a des mesures qui ne sont pas dans l intervalle !");
 							try {
+								lbAlerte.setIcon(new ImageIcon("img\\s_red_button.png"));
 								sms.envoiSMS(control.noTelephone(choixStade.getSelectedItem().toString()));
 							} catch (Exception e1) {
 
@@ -472,17 +476,21 @@ public class ConsoleGUI extends JFrame {
 						
 					}
 					
-				//BUG A REGLER
-					//addZoneToComboBox(choixZone, choixStade);
+					//On ajoute toutes les zones à la comboBox choixZone
+					addZoneToComboBox(choixZone, choixStade);
+					
+					//On mets à jour le JTable avec les mesures récupérées
 					laTable = setTable(lesMesures);
 					scrollPane.setViewportView(laTable);
+					
 				} catch (SQLException | ParseException e1) {
-					e1.printStackTrace();
+					
 				}
 			}
 		});
 		JPanel_choix_stade.add(validerChoixStade);
 		
+		//Déconnecte l'utilisateur en rendant la fenêtre visible en false
 		JButton ButtonDeconnexion = new JButton("Deconnexion");
 		ButtonDeconnexion.addMouseListener(new MouseAdapter() {
 			@Override
@@ -534,19 +542,19 @@ public class ConsoleGUI extends JFrame {
 	 * @param choixStade
 	 * @throws SQLException
 	 */
-//	public void addZoneToComboBox(JComboBox<String> choixZone, JComboBox<String> choixStade) throws SQLException{
-//		ArrayList<String> lesZones = new ArrayList<String>();
-//		String stade = choixStade.getSelectedItem().toString();
-//		
-//		lesZones = control.comboZone(lesZones, stade);
-//		
-//		choixZone.removeAllItems();
-//		
-//		choixZone.addItem("*");
-//		for(int i=0 ; i<lesZones.size() ; i++) {
-//			choixZone.addItem(lesZones.get(i));
-//		}
-//	}
+	public void addZoneToComboBox(JComboBox<String> choixZone, JComboBox<String> choixStade) throws SQLException{
+		ArrayList<String> lesZones = new ArrayList<String>();
+		String stade = choixStade.getSelectedItem().toString();
+		
+		lesZones = control.comboZone(lesZones, stade);
+		
+		choixZone.removeAllItems();
+		
+		choixZone.addItem("*");
+		for(int i=0 ; i<lesZones.size() ; i++) {
+			choixZone.addItem(lesZones.get(i));
+		}
+	}
 	
 	
 	/**
@@ -702,8 +710,6 @@ public class ConsoleGUI extends JFrame {
 		return uneTable;
 	}
 
-	//TODO factoriser le code avec setTable
-	//TODO gérer le choix du graphique
 	/**
 	 * <p>Impl&eacute;mente la biblioth&egrave;que JFreeChart :</p>
 	 * <ol>

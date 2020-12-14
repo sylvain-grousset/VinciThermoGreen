@@ -26,7 +26,7 @@ import view.*;
  * </ol>
  * 
  * @author GROUSSET Sylvain
- * @version 3.1.0
+ * @version 3.2.0
  * @see view.*;
  * @see model.Mesure;
  * @see base.Donnees;
@@ -254,6 +254,14 @@ public class Controller {
 	}
 	
 
+	/**
+	 * <p>Methode envoyant à la classe Donnes les temp_min et temp_max du stade passé en parametre pour faire un update sur la BDD</p>
+	 * @param stade
+	 * @param tempMax
+	 * @param tempMin
+	 * @return boolean
+	 * @throws SQLException
+	 */
 	public boolean updateMinMax(String stade, int tempMax, int tempMin) throws SQLException{
 		
 		if(database.updateMinMax(stade, tempMax, tempMin) == true) {
@@ -263,6 +271,13 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * <p>Methode permettant de récuperer les valeurs de temp_min et temp_max du stade sélectionné</p>
+	 * <p>pour ensuite les affichers dans les sliders</p>
+	 * @param stade
+	 * @return int[]
+	 * @throws SQLException
+	 */
 	public int[] defaultSliderValue(String stade) throws SQLException {
 		int[] a = database.defaultSliderValue(stade);
 		return a;

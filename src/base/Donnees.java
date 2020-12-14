@@ -9,7 +9,7 @@ import org.mindrot.jbcrypt.BCrypt;
  * <p>Etablit la connection avec la BDD et s'occupe des requetes avec celle ci</p>
  * <p>Projet Vinci Thermo Green</p>
  * @author Sylvain
- * @version 3.1.0
+ * @version 3.2.0
  * @see org.mindrot.jbcrypt.BCrypt;
  */
 
@@ -265,6 +265,14 @@ public class Donnees {
 		}
 	}
 	
+	/**
+	 * <p>Methode mettant à jour les temp_min et temp_max du stade passé en parametre</p>
+	 * @param stade
+	 * @param tempMax
+	 * @param tempMin
+	 * @return boolean
+	 * @throws SQLException
+	 */
 	public boolean updateMinMax(String stade, int tempMax, int tempMin) throws SQLException {
 		stmt = conn.createStatement();
 		
@@ -277,7 +285,12 @@ public class Donnees {
 		}
 
 	}
-	
+	/**
+	 * <p>Methode retournant un int[] de temp_min et temp_max du stade en parametre.</p>
+	 * @param stade
+	 * @return int[]
+	 * @throws SQLException
+	 */
 	public int[] defaultSliderValue(String stade) throws SQLException {
 		stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT temp_min, temp_max FROM STADE WHERE nom = '"+stade+"'");

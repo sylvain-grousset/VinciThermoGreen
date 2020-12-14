@@ -4,6 +4,13 @@ import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 
+
+/**
+ * <p>Classe Twilio pour l'envoie des SMS</p>
+ * @author GROUSSET Sylvain
+ * @version 3.2.0
+ *
+ */
 public class TwilioSMS {
     // Find your Account Sid and Auth Token at twilio.com/console
     public static final String ACCOUNT_SID =
@@ -15,7 +22,8 @@ public class TwilioSMS {
     public void envoiSMS(String noTel) {
     	Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-        Message message = Message
+        @SuppressWarnings("unused")
+		Message message = Message
                 .creator(new PhoneNumber(noTel), // to
                         new PhoneNumber("+12055091076"), // from
                         "Il y a une zone qui dépasse ou est en dessous de l'intervalle !")
